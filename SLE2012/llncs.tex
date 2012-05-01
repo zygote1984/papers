@@ -21,40 +21,35 @@ seamless.  Throughout the paper we will refer to the integration of two software
 	must be re-established. 
  	 \item When adding unforeseen functionality to a system, no explicit hooks
  	 exist for attaching the new component. In this case it may be necessary
-  	to modify code to make the binding, which will unnecessarily expose the
-  	developer to implementation details.
+  	to modify code to make the binding, which will create cluttered code. 
 	\item There may be structures in the new and the old component, which
 	conceptually overlap but provide different interfaces. 	The mapping between
 	these structures should be defined, in order to avoid inconsistencies.
 \end{enumerate}
 
-Handling the first challenge requires a maintainable way of expressing binding. 
+Handling the first challenge requires a \emph{maintainable} way of expressing binding. It is possible to program binding according to some foreseeable evolution scenarios. However in today's component-based systems, third-party software is widely used. So when the interface offered by a third-party software changes, it is necessary to re-program the binding. \emph{Reusable binding structures} and expressing binding in a \emph{concise} manner is then valuable to reduce this programming effort.
 
-Solving the second challenge requires a means to choose certain points in an
-application. \textbf{What would be a possible way to do this with OO and why is
-it bad? Where is it limited? discuss middleware/containers here which have to provide
-"explicit hooks"}
-Solving the third challenge requires a means to express the communication and
-the binding between components. \textbf{This is going to be explained after AOP
+Solving the second challenge requires a means to expose certain information in an
+application's control flow and inject additional behavior to the control flow. Context exposure can be done via object-oriented programming(OOP), by providing classes which store and expose context information. Injecting additional behavior can be achieved via design patterns like dependency injection or decorator. However these methods are valid for planned extensions, and they will not be sufficient when a new component needs to access an unexposed context. Another issue is linked to the nature of binding two components. Since components need to be connected through possibly multiple points the \textbf{binding concern} becomes cross-cutting. It has been shown that OOP is not effective in modularizing such cross-cutting concerns.  
+
+Solving the third challenge requires a means to express the mapping between components.  \textbf{This is going to be explained after AOP
 and how it offers solution to the first two challenges is mentioned.}
 
 Aspect Oriented Programming (AOP) is designed to modularize crosscutting
 concerns and with its 'weaving' mechanism, it is possible to change the behavior
 (advice weaving) or the structure (AspectJ:inter-type declarations, CaesarJ:
 family polymorphism, wrappers) of an implementation without altering the
-implementation itself. These properties of AOP make it a desirable candidate for
-attacking the binding problem.
+implementation itself. These properties of AOP make it a desirable candidate for modularizing the binding concern.
 
-Now let's go over the challenges again to understand how AOP can be of help.
 AOP is effective for achieving loose-coupling. It
 can capture information or inject behavior from a component without being
 acknowledged. AOP also facilitates the OO way of loose-coupling, which done via
 interfaces. It is possible to declare subtypes of an interface and provide the
-subsequent implementation in an aspect.  AOP is efficient in localizing a concern. So when two components are bound using
-AOP, the binding implementation will be in one place.This is an important
+subsequent implementation in an aspect.  AOP is also efficient in localizing a concern. So when two components are bound using
+AOP, the binding implementation will be in one place. This is an important
 property for maintaining the modules providing loose-coupling. 
 
-A pointcut is a program construct that selects join points and collects context at
+A pointcut is a program construct that selects join points and expose context at
 those points \textbf{(AspectJ in Action book)}. Hence by using pointcuts we can
 define entry points to a system to inject new behavior. Of course this approach
 is limited with the expressiveness of the join-point model of the AO language.
