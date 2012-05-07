@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.27)  4 MAY 2012 09:39
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.4)  7 MAY 2012 09:40
 entering extended mode
 **llncs.tex
 ("C:\Users\hatunk\Google Drive\SLE2012\llncs.tex"
@@ -197,23 +197,24 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 1205 strings out of 494019
- 15005 string characters out of 3143870
- 76905 words of memory out of 3000000
- 4539 multiletter control sequences out of 15000+200000
- 6225 words of font info for 23 fonts, out of 3000000 for 9000
+ 1207 strings out of 494019
+ 15026 string characters out of 3143871
+ 77905 words of memory out of 3000000
+ 4540 multiletter control sequences out of 15000+200000
+ 6578 words of font info for 24 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 29i,6n,21p,768b,226s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,6n,21p,1109b,226s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on llncs.pdf (2 pages, 101485 bytes).
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on llncs.pdf (2 pages, 106372 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
+ 41 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
