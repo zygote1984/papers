@@ -4,8 +4,27 @@
 \documentclass{llncs}
 \usepackage{llncsdoc}
 \usepackage{color}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{listings}
+\usepackage{bold-extra}
 %
+
+
+
 \begin{document}
+\lstset{ 
+	language = [AspectJ]Java,
+  basicstyle=\ttfamily\footnotesize,
+  numbers=left,
+	numberstyle=\tiny,
+  firstnumber=auto,
+	breaklines=true,
+  tabsize=2,
+	emph={aspect,declare, adapter, instance, pointcut, adaptee, adapts}, 
+	emphstyle=\textbf,
+	frame=single
+	}
 
 \title{SLE2012}
 
@@ -18,7 +37,7 @@
 \maketitle
 \section{Introduction}
 
-Component interact through their interfaces. In component-based systems, there are cases where a certain functionality is provided by a third-party software which usually comes with an incompatible interface, which makes connecting new components and the legacy components a challenge. For example the legacy component has a private variable for which it does not provide setters and getters. Then accesing this variable requires either making it public or modifying the legacy interface to offer setters and getters for it. Such changes may cause undesired effects on the system, like a security violation due to changed visibility. So an important requirement of \emph{binding} two components is to encapsulate the binding declarations in a separate module, while leaving the bound components untouched. In this study we present a language which satisfies this requirement and offers a reusable, maintainable and concise way of expressing binding.
+Components interact through their interfaces. In component-based systems, there are cases where a certain functionality is provided by a third-party software which usually comes with an incompatible interface, which makes connecting new components and the existing components a challenge.  An important requirement of \emph{binding} two components is to encapsulate the binding declarations in a separate module, while leaving the bound components untouched.  In this study we present a language which satisfies this requirement and offers a reusable, maintainable and concise way of expressing binding.
 
 Our language is composed of two main structures; \textbf{instance pointcuts} and \textbf{adapter declarations}. Instance pointcuts are specialized pointcuts, which are used to capture the instances of a type, which at some point in their life cycle become relevant. This can be creation of the instance, calling a certain method on the instance or passing the instance as an argument. The conditions for becoming relevant is defined in the pointcut expression. Adapter declarations provide a declarative syntax for implementing object adapters, where the objects to be adapted are selected by instance pointcuts. The benefit of our approach partly comes from utilization of Aspect Orientation (AO), which allows modularization of binding concern. But the major benefit is due to the marriage of two new language concepts which take object adapters to a new level. 
 
@@ -29,6 +48,90 @@ It is also possible to have an inheritance hierarchy among adapters, by defining
 The AO nature of our approach allows all of these features to be encapsulated in an aspect. The concern is localized therefore there's no scattering and tangling. Moreover a run-time library for querying and retrieving adapters is created. With this library the user can query adapters by using an instance, a type, an adapter name or a combination of these as a key. This allows accessing adapters in a flexible way, whereas in the traditional OO implementation, it is only possible to access an adapter is by using its instance name.  
 
 
+\section{The Binding Language}
+
+Instance pointcuts and adapter declarations are language concepts and ideally every aspect-oriented language can be extended to host them. We have implemented a prototype in AspectJ. While we have extended the syntax of AspectJ for instance pointcuts and adapter declarations, we have reused AspectJ's join-point model in instance pointcut expressions.  We will discuss possible extensions in other well known AO-languages at the end of this section. 
+
+\begin{figure}
+\centering
+
+\subfigure[Shapes Hierarchy]{
+   \includegraphics[width=0.4\textwidth] {images/shapes.png}
+   \label{fig:shapes}
+ }~~~
+ \subfigure[ShapeInfo and used interfaces]{
+   \includegraphics[width=0.5\textwidth] {images/shapeint.png}
+   \label{fig:shapesi}
+ }
+
+\label{fig:example1}
+\caption{Shapes Example}
+\end{figure}
+
+\subsection{Basic Language Features}
+We will explain the basics of the language with the help of a simple example. In Figure \ref{fig:shapes} a simple hierarchy of shapes is shown. The abstract class \texttt{Shape} has two subtypes called \texttt{Circle} and \texttt{Rectangle}. The interfaces provided by these classes can be seen in the figure. The \texttt{ShapeInfo} class shown in Figure \ref{fig:shapesi} collects the area and the circumference information of a given \texttt{Shape} using \texttt{ShapeArea} and \texttt{ShapeCircumference} interfaces, which are not implemented by any of the classes in the \texttt{Shape} hierarchy. 
+
+In Listing \ref{lst:circle} an instance pointcut that selects \texttt{Circle} instances and an adapter using that pointcut is defined. The name of the instance pointcut (line 2) is \textbf{\texttt{circles}} and the instance type is shown in Java generics syntax as \texttt{\textbf{<Circle>}}. The \texttt{call} primitive pointcut selects the join points where a new \texttt{Circle} object is created,then \texttt{\textbf{returning(instance)}} binds the returned \texttt{Circle} instance to the \emph{implicit variable} \texttt{\textbf{instance}}. The adapter declaration (line 4), defines an adapter called \texttt{CircleAdapter} which implements \texttt{ShapeArea} and \texttt{ShapeCircumference} interfaces, indicated inside the curly braces. After the \texttt{\textbf{adapts}} keyword we declare which set of object we would like to adapt, in this case the set of objects selected by the \texttt{circles} pointcut. In the body of an adapter declaration, the implementation of the declared interfaces is given. Notice the \texttt{\textbf{adaptee}} keyword in the method bodies (lines 7, 12). The \texttt{adaptee} keyword refers to the object that's being adapted, in this case a \texttt{Circle} object, therefore can access its methods. 
+
+\begin{lstlisting}[float=tb, caption={An instance pointcut selecting Circle objects and an adapter declaration using this pointcut}, label={lst:circle}]
+aspect ShapeAdapterAspect{
+	instance pointcut circles<Circle> : call(* Circle.new(..)) && returning(instance);
+
+	declare adapter: CircleAdapter{ShapeArea, ShapeCircumference} adapts circles{
+		public double getArea()
+		{
+			return Math.PI*adaptee.getRadius()*adaptee.getRadius();
+		}
+				
+		public double getCircumference()
+		{
+			return 2*Math.PI*adaptee.getRadius();
+		}
+	}
+}
+\end{lstlisting}
+
+\subsection{Adapter Hierarchies}
+In this section we will add a new required interface to the example presented in Figure \ref{fig:example1}, called \texttt{ShapeColor}. This interface has a \texttt{getColor()} method, which returns \texttt{RED} if the area of the shape is smaller than \texttt{40} and \texttt{BLUE} for the rest. 
+
+\begin{lstlisting}[float=tb, caption={An Adapter Hierarchy}, label={lst:adaphier}]
+aspect ShapeAdapterAspect{
+	instance pointcut shapes<Shape> : call(* Shape+.new(..)) && returning(instance);
+	
+	declare adapter: abstract ShapeAdapter{ShapeArea, ShapeCircumference, ShapeArea} adapts shapes{
+		public String getColor(){
+			if(this.getArea() < 40)
+				return ``RED'';
+			else
+				return ``BLUE'';
+		}
+	}
+
+	declare adapter: CircleAdapter extends ShapeAdapter adapts shapes<Circle>{
+		//Implementation of ShapeArea and ShapeCircumference
+	}
+	declare adapter: RectangleAdapter extends ShapeAdapter adapts shapes<Rectangle>{
+		//Implementation of ShapeArea and ShapeCircumference
+	}
+}
+\end{lstlisting}
+
+In Listing \ref{lst:adaphier} an adapter hierarchy is shown. We have modified the instance pointcut to capture all \texttt{Shape} instances including instances of its subtypes using the ``+'' operator of AspectJ(line 2). The implementation of the \texttt{ShapeColor} interface does not depend on the instance type. We provide the implementation of this interface in an \textbf{abstract adapter} called \texttt{ShapeAdapter}(line 4) , which adapts all the \texttt{Shape} objects that are created. An adapter is declared abstract by placing the \texttt{abstract} modifier before its name. \emph{An abstract adapter can have unimplemented methods, whereas a concrete adapter had to implement all the unimplemented interface methods it declares and inherits.} Since \texttt{ShapeAdapter} is abstract it does not have to implement \texttt{ShapeArea} and \texttt{ShapeCircumference}, however it can refer to these interfaces' methods, as seen in line 6.  Abstract adapters cannot be instantiated, therefore it is necessary to have sub-adapters that are concrete.
+
+The concrete adapters extending \texttt{ShapeAdapter} are \texttt{CircleAdapter} (line 13) and \texttt{RectangleAdapter} (line 16). There are two things to notice in these sub-adapter declarations. First is that they do not declare any interfaces, that information is inherited from \texttt{ShapeAdapter} declaration. The second is the way instance pointcut \texttt{shapes} is refined. \emph{Instance pointcuts store the dynamic types of instances.} The statement \texttt{\textbf{shapes<Circle>}} selects a subset of \texttt{Shape} objects which have the dynamic type \texttt{Circle}. This refinement mechanisms lets us create a \texttt{CircleAdapter} without writing a new pointcut which explicitly selects \texttt{Circle} instances, also by refining the same pointcut used in the super-adapter we ensure the set of \texttt{Circle} objects are a subset of \texttt{Shape} objects selected by \texttt{shapes} instance pointcut.
+
+\textbf{\textcolor[rgb]{1,0,0}{I think we should discuss whether we allow using a different pointcut in the sub-adapters.}}
+
+\subsection{Adapter Instantiation and Retrieval}
+While adapters are widely used to resolve incompatible interface problem, they introduce a cross-cutting concern to the which we identify as \emph{adapter instantiation concern}. In an OO-approach  the \texttt{ShapeInfo}(Figure \ref{fig:shapesi}) class has to create a \texttt{CircleAdapter} whenever it wants to get the area of a \texttt{Circle} object. In such a small example this does not cause a hindrance. However if increase the size of this problem into a thousand \texttt{Shape} instances and increase the number of interfaces ShapeInfo now has to deal to 20, then instantiation of the right adapters for the right shapes and managing these adapters is not so trivial anymore. 
+
+Instance pointcuts and adapters declarations provide a declarative way for matching instances with the appropriate adapters. When an instance pointcut matches an instance and there's a concrete adapter declaration for that instance pointcut, the adapter instance containing the matching instance is automatically created. The automatic creation of adapters is an implicit behavior and it modularizes the adapter instantiation concern. 
+
+
+\section{Related Work}
+
+
+\end{document}
 
 
 %Software evolution requires integration of new components with the old ones. In an
@@ -74,25 +177,3 @@ The AO nature of our approach allows all of these features to be encapsulated in
 %is limited with the expressiveness of the join-point model of the AO-language. }
 %
 %However implementation of adapters in current AOP approaches is type invasive. In AspectJ Adapter Pattern is implemented via inter-type declarations which alter the type system by making the adaptee implement a certain interface. This changes the type hierarchy of the adaptee. Also the Adapter Pattern disappears into the AspectJ syntax, which diminishes the visibility of the pattern. CaesarJ has an explicit syntax for defining adapters, which are referred to as wrappers in CaesarJ. However CeaserJ, although it gives great power over separation of concerns, tend to become too fragmented, hurting maintainability. 
-
-
-\section{The Binding Language}
-
-Instance pointcuts and adapter declarations are language concepts and ideally every aspect-oriented language can be extended to host them. We will discuss possible extentions in other well known AO-languages at the end of this section. 
-We have implemented a prototype in AspectJ. While we have extended the syntax of AspectJ for instance pointcuts and adapter declarations, we have reused AspectJ's primitive pointcuts for the instance pointcut expression. 
-
-
-
-\subsection{Instance Selectors / Pointcuts}
-\subsection{Adapter Declarations}
-
-
-\section{Comparative Evaluation}
-This section will include an example and compare solutions in AspectBind, AspectJ and CaesarJ.
-
-
-
-\section{Related Work}
-
-
-\end{document}
