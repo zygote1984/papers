@@ -17,7 +17,7 @@
 	language = [AspectJ]Java,
   basicstyle=\ttfamily\footnotesize,
   numbers=left,
-	numberstyle=\tiny,
+	numberstyle=\tiny\color[rgb]{0.25,0.25,0.25},
   firstnumber=auto,
 	breaklines=true,
   tabsize=2,
@@ -68,10 +68,10 @@ Instance pointcuts and adapter declarations are language concepts and ideally ev
 \caption{Shapes Example}
 \end{figure}
 
-\subsection{Basic Language Features}
+%\subsection{Basic Language Features}
 We will explain the basics of the language with the help of a simple example. In Figure \ref{fig:shapes} a simple hierarchy of shapes is shown. The abstract class \texttt{Shape} has two subtypes called \texttt{Circle} and \texttt{Rectangle}. The interfaces provided by these classes can be seen in the figure. The \texttt{ShapeInfo} class shown in Figure \ref{fig:shapesi} collects the area and the circumference information of a given \texttt{Shape} using \texttt{ShapeArea} and \texttt{ShapeCircumference} interfaces, which are not implemented by any of the classes in the \texttt{Shape} hierarchy. 
 
-In Listing \ref{lst:circle} an instance pointcut that selects \texttt{Circle} instances and an adapter using that pointcut is defined. The name of the instance pointcut (line 2) is \textbf{\texttt{circles}} and the instance type is shown in Java generics syntax as \texttt{\textbf{<Circle>}}. The \texttt{call} primitive pointcut selects the join points where a new \texttt{Circle} object is created,then \texttt{\textbf{returning(instance)}} binds the returned \texttt{Circle} instance to the \emph{implicit variable} \texttt{\textbf{instance}}. The adapter declaration (line 4), defines an adapter called \texttt{CircleAdapter} which implements \texttt{ShapeArea} and \texttt{ShapeCircumference} interfaces, indicated inside the curly braces. After the \texttt{\textbf{adapts}} keyword we declare which set of object we would like to adapt, in this case the set of objects selected by the \texttt{circles} pointcut. In the body of an adapter declaration, the implementation of the declared interfaces is given. Notice the \texttt{\textbf{adaptee}} keyword in the method bodies (lines 7, 12). The \texttt{adaptee} keyword refers to the object that's being adapted, in this case a \texttt{Circle} object, therefore can access its methods. 
+In Listing \ref{lst:circle} an simple instance pointcut that selects \texttt{Circle} instances and an adapter using that pointcut is defined. The name of the instance pointcut (line 2) is \textbf{\texttt{circles}} and the instance type is shown in Java generics syntax as \texttt{\textbf{<Circle>}}. The \texttt{call} primitive pointcut selects the join points where a new \texttt{Circle} object is created,then \texttt{\textbf{returning(instance)}} binds the returned \texttt{Circle} instance to the \emph{implicit variable} \texttt{\textbf{instance}}. The complete set of features of instance pointcuts will be discussed in Section \ref{sec:ip}. The adapter declaration (line 4), defines an adapter called \texttt{CircleAdapter} which implements \texttt{ShapeArea} and \texttt{ShapeCircumference} interfaces, indicated inside the curly braces. After the \texttt{\textbf{adapts}} keyword we declare which set of object we would like to adapt, in this case the set of objects selected by the \texttt{circles} pointcut. In the body of an adapter declaration, the implementation of the declared interfaces is given. Notice the \texttt{\textbf{adaptee}} keyword in the method bodies (lines 7, 12). The \texttt{adaptee} keyword refers to the object that's being adapted, in this case a \texttt{Circle} object, therefore can access its methods. 
 
 \begin{lstlisting}[float=tb, caption={An instance pointcut selecting Circle objects and an adapter declaration using this pointcut}, label={lst:circle}]
 aspect ShapeAdapterAspect{
@@ -90,6 +90,21 @@ aspect ShapeAdapterAspect{
 	}
 }
 \end{lstlisting}
+
+\subsection{Instance Pointcuts}
+\label{sec:ip}
+Instance pointcut is a declarative language construct to select a subset of objects of a specific type. Although throughout the paper we use instance pointcuts with adapters, they can be used on their own and they are decorated with handy features to make object selection and manipulation easier.
+
+A concrete instance pointcut definition consists of a left hand-side and a right-hand side. In the left hand side the pointcut's name and the instance type of interest is declared. In the left hand side a pointcut expression which describes the desired join-points is composed with a \emph{single} content exposure pointcut to bind the exposed instance to the \emph{implicit variable} called \textbf{instance}. It is also possible to declare an abstract instance pointcut, exactly the same way one would define a normal abstract pointcut. 
+
+\vspace{-15}
+\begin{lstlisting}[float=h!]
+instance pointcut pc<Shape>: call(* Shape+.new(..)) && within(ShapeGenerator1);
+\end{lstlisting}
+
+
+
+\subsection{Adapters}
 
 \subsection{Adapter Hierarchies}
 In this section we will add a new required interface to the example presented in Figure \ref{fig:example1}, called \texttt{ShapeColor}. This interface has a \texttt{getColor()} method, which returns \texttt{RED} if the area of the shape is smaller than \texttt{40} and \texttt{BLUE} for the rest. 
@@ -118,12 +133,12 @@ aspect ShapeAdapterAspect{
 
 In Listing \ref{lst:adaphier} an adapter hierarchy is shown. We have modified the instance pointcut to capture all \texttt{Shape} instances including instances of its subtypes using the ``+'' operator of AspectJ(line 2). The implementation of the \texttt{ShapeColor} interface does not depend on the instance type. We provide the implementation of this interface in an \textbf{abstract adapter} called \texttt{ShapeAdapter}(line 4) , which adapts all the \texttt{Shape} objects that are created. An adapter is declared abstract by placing the \texttt{abstract} modifier before its name. \emph{An abstract adapter can have unimplemented methods, whereas a concrete adapter had to implement all the unimplemented interface methods it declares and inherits.} Since \texttt{ShapeAdapter} is abstract it does not have to implement \texttt{ShapeArea} and \texttt{ShapeCircumference}, however it can refer to these interfaces' methods, as seen in line 6.  Abstract adapters cannot be instantiated, therefore it is necessary to have sub-adapters that are concrete.
 
-The concrete adapters extending \texttt{ShapeAdapter} are \texttt{CircleAdapter} (line 13) and \texttt{RectangleAdapter} (line 16). There are two things to notice in these sub-adapter declarations. First is that they do not declare any interfaces, that information is inherited from \texttt{ShapeAdapter} declaration. The second is the way instance pointcut \texttt{shapes} is refined. \emph{Instance pointcuts store the dynamic types of instances.} The statement \texttt{\textbf{shapes<Circle>}} selects a subset of \texttt{Shape} objects which have the dynamic type \texttt{Circle}. This refinement mechanisms lets us create a \texttt{CircleAdapter} without writing a new pointcut which explicitly selects \texttt{Circle} instances, also by refining the same pointcut used in the super-adapter we ensure the set of \texttt{Circle} objects are a subset of \texttt{Shape} objects selected by \texttt{shapes} instance pointcut.
+The concrete adapters extending \texttt{ShapeAdapter} are \texttt{CircleAdapter} (line 13) and \texttt{RectangleAdapter} (line 16). There are two things to notice in these sub-adapter declarations. First is that they do not declare any interfaces, that information is inherited from \texttt{ShapeAdapter} declaration. The second is the way instance pointcut \texttt{shapes} is refined. \emph{Instance pointcuts store the dynamic types of instances.} The statement \texttt{\textbf{shapes<Circle>}} selects a subset of \texttt{Shape} objects which have the dynamic type \texttt{Circle}. This refinement mechanism lets us create a \texttt{CircleAdapter} without writing a new pointcut which explicitly selects \texttt{Circle} instances, also by refining the same pointcut used in the super-adapter we ensure the set of \texttt{Circle} objects are a subset of \texttt{Shape} objects selected by \texttt{shapes} instance pointcut.
 
 \textbf{\textcolor[rgb]{1,0,0}{I think we should discuss whether we allow using a different pointcut in the sub-adapters.}}
 
 \subsection{Adapter Instantiation and Retrieval}
-While adapters are widely used to resolve incompatible interface problem, they introduce a cross-cutting concern to the which we identify as \emph{adapter instantiation concern}. In an OO-approach  the \texttt{ShapeInfo}(Figure \ref{fig:shapesi}) class has to create a \texttt{CircleAdapter} whenever it wants to get the area of a \texttt{Circle} object. In such a small example this does not cause a hindrance. However if increase the size of this problem into a thousand \texttt{Shape} instances and increase the number of interfaces ShapeInfo now has to deal to 20, then instantiation of the right adapters for the right shapes and managing these adapters is not so trivial anymore. 
+While adapters are widely used to resolve incompatible interface problem, they introduce a cross-cutting concern to the which we identify as \emph{adapter instantiation concern}. In an OO-approach  the \texttt{ShapeInfo}(Figure \ref{fig:shapesi}) class has to create or reuse a \texttt{CircleAdapter} whenever it wants to get the area of a \texttt{Circle} object. In such a small example this does not cause a hindrance. However if we increase the size of this problem into a thousand \texttt{Shape} instances and increase the number of interfaces ShapeInfo has to deal with to 20, then instantiation of the right adapters for the right shapes and managing these adapters is not so trivial anymore. 
 
 Instance pointcuts and adapters declarations provide a declarative way for matching instances with the appropriate adapters. When an instance pointcut matches an instance and there's a concrete adapter declaration for that instance pointcut, the adapter instance containing the matching instance is automatically created. The automatic creation of adapters is an implicit behavior and it modularizes the adapter instantiation concern. 
 

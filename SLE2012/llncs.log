@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.7)  8 MAY 2012 16:53
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.7)  10 MAY 2012 10:31
 entering extended mode
 **llncs.tex
 ("C:\Users\hatunk\Google Drive\SLE2012\llncs.tex"
@@ -279,30 +279,35 @@ File: images/shapes.png Graphic file (type png)
 <images/shapeint.png, id=14, 249.18094pt x 91.84312pt>
 File: images/shapeint.png Graphic file (type png)
 
-<use images/shapeint.png> [2 <C:/Users/hatunk/Google Drive/SLE2012/images/shape
-s.png (PNG copy)> <C:/Users/hatunk/Google Drive/SLE2012/images/shapeint.png (PN
-G copy)>]
+<use images/shapeint.png>
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/b/n' tried instead on input line 74.
+ [2 <C:/Users/hatunk/Google Drive/SLE2012/images/shapes.png (PNG copy)> <C:/Use
+rs/hatunk/Google Drive/SLE2012/images/shapeint.png (PNG copy)>]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
 (Font)              Font shape `OT1/cmtt/b/n' tried instead on input line 77.
  [3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (32.82443pt too wide) in paragraph at lines 100--101
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][]
+ []
 
- [4]
-[5] ("C:\Users\hatunk\Google Drive\SLE2012\llncs.aux")
+[4] [5] ("C:\Users\hatunk\Google Drive\SLE2012\llncs.aux")
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 3011 strings out of 494019
- 41526 string characters out of 3143871
- 213289 words of memory out of 3000000
- 6294 multiletter control sequences out of 15000+200000
+ 3017 strings out of 494019
+ 41599 string characters out of 3143871
+ 181343 words of memory out of 3000000
+ 6300 multiletter control sequences out of 15000+200000
  7558 words of font info for 29 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 32i,7n,49p,1267b,1151s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,7n,49p,1368b,1151s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\hatunk\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cm\dpi600\c
 mttb10.pk> <C:\Users\hatunk\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cm\
 dpi540\cmttb10.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
@@ -317,9 +322,9 @@ C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on llncs.pdf (5 pages, 193045 bytes).
+Output written on llncs.pdf (5 pages, 194438 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
+ 114 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
