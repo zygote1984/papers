@@ -8,6 +8,7 @@
 \usepackage{subfigure}
 \usepackage{listings}
 \usepackage{bold-extra}
+\usepackage{wrapfig}
 %
 
 
@@ -21,7 +22,7 @@
   firstnumber=auto,
 	breaklines=true,
   tabsize=2,
-	emph={aspect,declare, adapter, instance, pointcut, adaptee, adapts}, 
+	emph={aspect,declare, adapter, instance, pointcut, adaptee, adapts, select, UNTIL}, 
 	emphstyle=\textbf,
 	frame=single
 	}
@@ -93,15 +94,51 @@ aspect ShapeAdapterAspect{
 
 \subsection{Instance Pointcuts}
 \label{sec:ip}
-Instance pointcut is a declarative language construct to select a subset of objects of a specific type. Although throughout the paper we use instance pointcuts with adapters, they can be used on their own and they are decorated with handy features to make object selection and manipulation easier.
+Instance pointcut is a declarative language construct that is used to select a group of objects of a specific type. The result of the selection is a \emph{set}, hence it cannot contain the same object more than once. Although throughout the paper we use instance pointcuts with adapters, they can be used on their own and they offer further features for managing object sets.
 
-A concrete instance pointcut definition consists of a left hand-side and a right-hand side. In the left hand side the pointcut's name and the instance type of interest is declared. In the left hand side a pointcut expression which describes the desired join-points is composed with a \emph{single} content exposure pointcut to bind the exposed instance to the \emph{implicit variable} called \textbf{instance}. It is also possible to declare an abstract instance pointcut, exactly the same way one would define a normal abstract pointcut. 
+An object can be accessed from multiple modules during its life-cycle. Objects are categorized according to their \emph{types}. This is a structural categorization and it does not give any information about the events that object participates in. However, grouping objects according to another criteria such as, the class they were initialized in or being passed as an argument to a certain method would only be possible by inserting code at those particular points, which would litter the code.  For example, in an online-store application, during a purchase action a \emph{product} object is used by modules like product manager, shopping bag, shipping info and payment process. For analysis purposes, we would like to count the purchases that are made from a particular city. Later according to our analysis results, we may want to apply a discount to that product type and apply further discount if 3 items of that product is present in the shopping bag. To perform these operations we need to insert code to multiple modules to capture relevant events, which cross-cuts the original module functionality.
 
-\vspace{-15}
+Instance pointcuts provide the ability to select objects over a period marked by events in their life-cycle, modularizing the object selection concern. It also provides a mechanism to construct a set of objects according to relevant events, the places in application those events take place and object state at a certain point in execution. Instance pointcuts lets the user to make focused selections,therefore manage the system at a finer level. For the online store example, instance pointcuts can select necessary object for the relevant criteria such as shipping destination, price etc. in a single concise pointcut declaration. 
+
+A concrete instance pointcut definition consists of a left hand-side and a right-hand side. In the left hand side the pointcut's name and the instance type of interest is declared. Instance pointcuts cannot declare variables, it only has a single implicit variable called \texttt{instance} of the declared instance type. In the right hand side a pointcut expression describes the desired join-points and then binds the exposed object as a member of the instance pointcut's set, which is represented by the variable \texttt{instance}.  It is also possible to declare an abstract instance pointcut, by leaving out the right hand side and placing the \emph{abstract} modifier at the beginning of the declaration.
+ %, caption={A simple instance pointcut}, label={lst:simpleip}]%
+%\vspace{-15}
 \begin{lstlisting}[float=h!]
-instance pointcut pc<Shape>: call(* Shape+.new(..)) && within(ShapeGenerator1);
+instance pointcut shapes<Shape>: call(* Shape+.new(..)) && within(ShapeGenerator1) && returning(instance)
 \end{lstlisting}
+%\vspace{-15}
 
+The instance pointcut above shows a basic example. The left-hand side of the instance pointcut indicates the pointcut is called \texttt{shapes} and it is interested in selecting the \texttt{Shape} objects. On the right-hand side, the pointcut expression selects the join-points where \texttt{Shape} or its subtypes are instantiated (\textbf{+} operator indicates subtypes are selected, for a complete documentation please refer to ...) \emph{within} the class \texttt{ShapeGenerator1}. The created instances are exposed and bound by the \texttt{returning} clause to \emph{implicit variable} \texttt{instance}, which represents a member of \texttt{shapes}'s set. After selecting a set of objects, instance pointcuts offer ways to manipulate this set. 
+
+
+
+\subsubsection{Refinement} 
+It is possible to refine instance pointcuts in multiple ways. Normally instance pointcuts are referenced by their name, however they can also take an additional statement for \emph{type refinement}, which selects a subset of the instance pointcut dynamically. Type refinements require that, the refined type is a subtype of the original instance type. For example the instance pointcut \texttt{shapes} can be refined with the following syntax: \lstinline!shapes<Rectangle>!. This indicates we would like to select the subset of \texttt{Rectangle} instances from the set of \texttt{Shape} instances selected by \texttt{shapes}. Note that this notation will also select subtypes of \texttt{Rectangle}. If this is not the desired effect then the following: \lstinline!instance pointcut rectangle<Rectangle>: shapes && if(instance.getClass().equals(Rectangle.class))! can be used. The effect of a refinement subset being empty is equivalent to that of an unmatched pointcut. Note that if the \textbf{+} operator was not used in the pointcut expression, the refinement expression would still be legal, since \texttt{Rectangle} is a subtype of \texttt{Shape}. However it would result in a warning explaining the \texttt{Shape}'s subtypes are not selected.
+
+%\begin{wrapfigure}{R}{0.25\textwidth}
+    %\includegraphics[width=0.23\textwidth]{images/paralel.png}
+  %\caption{Parallelogram Class}
+%\end{wrapfigure}
+
+Instance pointcuts can also be refined inside a pointcut expressions and the refinement result will then be assigned to the instance pointcut on the left-hand side. Once again refining the \texttt{shapes} pointcut, we can define the following:
+
+%\vspace{-15}
+\begin{lstlisting}[float=h!]
+instance pointcut rectangle<Rectangle>: shapes<Rectangle> &&  if(instance.getWidth() > 10)
+\end{lstlisting}
+%\vspace{-15}
+
+The \texttt{rectangle} instance pointcut is interested in \texttt{Rectangle} objects which are selected by \texttt{shapes} and which has a width larger than 10. The pointcut expression to select these instances is very concise and is shown in the listing above. \texttt{shapes<Rectangle>} statement selects the \texttt{Rectangle} instances selected by \texttt{shapes} pointcut, then the \texttt{if} pointcuts checks whether these instances satisfy the condition. 
+%We do not have write \texttt{shapes<Rectangle>(instance)} since \texttt{instance} is implicit
+
+\textbf{\textcolor[rgb]{1,0.41,0.13}{What is the benefit of refinement?}}
+
+\subsubsection{Deselecting Instances}
+The examples of instance pointcuts presented so far were for selecting objects. Once an object is selected, it does not have to remain in the instance set until it dies. It is possible to define removal conditions in the form of pointcut expressions, that can point to any event in the object's life-cycle.
+
+\begin{lstlisting}[float=h!]
+instance pointcut parallel<Parallelogram>: call(* Parallelogram.new(..) && returning(instance) UNTIL call(* Parallelogram.setWidth(..)) && if(instance.getWidth() > 10)
+\end{lstlisting}
 
 
 \subsection{Adapters}
