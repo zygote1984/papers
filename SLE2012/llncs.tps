@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=llncs.tex
 
 [Frame0_View0,0]
-TopLine=251
-Cursor=10384
+TopLine=277
+Cursor=19383
 
 [Frame1]
 Flags=0

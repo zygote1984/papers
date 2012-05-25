@@ -1,0 +1,30 @@
+\contentsline {todo}{elaborate ... explain a bit the language, and the different features}{3}
+\contentsline {todo}{Introduce Online Shop example in detail, introduce relevant structures, identify event variations for object (Product can be passed as an argument etc)}{3}
+\contentsline {todo}{Explain what cannot be done with current approaches}{3}
+\contentsline {todo}{Explain briefly How instance pointcuts can remedy the situation}{4}
+\contentsline {todo}{small introduction and maybe section outline}{4}
+\contentsline {todo}{Figure: Static Structure of instance pointcuts}{4}
+\contentsline {todo}{Figure: Simple example}{4}
+\contentsline {todo}{Here we will discuss which predicates we support, with additional explanation of the returning clause}{4}
+\contentsline {todo}{How to use them and invalid combinations}{4}
+\contentsline {todo}{What is the default behavior if they are not explicitly defined}{4}
+\contentsline {todo}{Additional checks?}{4}
+\contentsline {todo}{Figure: Example using before after statements}{5}
+\contentsline {todo}{How to deselect instances, what are possible checks?}{5}
+\contentsline {todo}{Figure: Example using UNTIL clause, also incorporating before/after}{5}
+\contentsline {todo}{how to reference instance pointcuts}{5}
+\contentsline {todo}{Type-refined references}{5}
+\contentsline {todo}{Explain what type of relationships subsets stand for}{5}
+\contentsline {todo}{Paragraph: subsetting by type refinement}{5}
+\contentsline {todo}{Paragraph: subsetting by narrowing down the pointcut expression with additional predicates}{5}
+\contentsline {todo}{Figure: Examples of subsetting, type refinement, additional predicates and both}{5}
+\contentsline {todo}{Explain what type of relationships supersets stand for}{6}
+\contentsline {todo}{Paragraph: superset by composing multiple instance pointcuts refer to union operation}{6}
+\contentsline {todo}{Paragraph: superset by composing an instance pointcut with an expression}{6}
+\contentsline {todo}{Figure: Examples of supersetting}{6}
+\contentsline {todo}{Define these operations and give simple examples}{6}
+\contentsline {todo}{this section will include sequence diagrams and advanced instance pointcuts for showing their benefits....}{11}
+\contentsline {todo}{AspectJ code generation}{11}
+\contentsline {todo}{Generation of instance pointcut related hooks in the form of aspectj pointcuts, such as add/remove operations to the instance pointcut set}{11}
+\contentsline {todo}{Figure: compilation algorithm?}{11}
+\contentsline {todo}{keep it short}{11}

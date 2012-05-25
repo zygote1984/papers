@@ -1,0 +1,26 @@
+\contentsline {title}{SLE2012}{1}
+\authcount {3}
+\contentsline {author}{Kardelen Hatun \and Christoph Bockisch \and Mehmet Ak\c {s}it}{1}
+\contentsline {chapter}{Todo list}{2}
+\contentsline {section}{\numberline {1}Introduction}{4}
+\contentsline {section}{\numberline {2}Motivation}{4}
+\contentsline {section}{\numberline {3}Instance Pointcuts}{5}
+\contentsline {subsection}{\numberline {3.1}Features}{5}
+\contentsline {subsection}{\numberline {3.2}Basic Syntax}{5}
+\contentsline {subsection}{\numberline {3.3}Supported AspectJ Predicates}{5}
+\contentsline {subsection}{\numberline {3.4}before / after Statements}{5}
+\contentsline {subsection}{\numberline {3.5}Deselection}{6}
+\contentsline {subsection}{\numberline {3.6}Instance Pointcut References}{6}
+\contentsline {subsection}{\numberline {3.7}Instance Pointcut Composition}{6}
+\contentsline {subsection}{\numberline {3.8}Subsets}{6}
+\contentsline {subsection}{\numberline {3.9}Supersets}{7}
+\contentsline {subsection}{\numberline {3.10}Union, Intersection and Set Difference}{7}
+\contentsline {section}{\numberline {4}Instance Pointcuts}{7}
+\contentsline {subsection}{\numberline {4.1}Refinement}{8}
+\contentsline {subsection}{\numberline {4.2}Deselecting Instances}{9}
+\contentsline {subsection}{\numberline {4.3}Compilation of Instance Pointcuts}{10}
+\contentsline {section}{\numberline {5}Application on Online Shop}{12}
+\contentsline {section}{\numberline {6}Compilation of Instance Pointcuts}{12}
+\contentsline {section}{\numberline {7}Related Work}{12}
+\contentsline {section}{\numberline {8}Discussion}{12}
+\contentsline {section}{\numberline {9}Conclusion and Future Work}{12}

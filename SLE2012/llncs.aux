@@ -3,24 +3,84 @@
 \@writefile{toc}{\authcount {3}}
 \@writefile{toc}{\contentsline {author}{Kardelen Hatun \and Christoph Bockisch \and Mehmet Ak\c {s}it}{1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}The Binding Language}{2}}
-\newlabel{fig:shapes}{{1(a)}{2}}
-\newlabel{sub@fig:shapes}{{(a)}{2}}
-\newlabel{fig:shapesi}{{1(b)}{2}}
-\newlabel{sub@fig:shapesi}{{(b)}{2}}
-\newlabel{fig:example1}{{2}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Shapes Example}}{2}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Shapes Hierarchy}}}{2}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {ShapeInfo and used interfaces}}}{2}}
-\newlabel{lst:circle}{{1.1}{3}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.1}An instance pointcut selecting Circle objects and an adapter declaration using this pointcut}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Instance Pointcuts}{3}}
-\newlabel{sec:ip}{{2.1}{3}}
-\@writefile{toc}{\contentsline {subsubsection}{Refinement}{5}}
-\@writefile{toc}{\contentsline {subsubsection}{Deselecting Instances}{5}}
-\newlabel{lst:adaphier}{{1.2}{6}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.2}An Adapter Hierarchy}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Adapters}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Adapter Hierarchies}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Adapter Instantiation and Retrieval}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Related Work}{7}}
+\@writefile{tdo}{\contentsline {todo}{elaborate ... explain a bit the language, and the different features}{2}}
+\pgfsyspdfmark {pgfid1}{20223214}{39932106}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Motivation}{2}}
+\@writefile{tdo}{\contentsline {todo}{Introduce Online Shop example in detail, introduce relevant structures, identify event variations for object (Product can be passed as an argument etc)}{2}}
+\pgfsyspdfmark {pgfid2}{20223214}{35307465}
+\@writefile{tdo}{\contentsline {todo}{Explain what cannot be done with current approaches}{2}}
+\pgfsyspdfmark {pgfid3}{20223214}{33743997}
+\@writefile{tdo}{\contentsline {todo}{Explain briefly How instance pointcuts can remedy the situation}{2}}
+\pgfsyspdfmark {pgfid4}{20223214}{32591948}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Instance Pointcuts}{2}}
+\@writefile{tdo}{\contentsline {todo}{small introduction and maybe section outline}{3}}
+\pgfsyspdfmark {pgfid5}{20223214}{35295621}
+\@writefile{tdo}{\contentsline {todo}{Figure: Static Structure of instance pointcuts}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Features}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Basic Syntax}{3}}
+\@writefile{tdo}{\contentsline {todo}{Figure: Simple example}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Supported AspectJ Predicates}{3}}
+\@writefile{tdo}{\contentsline {todo}{Here we will discuss which predicates we support, with additional explanation of the returning clause}{3}}
+\pgfsyspdfmark {pgfid8}{20223214}{9417563}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}before / after Statements}{4}}
+\@writefile{tdo}{\contentsline {todo}{How to use them and invalid combinations}{4}}
+\pgfsyspdfmark {pgfid9}{20223214}{42552979}
+\@writefile{tdo}{\contentsline {todo}{What is the default behavior if they are not explicitly defined}{4}}
+\pgfsyspdfmark {pgfid10}{20223214}{41474858}
+\@writefile{tdo}{\contentsline {todo}{Additional checks?}{4}}
+\pgfsyspdfmark {pgfid11}{20223214}{40396736}
+\@writefile{tdo}{\contentsline {todo}{Figure: Example using before after statements}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Deselection}{4}}
+\@writefile{tdo}{\contentsline {todo}{How to deselect instances, what are possible checks?}{4}}
+\pgfsyspdfmark {pgfid13}{20223214}{28422348}
+\@writefile{tdo}{\contentsline {todo}{Figure: Example using UNTIL clause, also incorporating before/after}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Instance Pointcut References}{4}}
+\@writefile{tdo}{\contentsline {todo}{how to reference instance pointcuts}{4}}
+\pgfsyspdfmark {pgfid15}{20223214}{16384244}
+\@writefile{tdo}{\contentsline {todo}{Type-refined references}{4}}
+\pgfsyspdfmark {pgfid16}{20223214}{15242406}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Instance Pointcut Composition}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Subsets}{4}}
+\@writefile{tdo}{\contentsline {todo}{Explain what type of relationships subsets stand for}{4}}
+\pgfsyspdfmark {pgfid17}{20223214}{10166184}
+\@writefile{tdo}{\contentsline {todo}{Paragraph: subsetting by type refinement}{4}}
+\pgfsyspdfmark {pgfid18}{20223214}{9024347}
+\@writefile{tdo}{\contentsline {todo}{Paragraph: subsetting by narrowing down the pointcut expression with additional predicates}{4}}
+\pgfsyspdfmark {pgfid19}{20223214}{43552677}
+\@writefile{tdo}{\contentsline {todo}{Figure: Examples of subsetting, type refinement, additional predicates and both}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.9}Supersets}{5}}
+\@writefile{tdo}{\contentsline {todo}{Explain what type of relationships supersets stand for}{5}}
+\pgfsyspdfmark {pgfid21}{20223214}{31051197}
+\@writefile{tdo}{\contentsline {todo}{Paragraph: superset by composing multiple instance pointcuts refer to union operation}{5}}
+\pgfsyspdfmark {pgfid22}{20223214}{29521350}
+\@writefile{tdo}{\contentsline {todo}{Paragraph: superset by composing an instance pointcut with an expression}{5}}
+\pgfsyspdfmark {pgfid23}{20223214}{27991503}
+\@writefile{tdo}{\contentsline {todo}{Figure: Examples of supersetting}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.10}Union, Intersection and Set Difference}{5}}
+\@writefile{tdo}{\contentsline {todo}{Define these operations and give simple examples}{5}}
+\pgfsyspdfmark {pgfid25}{20223214}{15883239}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Instance Pointcuts}{5}}
+\newlabel{sec:ip}{{4}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Refinement}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Deselecting Instances}{7}}
+\newlabel{sec:deselect}{{4.2}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Compilation of Instance Pointcuts}{8}}
+\newlabel{fig:shapes}{{4.3}{8}}
+\newlabel{fig:ip}{{4.3}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Instance pointcut static structure}}{8}}
+\newlabel{lst:ip2aj}{{1.1}{10}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.1}Code generation templates for instance pointcut to AspectJ generation}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Application on Online Shop}{11}}
+\@writefile{tdo}{\contentsline {todo}{this section will include sequence diagrams and advanced instance pointcuts for showing their benefits....}{11}}
+\pgfsyspdfmark {pgfid26}{20223214}{41892433}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Compilation of Instance Pointcuts}{11}}
+\@writefile{tdo}{\contentsline {todo}{AspectJ code generation}{11}}
+\pgfsyspdfmark {pgfid27}{20223214}{37330401}
+\@writefile{tdo}{\contentsline {todo}{Generation of instance pointcut related hooks in the form of aspectj pointcuts, such as add/remove operations to the instance pointcut set}{11}}
+\pgfsyspdfmark {pgfid28}{20223214}{35786665}
+\@writefile{tdo}{\contentsline {todo}{Figure: compilation algorithm?}{11}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Related Work}{11}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Discussion}{11}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion and Future Work}{11}}
+\@writefile{tdo}{\contentsline {todo}{keep it short}{11}}
+\pgfsyspdfmark {pgfid30}{20223214}{20427218}
