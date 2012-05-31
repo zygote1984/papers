@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.25)  25 MAY 2012 16:16
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.25)  31 MAY 2012 09:38
 entering extended mode
 **llncs.tex
 ("C:\Users\hatunk\Google Drive\SLE2012\llncs.tex"
@@ -647,46 +647,64 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 y
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 43.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 43.
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 43.
+Runaway argument?
+{\begin {abstract} 
+! Paragraph ended before \begin was complete.
+<to be read again> 
+                   \par 
+l.44 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
 
-LaTeX Font Info:    No file OMScmtt.fd. on input line 43.
 
+! LaTeX Error: \begin{document} ended by \end{abstract}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45 \end{abstract}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.45 \end{abstract}
+                   
+Things are pretty mixed up, but I think the worst is over.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 46.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 46.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 46.
+
+LaTeX Font Info:    No file OMScmtt.fd. on input line 46.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 43.
+(Font)              for symbol `textbraceleft' on input line 46.
 
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no ¬ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no „ in font cmr10!
-Missing character: There is no ¢ in font cmr10!
 [1
 
-{C:/Users/hatunk/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{C:/Users/hatunk/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+<images/onlineshop1.png, id=18, 809.0225pt x 356.33125pt>
+File: images/onlineshop1.png Graphic file (type png)
+
+<use images/onlineshop1.png> [3 <C:/Users/hatunk/Google Drive/SLE2012/images/on
+lineshop1.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+
+ []
+
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/b/n' tried instead on input line 81.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
-
- []
-
+(Font)              Font shape `OT1/cmtt/b/n' tried instead on input line 94.
+[4]
 
 ! LaTeX Error: There's no line here to end.
 
@@ -694,60 +712,60 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.101 
+l.105 
       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
+[6]
+Underfull \vbox (badness 6141) has occurred while \output is active []
 
- []
-
-[5] [6]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[7] <images/pc.png, id=37, 532.99126pt x 199.49532pt>
+ [7]
+<images/pc.png, id=39, 532.99126pt x 199.49532pt>
 File: images/pc.png Graphic file (type png)
  <use images/pc.png>
-LaTeX Font Info:    Try loading font information for OML+cmss on input line 205
+LaTeX Font Info:    Try loading font information for OML+cmss on input line 189
 .
-LaTeX Font Info:    No file OMLcmss.fd. on input line 205.
+LaTeX Font Info:    No file OMLcmss.fd. on input line 189.
 
 
 LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
 (Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textless' on input line 205.
+(Font)              for symbol `textless' on input line 189.
 
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 232
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 216
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 232.
+LaTeX Font Info:    No file OMScmss.fd. on input line 216.
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 232.
+(Font)              for symbol `textbraceleft' on input line 216.
 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.243 \end{lstlisting}
+l.227 \end{lstlisting}
                       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -756,29 +774,27 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \vbox (badness 1968) has occurred while \output is active []
+Underfull \vbox (badness 2744) has occurred while \output is active []
 
- [8 <C:/Users/hatunk/Google Drive/SLE2012/images/pc.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [8]
+Overfull \vbox (172.95306pt too high) has occurred while \output is active []
 
- [9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10]
+[9 <C:/Users/hatunk/Google Drive/SLE2012/images/pc.png>]
 
-! LaTeX Error: \begin{lstlisting} on input line 200 ended by \end{document}.
+! LaTeX Error: \begin{lstlisting} on input line 184 ended by \end{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.339 \end{document}
+l.242 \end{document}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[11] ("C:\Users\hatunk\Google Drive\SLE2012\llncs.aux")
+[10] ("C:\Users\hatunk\Google Drive\SLE2012\llncs.aux")
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -788,17 +804,17 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
  )
 (\end occurred inside a group at level 2)
 
-### semi simple group (level 2) entered at line 200 (\begingroup)
-### semi simple group (level 1) entered at line 200 (\begingroup)
+### semi simple group (level 2) entered at line 184 (\begingroup)
+### semi simple group (level 1) entered at line 184 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 13104 strings out of 494019
- 237798 string characters out of 3143870
- 471549 words of memory out of 3000000
- 16153 multiletter control sequences out of 15000+200000
+ 13109 strings out of 494019
+ 238013 string characters out of 3143870
+ 472534 words of memory out of 3000000
+ 16157 multiletter control sequences out of 15000+200000
  7533 words of font info for 28 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 63i,7n,97p,1354b,1332s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,7n,97p,1469b,1332s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\hatunk\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\publ
 ic\cm\dpi540\cmttb10.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
 msfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
@@ -812,9 +828,9 @@ fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb>
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Pro
 gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on llncs.pdf (11 pages, 220849 bytes).
+Output written on llncs.pdf (10 pages, 234734 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
+ 120 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

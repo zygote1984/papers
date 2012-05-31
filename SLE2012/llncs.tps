@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=940
-NormalPos.bottom=719
+NormalPos.right=1916
+NormalPos.bottom=753
 Class=LaTeXView
 Document=llncs.tex
 
 [Frame0_View0,0]
-TopLine=277
-Cursor=19383
+TopLine=24
+Cursor=1159
 
 [Frame1]
 Flags=0
@@ -29,14 +29,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=940
-NormalPos.bottom=719
+NormalPos.right=1916
+NormalPos.bottom=753
 Class=LaTeXView
-Document=D:\Profiles\hatunk\workspaceIndigo\OctopusBookChapter\kardelen.tex
+Document=D:\Profiles\hatunk\workspaceIndigo\Thesis\chapterx.tex
 
 [Frame1_View0,0]
 TopLine=0
-Cursor=167
+Cursor=24404
 
 [SessionInfo]
 FrameCount=2
