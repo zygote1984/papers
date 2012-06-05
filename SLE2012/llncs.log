@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.25)  3 JUN 2012 12:50
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.6.5)  5 JUN 2012 15:35
 entering extended mode
 **llncs.tex
 ("C:\Users\hatunk\Google Drive\SLE2012\llncs.tex"
@@ -169,44 +169,24 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 \Gin@req@height=\dimen124
 \Gin@req@width=\dimen125
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
-Package: subfigure 2002/07/30 v2.1.4 subfigure package
-\subfigtopskip=\skip45
-\subfigcapskip=\skip46
-\subfigcaptopadj=\dimen126
-\subfigbottomskip=\skip47
-\subfigcapmargin=\dimen127
-\subfiglabelskip=\skip48
-\c@subfigure=\count116
-\c@lofdepth=\count117
-\c@subtable=\count118
-\c@lotdepth=\count119
-
-****************************************
-* Local config file subfigure.cfg used *
-****************************************
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
-\subfig@top=\skip49
-\subfig@bottom=\skip50
-)
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
-\lst@mode=\count120
+\lst@mode=\count116
 \lst@gtempboxa=\box54
 \lst@token=\toks19
-\lst@length=\count121
-\lst@currlwidth=\dimen128
-\lst@column=\count122
-\lst@pos=\count123
-\lst@lostspace=\dimen129
-\lst@width=\dimen130
-\lst@newlines=\count124
-\lst@lineno=\count125
-\lst@maxwidth=\dimen131
+\lst@length=\count117
+\lst@currlwidth=\dimen126
+\lst@column=\count118
+\lst@pos=\count119
+\lst@lostspace=\dimen127
+\lst@width=\dimen128
+\lst@newlines=\count120
+\lst@lineno=\count121
+\lst@maxwidth=\dimen129
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count126
-\lst@skipnumbers=\count127
+\c@lstnumber=\count122
+\lst@skipnumbers=\count123
 \lst@framebox=\box55
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
@@ -216,87 +196,24 @@ Package: listings 2007/02/22 1.4 (Carsten Heinz)
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\bold-extra\bold-extra.sty"
 Package: bold-extra 2001/11/13 v0.1 Use fonts from cm/mf-extra/bold
 )
-(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\wrapfig\wrapfig.sty
-\wrapoverhang=\dimen132
-\WF@size=\dimen133
-\c@WF@wrappedlines=\count128
-\WF@box=\box56
-\WF@everypar=\toks20
-Package: wrapfig 2003/01/31  v 3.6
-)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\enumerate.sty"
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
-\@enLab=\toks21
+\@enLab=\toks20
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count129
-\float@exts=\toks22
-\float@box=\box57
-\@float@everytoks=\toks23
-\@floatcapt=\box58
-)
-(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithm2e\algorithm2
-e.sty
-Package: algorithm2e 2008/00/00 v3.10 algorithms environments
-\c@AlgoLine=\count130
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\xspace.sty"
-Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\relsize.sty"
-Package: relsize 2003/07/04 ver 3.1
-)
-********************************************************
-Package `algorithm2e' Release 4.01 -- december 14 2009 --
-- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
-- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
-subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
-- Author: Christophe Fiorio (fiorio@lirmm.fr)
-********************************************************
-\skiptotal=\skip51
-\skiplinenumber=\skip52
-\skiprule=\skip53
-\skiphlne=\skip54
-\skiptext=\skip55
-\skiplength=\skip56
-\algomargin=\skip57
-\skipalgocfslide=\skip58
-\algowidth=\dimen134
-\inoutsize=\dimen135
-\inoutline=\dimen136
-\interspacetitleruled=\dimen137
-\interspacealgoruled=\dimen138
-\interspacetitleboxruled=\dimen139
-\algocf@inoutbox=\box59
-\algocf@inputbox=\box60
-\AlCapSkip=\skip59
-\AlCapHSkip=\skip60
-\algocf@nlbox=\box61
-\algocf@hangingbox=\box62
-\algocf@capbox=\box63
-\algoheightruledefault=\skip61
-\algoheightrule=\skip62
-\algotitleheightruledefault=\skip63
-\algotitleheightrule=\skip64
-\c@algocfline=\count131
-\c@algocfproc=\count132
-\c@algocf=\count133
-\algocf@algoframe=\box64
-\algocf@algobox=\box65
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\todonotes\todonotes.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\todonotes\todonotes.sty"
 Package: todonotes 2011/10/22 .dtx Todonotes source and documentation.
 Package: todonotes 2011/10/22
 
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
 Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
-\XKV@toks=\toks24
-\XKV@tempa@toks=\toks25
-\XKV@depth=\count134
+\XKV@toks=\toks21
+\XKV@tempa@toks=\toks22
+\XKV@depth=\count124
 File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
 ))
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
@@ -325,11 +242,11 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 ty
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfuti
 l-common.tex
-\pgfutil@everybye=\toks26
+\pgfutil@everybye=\toks23
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfuti
 l-latex.def
-\pgfutil@abb=\box66
+\pgfutil@abb=\box56
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\ms\everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
@@ -350,27 +267,27 @@ Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkey
 s.code.tex
-\pgfkeys@pathtoks=\toks27
-\pgfkeys@temptoks=\toks28
+\pgfkeys@pathtoks=\toks24
+\pgfkeys@temptoks=\toks25
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkey
 sfiltered.code.tex
-\pgfkeys@tmptoks=\toks29
+\pgfkeys@tmptoks=\toks26
 ))
-\pgf@x=\dimen140
-\pgf@y=\dimen141
-\pgf@xa=\dimen142
-\pgf@ya=\dimen143
-\pgf@xb=\dimen144
-\pgf@yb=\dimen145
-\pgf@xc=\dimen146
-\pgf@yc=\dimen147
+\pgf@x=\dimen130
+\pgf@y=\dimen131
+\pgf@xa=\dimen132
+\pgf@ya=\dimen133
+\pgf@xb=\dimen134
+\pgf@yb=\dimen135
+\pgf@xc=\dimen136
+\pgf@yc=\dimen137
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count135
-\c@pgf@countb=\count136
-\c@pgf@countc=\count137
-\c@pgf@countd=\count138
+\c@pgf@counta=\count125
+\c@pgf@countb=\count126
+\c@pgf@countc=\count127
+\c@pgf@countd=\count128
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgf.
 cfg
@@ -389,8 +306,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfs
 yssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count139
-\pgfsyssoftpath@bigbuffer@items=\count140
+\pgfsyssoftpath@smallbuffer@items=\count129
+\pgfsyssoftpath@bigbuffer@items=\count130
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfs
 ysprotocol.code.tex
@@ -408,12 +325,12 @@ e.tex
 .code.tex)
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathpars
 er.code.tex
-\pgfmath@dimen=\dimen148
-\pgfmath@count=\count141
-\pgfmath@box=\box67
-\pgfmath@toks=\toks30
-\pgfmath@stack@operand=\toks31
-\pgfmath@stack@operation=\toks32
+\pgfmath@dimen=\dimen138
+\pgfmath@count=\count131
+\pgfmath@box=\box57
+\pgfmath@toks=\toks27
+\pgfmath@stack@operand=\toks28
+\pgfmath@stack@operation=\toks29
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunc
 tions.code.tex
@@ -433,57 +350,57 @@ tions.round.code.tex)
 tions.misc.code.tex)))
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloa
 t.code.tex
-\c@pgfmathroundto@lastzeros=\count142
+\c@pgfmathroundto@lastzeros=\count132
 ))
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 repoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen149
-\pgf@picmaxx=\dimen150
-\pgf@picminy=\dimen151
-\pgf@picmaxy=\dimen152
-\pgf@pathminx=\dimen153
-\pgf@pathmaxx=\dimen154
-\pgf@pathminy=\dimen155
-\pgf@pathmaxy=\dimen156
-\pgf@xx=\dimen157
-\pgf@xy=\dimen158
-\pgf@yx=\dimen159
-\pgf@yy=\dimen160
-\pgf@zx=\dimen161
-\pgf@zy=\dimen162
+\pgf@picminx=\dimen139
+\pgf@picmaxx=\dimen140
+\pgf@picminy=\dimen141
+\pgf@picmaxy=\dimen142
+\pgf@pathminx=\dimen143
+\pgf@pathmaxx=\dimen144
+\pgf@pathminy=\dimen145
+\pgf@pathmaxy=\dimen146
+\pgf@xx=\dimen147
+\pgf@xy=\dimen148
+\pgf@yx=\dimen149
+\pgf@yy=\dimen150
+\pgf@zx=\dimen151
+\pgf@zy=\dimen152
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 repathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen163
-\pgf@path@lasty=\dimen164
+\pgf@path@lastx=\dimen153
+\pgf@path@lasty=\dimen154
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 repathusage.code.tex
 File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen165
-\pgf@shorten@start@additional=\dimen166
+\pgf@shorten@end@additional=\dimen155
+\pgf@shorten@start@additional=\dimen156
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 rescopes.code.tex
 File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
-\pgfpic=\box68
-\pgf@hbox=\box69
-\pgf@layerbox@main=\box70
-\pgf@picture@serial@count=\count143
+\pgfpic=\box58
+\pgf@hbox=\box59
+\pgf@layerbox@main=\box60
+\pgf@picture@serial@count=\count133
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 regraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen167
+\pgflinewidth=\dimen157
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 retransformations.code.tex
 File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen168
-\pgf@pt@y=\dimen169
-\pgf@pt@temp=\dimen170
+\pgf@pt@x=\dimen158
+\pgf@pt@y=\dimen159
+\pgf@pt@temp=\dimen160
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 requick.code.tex
@@ -504,8 +421,8 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 reshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen171
-\pgf@sys@shading@range@num=\count144
+\pgf@max=\dimen161
+\pgf@sys@shading@range@num=\count134
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 reimage.code.tex
@@ -514,7 +431,7 @@ File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 reexternal.code.tex
 File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
-\pgfexternal@startupbox=\box71
+\pgfexternal@startupbox=\box61
 ))
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 relayers.code.tex
@@ -531,7 +448,7 @@ File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodul
 eshapes.code.tex
 File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
-\pgfnodeparttextbox=\box72
+\pgfnodeparttextbox=\box62
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodul
 eplot.code.tex
@@ -540,8 +457,8 @@ File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfc
 omp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen172
-\pgf@nodesepend=\dimen173
+\pgf@nodesepstart=\dimen162
+\pgf@nodesepend=\dimen163
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfc
 omp-version-1-18.sty
@@ -556,10 +473,10 @@ s.code.tex))
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgffor
 .code.tex
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
-\pgffor@iter=\dimen174
-\pgffor@skip=\dimen175
-\pgffor@stack=\toks33
-\pgffor@toks=\toks34
+\pgffor@iter=\dimen164
+\pgffor@skip=\dimen165
+\pgffor@stack=\toks30
+\pgffor@toks=\toks31
 ))
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
 kz\tikz.code.tex
@@ -568,30 +485,30 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflib
 raryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count145
-\pgfplotmarksize=\dimen176
+\pgf@plot@mark@count=\count135
+\pgfplotmarksize=\dimen166
 )
-\tikz@lastx=\dimen177
-\tikz@lasty=\dimen178
-\tikz@lastxsaved=\dimen179
-\tikz@lastysaved=\dimen180
-\tikzleveldistance=\dimen181
-\tikzsiblingdistance=\dimen182
-\tikz@figbox=\box73
-\tikz@tempbox=\box74
-\tikztreelevel=\count146
-\tikznumberofchildren=\count147
-\tikznumberofcurrentchild=\count148
-\tikz@fig@count=\count149
+\tikz@lastx=\dimen167
+\tikz@lasty=\dimen168
+\tikz@lastxsaved=\dimen169
+\tikz@lastysaved=\dimen170
+\tikzleveldistance=\dimen171
+\tikzsiblingdistance=\dimen172
+\tikz@figbox=\box63
+\tikz@tempbox=\box64
+\tikztreelevel=\count136
+\tikznumberofchildren=\count137
+\tikznumberofcurrentchild=\count138
+\tikz@fig@count=\count139
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodul
 ematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count150
-\pgfmatrixcurrentcolumn=\count151
-\pgf@matrix@numberofcolumns=\count152
+\pgfmatrixcurrentrow=\count140
+\pgfmatrixcurrentcolumn=\count141
+\pgf@matrix@numberofcolumns=\count142
 )
-\tikz@expandcount=\count153
+\tikz@expandcount=\count143
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
 kz\libraries\tikzlibrarytopaths.code.tex
@@ -603,47 +520,63 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count154
-\calc@Bcount=\count155
-\calc@Adimen=\dimen183
-\calc@Bdimen=\dimen184
-\calc@Askip=\skip65
-\calc@Bskip=\skip66
+\calc@Acount=\count144
+\calc@Bcount=\count145
+\calc@Adimen=\dimen173
+\calc@Bdimen=\dimen174
+\calc@Askip=\skip45
+\calc@Bskip=\skip46
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count156
-\calc@Cskip=\skip67
+\calc@Ccount=\count146
+\calc@Cskip=\skip47
 )
-\c@@todonotes@numberoftodonotes=\count157
+\c@@todonotes@numberoftodonotes=\count147
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\courier.sty"
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+("C:\Users\hatunk\Google Drive\SLE2012\syntax.sty"
+Package: syntax 1996/05/17 1.07 Syntax typesetting (MDW)
+\grammarparsep=\skip48
+\grammarindent=\dimen175
+\sdstartspace=\skip49
+\sdendspace=\skip50
+\sdmidskip=\skip51
+\sdtokskip=\skip52
+\sdfinalskip=\skip53
+\sdrulewidth=\dimen176
+\sdcirclediam=\dimen177
+\sdindent=\dimen178
 )
 ("C:\Users\hatunk\Google Drive\SLE2012\llncs.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count158
-\scratchdimen=\dimen185
-\scratchbox=\box75
-\nofMPsegments=\count159
-\nofMParguments=\count160
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count161
-\MPscratchDim=\dimen186
-\MPnumerator=\count162
-\everyMPtoPDFconversion=\toks36
+\scratchcounter=\count148
+\scratchdimen=\dimen179
+\scratchbox=\box65
+\nofMPsegments=\count149
+\nofMParguments=\count150
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count151
+\MPscratchDim=\dimen180
+\MPnumerator=\count152
+\everyMPtoPDFconversion=\toks33
 )
-\c@lstlisting=\count163
+\c@lstlisting=\count153
  ABD: EveryShipout initializing macros
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
@@ -652,127 +585,133 @@ y
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 45.
+(Font)              <7> on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 45.
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 45.
+(Font)              <5> on input line 44.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 44.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 44.
 
-LaTeX Font Info:    No file OMScmtt.fd. on input line 45.
-
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 45.
-
-[1
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omspcr.fd"
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 44.
+ [1
 
 {C:/Users/hatunk/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-<images/onlineshop_son.png, id=18, 628.3475pt x 348.30125pt>
-File: images/onlineshop_son.png Graphic file (type png)
+<images/myonlineshop.png, id=18, 687.56876pt x 256.96pt>
+File: images/myonlineshop.png Graphic file (type png)
 
-<use images/onlineshop_son.png>
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/b/n' tried instead on input line 105.
- [3] [4]
-! Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
-l.178 \hline
-            
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
+<use images/myonlineshop.png> [3 <C:/Users/hatunk/Google Drive/SLE2012/images/m
+yonlineshop.png (PNG copy)>]
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <9> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 107.
+ [4]
+Underfull \vbox (badness 6792) has occurred while \output is active []
 
-! Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
-l.179 \hline
-            
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
-
+ [5]
+Overfull \hbox (0.51596pt too wide) in paragraph at lines 175--176
+[]\OT1/cmr/m/n/10 Provide checks for va-lid-ity of com-po-si-tion, empty sets a
+nd subset-
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 214.
+
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 214.
+ [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
-
- []
-
-[8]
-Overfull \hbox (9.89307pt too wide) in paragraph at lines 258--259
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][] \OT1/cmr/m/n/10 , would
+Overfull \hbox (52.47601pt too wide) in paragraph at lines 305--306
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
  []
 
 
-Overfull \hbox (53.09698pt too wide) in paragraph at lines 258--259
-\OT1/cmr/m/n/10 stances to a \OT1/cmtt/m/n/10 RegularCustomer \OT1/cmr/m/n/10 i
-n-stance point-cut. Sec-ondly \OT1/cmtt/m/n/10 instance.getGoldCustomerID()
+Overfull \hbox (32.4601pt too wide) in paragraph at lines 305--306
+\OT1/cmr/m/n/10 has the type \OT1/pcr/m/n/10 RegularCustomer\OT1/cmr/m/n/10 , w
+hich does not have the prop-erty \OT1/pcr/m/n/10 goldCustomerID\OT1/cmr/m/n/10 
+. 
  []
 
-[9] <images/pc.png, id=48, 532.99126pt x 199.49532pt>
+[10]
+
+LaTeX Warning: Reference `sec:deselect' on page 11 undefined on input line 312.
+
+
+
+Overfull \hbox (5.70915pt too wide) in paragraph at lines 312--313
+\OT1/cmr/m/n/10 stance point-cuts is that As-pectJ point-cuts are parametriz-ab
+le (\OT1/pcr/m/n/10 Parametrizable
+ []
+
+
+Overfull \hbox (31.18231pt too wide) in paragraph at lines 312--313
+\OT1/cmr/m/it/10 stance\OT1/cmr/m/n/10 . The type of this pa-ram-e-ter is store
+d in the manda-tory at-tribute \OT1/pcr/m/n/10 instanceType\OT1/cmr/m/n/10 . 
+ []
+
+<images/pc.png, id=50, 532.99126pt x 199.49532pt>
 File: images/pc.png Graphic file (type png)
  <use images/pc.png>
 
-LaTeX Warning: Reference `lst:ip2aj' on page 10 undefined on input line 288.
+LaTeX Warning: Reference `lst:ip2aj' on page 11 undefined on input line 322.
 
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 338--339
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
 
  []
 
-[11] [12 <C:/Users/hatunk/Google Drive/SLE2012/images/onlineshop_son.png (PNG c
-opy)> <C:/Users/hatunk/Google Drive/SLE2012/images/pc.png>]
+[11] [12 <C:/Users/hatunk/Google Drive/SLE2012/images/pc.png>]
 ("C:\Users\hatunk\Google Drive\SLE2012\llncs.aux")
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 13102 strings out of 494019
- 237861 string characters out of 3143870
- 356821 words of memory out of 3000000
- 16151 multiletter control sequences out of 15000+200000
- 7648 words of font info for 29 fonts, out of 3000000 for 9000
+ 11973 strings out of 494019
+ 222461 string characters out of 3143871
+ 345037 words of memory out of 3000000
+ 15031 multiletter control sequences out of 15000+200000
+ 8522 words of font info for 31 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 63i,7n,97p,1636b,1696s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\hatunk\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cm\dpi540\c
-mttb10.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
-x10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx1
-2.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on llncs.pdf (12 pages, 249625 bytes).
+ 63i,7n,97p,1384b,1210s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/urw/courier/ucrb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
+w/courier/ucrr8a.pfb>
+Output written on llncs.pdf (12 pages, 237700 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
+ 101 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
