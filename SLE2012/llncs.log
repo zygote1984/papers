@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.6.5)  5 JUN 2012 15:35
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.6.5)  6 JUN 2012 12:12
 entering extended mode
 **llncs.tex
 ("C:\Users\hatunk\Google Drive\SLE2012\llncs.tex"
@@ -549,7 +549,12 @@ Package: syntax 1996/05/17 1.07 Syntax typesetting (MDW)
 \sdcirclediam=\dimen177
 \sdindent=\dimen178
 )
-("C:\Users\hatunk\Google Drive\SLE2012\llncs.aux")
+("C:\Users\hatunk\Google Drive\SLE2012\llncs.aux"
+("C:\Users\hatunk\Google Drive\SLE2012\absintromotiv.aux")
+
+LaTeX Warning: Label `lst:wishlisted' multiply defined.
+
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
@@ -562,8 +567,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
-
-(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+ (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count148
 \scratchdimen=\dimen179
@@ -601,100 +605,109 @@ LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 44.
  [1
 
-{C:/Users/hatunk/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+{C:/Users/hatunk/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+("C:\Users\hatunk\Google Drive\SLE2012\absintromotiv.tex" [2
+
+]
 <images/myonlineshop.png, id=18, 687.56876pt x 256.96pt>
 File: images/myonlineshop.png Graphic file (type png)
 
-<use images/myonlineshop.png> [3 <C:/Users/hatunk/Google Drive/SLE2012/images/m
-yonlineshop.png (PNG copy)>]
-LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <9> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 107.
- [4]
-Underfull \vbox (badness 6792) has occurred while \output is active []
+<use images/myonlineshop.png>
 
- [5]
-Overfull \hbox (0.51596pt too wide) in paragraph at lines 175--176
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3]
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <9> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 62.
+ [4 <C:/Users/hatunk/Google Drive/SLE2012/images/myonlineshop.png (PNG copy)>] 
+[5] [6]
+Overfull \hbox (0.51596pt too wide) in paragraph at lines 124--125
 []\OT1/cmr/m/n/10 Provide checks for va-lid-ity of com-po-si-tion, empty sets a
 nd subset-
  []
 
-[6]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 214.
+) [7] [8
 
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 82.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 214.
- [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 276--277
-
- []
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 82.
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 283--284
+Overfull \hbox (41.67603pt too wide) in paragraph at lines 134--139
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
 
-Overfull \hbox (52.47601pt too wide) in paragraph at lines 305--306
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
+
+ []
+
+[11]
+Overfull \hbox (52.47601pt too wide) in paragraph at lines 184--185
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
  []
 
 
-Overfull \hbox (32.4601pt too wide) in paragraph at lines 305--306
+Overfull \hbox (32.4601pt too wide) in paragraph at lines 184--185
 \OT1/cmr/m/n/10 has the type \OT1/pcr/m/n/10 RegularCustomer\OT1/cmr/m/n/10 , w
 hich does not have the prop-erty \OT1/pcr/m/n/10 goldCustomerID\OT1/cmr/m/n/10 
 . 
  []
 
-[10]
 
-LaTeX Warning: Reference `sec:deselect' on page 11 undefined on input line 312.
-
+LaTeX Warning: Reference `sec:deselect' on page 12 undefined on input line 191.
 
 
-Overfull \hbox (5.70915pt too wide) in paragraph at lines 312--313
+
+Overfull \hbox (5.70915pt too wide) in paragraph at lines 191--192
 \OT1/cmr/m/n/10 stance point-cuts is that As-pectJ point-cuts are parametriz-ab
 le (\OT1/pcr/m/n/10 Parametrizable
  []
 
 
-Overfull \hbox (31.18231pt too wide) in paragraph at lines 312--313
+Overfull \hbox (31.18231pt too wide) in paragraph at lines 191--192
 \OT1/cmr/m/it/10 stance\OT1/cmr/m/n/10 . The type of this pa-ram-e-ter is store
 d in the manda-tory at-tribute \OT1/pcr/m/n/10 instanceType\OT1/cmr/m/n/10 . 
  []
 
-<images/pc.png, id=50, 532.99126pt x 199.49532pt>
+[12] <images/pc.png, id=56, 532.99126pt x 199.49532pt>
 File: images/pc.png Graphic file (type png)
  <use images/pc.png>
 
-LaTeX Warning: Reference `lst:ip2aj' on page 11 undefined on input line 322.
+LaTeX Warning: Reference `lst:ip2aj' on page 13 undefined on input line 201.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
 
  []
 
-[11] [12 <C:/Users/hatunk/Google Drive/SLE2012/images/pc.png>]
-("C:\Users\hatunk\Google Drive\SLE2012\llncs.aux")
+[13 <C:/Users/hatunk/Google Drive/SLE2012/images/pc.png>] [14]
+("C:\Users\hatunk\Google Drive\SLE2012\llncs.aux"
+("C:\Users\hatunk\Google Drive\SLE2012\absintromotiv.aux"))
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 11973 strings out of 494019
- 222461 string characters out of 3143871
- 345037 words of memory out of 3000000
- 15031 multiletter control sequences out of 15000+200000
+ 11983 strings out of 494019
+ 222822 string characters out of 3143871
+ 390595 words of memory out of 3000000
+ 15034 multiletter control sequences out of 15000+200000
  8522 words of font info for 31 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 63i,7n,97p,1384b,1210s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,7n,97p,1408b,1210s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
@@ -709,9 +722,9 @@ fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/urw/courier/ucrb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
 w/courier/ucrr8a.pfb>
-Output written on llncs.pdf (12 pages, 237700 bytes).
+Output written on llncs.pdf (14 pages, 239355 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
+ 108 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
