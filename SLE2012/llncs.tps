@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1684
-NormalPos.bottom=789
+NormalPos.right=820
+NormalPos.bottom=623
 Class=LaTeXView
 Document=llncs.tex
 
 [Frame0_View0,0]
-TopLine=246
-Cursor=16914
+TopLine=551
+Cursor=27854
 
 [SessionInfo]
 FrameCount=1

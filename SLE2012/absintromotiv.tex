@@ -111,9 +111,9 @@ before():checkOut()
 }
 \end{lstlisting}
 
-Let's look at another new requirement, which is as follows: \textsf{Keep a set of products that are wishlisted and currently out of stock,  once they become available raise an event and remove them from the set}. This scenario also requires when a condition holds and the set is changed there should be an event raised which means the set should be monitored. This creates an additional concern. 
+Let's look at another new requirement, which is as follows: \textsf{Keep a set of products that are currently out of stock,  once they become available raise an event and remove them from the set}. This scenario also requires when a condition holds and the set is changed there should be an event raised which means the set should be monitored. This creates an additional concern. 
 
-Reusing existing sets by finding their subsets or composing them with set operations is also impractical with imperative programming. If we want to find the subset of \texttt{BeautyProduct}s in a set of \texttt{Product} object, we have to iterate over it and check instance types to create a new set. Implementing set operations such as intersection also results in further boilerplate code.
+Reusing existing sets by finding their subsets or composing them with set operations is also impractical with imperative programming. If we want to find the subset of \texttt{BeautyProduct}s in a set of \texttt{Product} objects, we have to iterate over it and check instance types to create a new set. Implementing set operations such as intersection also results in further boilerplate code.
 
 In order to overcome the shortcomings of existing approaches, we need a way to declaratively select objects based their life-cycle phases, where the beginning and the end of a phase is marked by events. From the scenarios described above, we conclude the following requirements:
 

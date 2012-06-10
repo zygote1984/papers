@@ -5,16 +5,16 @@
 \usepackage{llncsdoc}
 \usepackage{color}
 \usepackage{graphicx}
-\usepackage{listings}
+\usepackage{listings, tikz, xcolor}
 \usepackage{bold-extra}
+\usepackage{subfig}
 \usepackage{enumerate}
-\usepackage[backgroundcolor=pink!40]{todonotes}
+\usepackage[backgroundcolor=pink!40, disable]{todonotes}
 \usepackage{courier}
 \usepackage{syntax}
 \usepackage{amsmath}
 \usepackage{hyperref}
 %
-
 \lstset{ 
 	language = [AspectJ]Java,
   basicstyle=\ttfamily\footnotesize,
@@ -33,6 +33,17 @@
 	captionpos = b,
 	numberbychapter=false
 	}
+	
+\newcommand\bh{\tikz[remember picture]
+					\node (begin highlight) {};
+			 }
+  \newcommand\eh{\tikz[remember picture]
+		 \node (end highlight) {};
+		 \tikz[remember picture, overlay] 
+		 \draw[yellow,line width=10pt,opacity=0.3] (begin highlight) -- (end
+			highlight);
+		 }
+	
 \begin{document}
 
 
@@ -53,18 +64,23 @@ Instance pointcut is a declarative language construct that is used to reify and 
  
 In the remainder of this section, we will explain instance pointcuts in detail. We have implemented a prototype by extending AspectJ, throughout the section code examples of instance pointcuts will be in AspectJ.
 
-\todo[inline]{maybe section outline summarizing main features}
+%\todo[inline]{maybe section outline summarizing main features}
 %\missingfigure{Static Structure of instance pointcuts}
 
 \subsection{Features}
 
 A concrete instance pointcut definition consists of a left hand-side and a right-hand side. 
 In the left hand side the pointcut's name and the instance type of interest is declared. 
-Instance pointcuts do not declare pointcut parameters, it has a single implicit parameter called \texttt{instance} of the declared instance type. 
-In the right hand side a pointcut expression describes the desired join-points and then binds the exposed object as a member of the instance pointcut's set, which is represented by the variable \texttt{instance}. 
-It is also possible to declare an abstract instance pointcut, by leaving out the right hand side and placing the \emph{abstract} modifier at the beginning of the declaration and not defining a pointcut expression. Abstract instance pointcuts are used when execution details are not yet clear but the instance set to be created is determined.
+An instance pointcuts do not declare pointcut parameters, it has a single implicit parameter called \texttt{instance} of the declared instance type. 
+In the right hand side a pointcut expression selects the desired events from join-points and then binds the exposed object as a member of the instance pointcut's set, which is represented by \texttt{instance} parameter. 
+An instance pointcut is a \emph{static aspect member} (Listing \ref{lst:member}).%, can be accessed as a field;  \lstinline!MyAspect.foo!.
 
-
+\begin{lstlisting}[float=h!, caption={An instance pointcut declaration in an aspect}, label={lst:member}]
+aspect MyAspect{
+	static instance pointcut foo<Object> ...
+}
+\end{lstlisting}
+%It is also possible to declare an abstract instance pointcut, by leaving out the right hand side and placing the \emph{abstract} modifier at the beginning of the declaration and not defining a pointcut expression. Abstract instance pointcuts are used when execution details are not yet clear but the instance set to be created and its instance type are determined.
 
 \subsubsection{Add/Remove Expressions}
 Join points mark \emph{sites} of execution; a join-point by itself does not define an event. 
@@ -83,6 +99,7 @@ The before element selects the before events and the after element, selects afte
 The grammar definition below shows part of the instance pointcut syntax. 
 An event definition is comprised of an event keyword , \texttt{before} or \texttt{after}, and a pointcut expression.
 The pointcut expression selects a set of join points and the event keyword specifies which event is selected from a join-point. 
+\todo{is it sufficient?} $\langle pointcut-expression\rangle$ rule represents an AspectJ pointcut expression with the restriction that every pointcut expression there should be a binding predicate that bind the \texttt{instance} parameter and an extension that allows the use of \texttt{returning} clause as a binding predicate. 
 In an instance pointcut expression, it is only possible to \texttt{OR} a before event with an after event. 
 The \emph{before} clause selects the start of executing an operation (i.e., the start of a join point in AspectJ terminology) and the \emph{after} clause selects the end of such an execution. 
 For two operations that are executed sequentially, the end of the first and the start of the second operation are treated as two different events. Thus, the before and after clauses select from two disjoint groups of events and the conjunction of a before and an after clause will always be empty.
@@ -104,94 +121,94 @@ For two operations that are executed sequentially, the end of the first and the 
 \end{figure}
 
 
-
 \begin{lstlisting}[float=h!, caption={A basic instance pointcut declaration with add and remove expressions}, label={lst:basic}]
 instance pointcut customers<Customer>: after(call(SessionManager.createCustomer(..)) && returning(instance)) UNTIL before(call(SessionManager.destroyCustomer(..)) && args(instance))
 \end{lstlisting}
 
+
 The instance pointcut in Listing \ref{lst:basic} shows a basic example. The left-hand side of the instance pointcut indicates the pointcut is called \texttt{customers} and it is interested in selecting the \texttt{Customer} objects. 
-On the right hand side, there are two expression separated by the \texttt{UNTIL} keyword. The first one is the add expression. It selects the return event of the method \texttt{createCustomer} and from the context of this event it exposes the returned \texttt{Customer} object with the \texttt{returning} clause and binds it to the \texttt{instance} parameter. If the \texttt{instance} parameter is bounded by the returning clause then it has to be in an after event. The second one is the remove expression and it selects the before event \texttt{destroyCustomer} call and exposes the \texttt{Customer} instance in the method arguments and binds it to the \texttt{instance} parameter with \texttt{args} pointcut.
+On the right hand side, there are two expression separated by the \texttt{UNTIL} keyword. The first one is the add expression. It selects the return event of the method \texttt{createCustomer} and from the context of this event it exposes the returned \texttt{Customer} object with the \texttt{returning} clause and binds it to the \texttt{instance} parameter. If the \texttt{instance} parameter is bound by the returning clause then it has to be in an after event. The second one is the remove expression and it selects the before event \texttt{destroyCustomer} call and exposes the \texttt{Customer} instance in the method arguments and binds it to the \texttt{instance} parameter with \texttt{args} pointcut.
 
 \emph{Note that instance pointcuts do not keep objects alive.} Because instance pointcuts are non-invasive constructs, which do not affect the program execution in any way. So even if the remove expression was not defined for \texttt{customers} pointcut, if the \texttt{Customer} instances were collected by the garbage collector, they would still be removed from the set. 
 
 
-\subsubsection{Multiset Support}
-Instance pointcuts provide the option to use sets or multisets. Sets are restricted since they can only contain an element once, multisets how ever can contain duplicates of an element. By default the following expression \lstinline!instance pointcut {pc_name}<{instance_type}>! means that the instance pointcut is a set. The multiset option can be chosen via putting \texttt{*} after instance type; \lstinline!instance pointcut {pc_name}<{instance_type*}>!.
+\subsubsection{Multisets}
+An instance pointcut reifies an object set as a \emph{multiset}. Multisets are sets which allow multiple appearances of a an object. The instance pointcut shown in In Listing \ref{lst:wishlisted} selects \texttt{Product} instances, which are added to the wishlist of a \texttt{Customer}. The remove expression removes a \texttt{Product} instance if it is removed from the wish-list of a \texttt{Customer}. With this pointcut we would like to count the currently wish-listed products. If instance pointcuts onyle supported a set then as soon as a customer removes a product from his wish-list, its only copy will be removed and it will appear removed from all customers' wish-lists, therefore a multi-set is used. 
 
-Multisets are used when the same object is added to the set multiple times and there should be book-keeping of the duplicates. The examples in Listing \ref{lst:wishlisted} shows two situations one using a set and another using a multiset. The add expression of \texttt{products1} selects the products which are added to a customer's wish-list and which are currently out of stock, until a \texttt{Vendor} stocks up that product again then the product is removed from the set. In this case we use a set because we are not interested in the duplicates of \texttt{Product} instances, we are only interested if a \texttt{Product} is wish-listed when it was out of stock. The second instance pointcut also selects \texttt{Product} instances, this time without checking the availability. The remove expression removes a \texttt{Product} instance if it is removed from the wish-list of a \texttt{Customer}. With this pointcut we would like to count the currently wish-listed products. If we use a set then as soon as a customer removes a product from his wish-list, its only copy will be removed and it will appear removed from all customers' wish-lists, therefore a multi-set is used. 
-
-\begin{lstlisting}[float=h!, caption={Two instance pointcuts, each maintains a set of wish-listed products}, label={lst:wishlisted}]
-instance pointcut products1<Product>: 
-before(call(Customer.addToWishList(..)) && args(instance) && if(!instance.inStock())) 
-	UNTIL after(call(Vendor.stock(..)) && args(instance))
-instance pointcut products2<Product*>: 
+\begin{lstlisting}[float=h!, caption={An instance pointcut utilizing multiset property}, label={lst:wishlisted}]
+instance pointcut multi_wish<Product>: 
 before(call(Customer.addToWishList(..)) && args(instance))
  UNTIL before(call(Customer.removeFromWishList(..)) && args(instance))
 \end{lstlisting}
 
-\subsubsection{Set Monitoring}
-An instance pointcuts definition also defines two set change events; add event and remove event. These events are interesting since they signify that the object has become relevant or irrelevant. In order to select the join-points of these events, every instance pointcut definition automatically has two implicit regular pointcuts. These implicit pointcuts has the following naming convention; \lstinline!<name>_add, <name>_remove!, where \texttt{<name>} is the name of the instance pointcut. These pointcuts allow the user to, for example raise an event when an object becomes relevant. If we remember the following requirement form Section \ref{sect:motivation}; \textsf{Keep a set of products that are wishlisted and currently out of stock,  once they become available raise an event and remove them from the set}. The instance pointcut defined in Listing \ref{lst:wishlisted} ad \texttt{products1} almost satisfies this requirement. To fully satisfy the requirement we can use the implicit pointcut \texttt{products1_remove} as in Listing \ref{lst:monitor1}. This advice declaration indicates an event will be raised before the product is removed from the set. 
-\begin{lstlisting}[float=h!, caption={Implicit remove pointcut used with an advice}, label={lst:monitor1}]
-before(): products1_remove()
-{
-	raiseEvent();
-}
-\end{lstlisting}
-It is also possible to use implicit pointcuts with parameter binding, as shown in Listing \ref{lst:monitor2}; the advice daclaration is the same, but this time removed instance is exposed and passed to the \texttt{raiseEvent} method.
-\begin{lstlisting}[float=h!, caption={Implicit remove pointcut with parameter binding used with an advice}, label={lst:monitor2}]
-before(Product p): products1_remove(p)
-{
-	raiseEvent(p);
-}
-\end{lstlisting}
-
-%\subsection{Potential Scenarios}
-%\begin{enumerate}
-	%\item When a product is wish-listed by a GoldCustomer, then apply a discount to it. 
-	%\item When products are added to a shopping bag between certain hours, then they are applied the happy-hour discount
-	%\item When products are added to GoldCustomer’s shopping bags, apply an additional discount
-	%\item When a product is marked low selling by the system, put an advertisement for it on the sidebar → refinement low selling books..., 
-	%\item if product is low selling →  notify the vendor
-	%\item superset: beauty products, sub-set: beauty products by guerlain which are wishlisted on workdays
-	%\item composition:intersect(low selling products && products from Vendor A && products which are lipsticks)
-	%\item When it is added to a shopping bag its price may be decreased by applying a discount policy. These examples contain an initial event that is associated with a particular instance, which triggers a follow-up event. 
-%\end{enumerate}
-
-
-%\item Provide a declarative way to refine existing sets to their subsets
-%\item Compose sets via set operations (intersection, union, set difference)
-%\item Provide checks for validity of composition, empty sets and subset-superset compatibility
 
 \subsection{Refinement and Composition}
 
 Instance pointcuts can be referenced by other instance pointcuts, they can be refined to create a subset or broadened to create a superset. 
 
 \subsubsection{Referencing and Dynamic Refinement}
-Normally instance pointcuts are referenced by their name, however they can also take an additional statement for \emph{type refinement}, which selects a subset of the instance pointcut \emph{dynamically}. Type refinements require that, the refined type is a subtype of the original instance type. For example the instance pointcut \texttt{lowSelling} (Listing \ref{lst:refmain}) can be refined with the following syntax: \lstinline!lowSelling<BeautyProduct>!. 
+Normally instance pointcuts are referenced by their name, however they can also take an additional statement for \emph{type refinement}, which selects a subset of the instance pointcut \emph{dynamically}. Type refinements require that, the refined type is a subtype of the original instance type. For example the instance pointcut \texttt{lowSelling} (Listing \ref{lst:ref1}) can be refined with the following syntax: \lstinline!instance pointcut lowSellingBeauty<BeautyProduct>: lowSelling<BeautyProduct>!. 
 This indicates we would like to select the subset of \texttt{BeautyProduct} instances from the set of \texttt{Product} instances selected by \texttt{lowSelling}. 
 Note that this notation will also select subtypes of \texttt{BeautyProduct}. 
-The effect of a refinement subset being empty is equivalent to that of an unmatched pointcut. 
+The effect of a refinement subset being empty is equivalent to that of an unmatched pointcut, meaning it will not result in any changes on the set.
+
+
+\begin{lstlisting}[float=h!, caption={Two instance pointcuts composed to obtain a new one}, label={lst:ref1}]
+instance pointcut lowSelling<Product>: after(call(* OnlineShop.setLowSelling(..))  && args(instance));
+\end{lstlisting}
 
 \subsubsection{Instance Pointcut Composition}
-It is also possible to compose instance pointcuts to obtain a more refined or a broader set. In Figure \ref{fig:grammar2}, an extended version of the grammar definition in Figure \ref{fig:grammar1} is shown. A new pointcut can be defined either by referencing another pointcut and appending additional predicates to the pointcut expressions in before and after blocks or it can be defined as the composition of other pointcuts or both. In order to obtain a more refined set \&\& operation is used, for a broader set $\|$ is used.
+It is also possible to compose instance pointcuts to obtain a new pointcut based on others. In Figure \ref{fig:grammar2}, an extended version of the grammar definition is shown. A new pointcut can be defined either by referencing another pointcut and appending additional predicates to the pointcut expressions in before and after blocks or it can be defined as the composition of other pointcuts or both. In order to obtain a more refined set \&\& operation is used and for a broader set $\|$ is used. 
 
 
 \begin{figure}[h]
 \begin{grammar}
-<instance-pointcut> ::= \ldots `instace pointcut' <name> `<' <instance-type> `>' `:'
-( <ip-ref-expr> <logical-operator>)? <ip-expr>? (`UNTIL' <ip-expr>)? 
+<instance-pointcut> ::= `instace pointcut' <name> `<' <instance-type> `>' `:'
+(<ip-ref-expr> <logical-operator>)? (<ip-expr> `UNTIL' <ip-expr>)? 
 
 <logical-operator> ::= `&&' \alt `||'
 
 <ip-ref-expr> ::= <ip-ref> \alt <ip-ref-expr> `&&' <ip-ref-expr> \alt <ip-ref-expr> `||' <ip-ref-expr>
 
-<ip-ref> = <name> \alt <name>`<' <refined-instance-type> `>' 
+<ip-ref> = <name> \alt <name>(`<' <refined-instance-type> `>')?
+
+\ldots
 \end{grammar}
-\caption{Extended grammar definition for instance pointcuts}
+\caption{Syntax for instance pointcut composition}
 \label{fig:grammar2}
 \end{figure}
 
-An instance pointcut can have at most four expression elements; before (part of) add ($ba$) and after add ($aa$) form the add expression and, before remove($br$) and after remove($ar$) form the remove expression. Let us define an instance pointcut as $IP = ba_{IP}\;\|\;aa_{IP}\;\textrm{UNTIL}\;br_{IP}\;\| ar_{IP}$. Each element contains a pointcut expression referred with the following notation $ba_{IP}\_expression$. 
+
+The composition also has an effect on the types of the instances that are added to the set. To better explain this effect we have created a small example, where a members of a simple type hierarchy (Figure \ref{fig:types}) are used in instance pointcuts. Table \ref{table1} shows four distinct cases. In the first case we compose two pointcuts \texttt{pc1<B>} and \texttt{pc2<C>} with an \&\& operation, the resulting pointcut from this composition can only select the narrower type \texttt{C} since the composed expression is stricter and the type restriction comes from \texttt{pc2}. However with $\|$ operation we can capture \texttt{B} types as well as \texttt{C} types, so the resulting compsition will select a mixture. In the second row a case with sibling types are shown. For the \&\& operation the resulting composition cannot select any types since the types \texttt{A} and \texttt{B} cannot have a common instance. The $\|$ operation will again select a mix of instances of type \texttt{A} and \texttt{B}, then the instance type for the composed pointcut should be \texttt{R} to contain the subtypes.
+
+\begin{figure}[h!]
+\centering
+\subfloat[A simple type hierarchy]{
+\includegraphics[width=0.1\textwidth]{images/types.png}
+\label{fig:types}
+}
+\hspace{20}
+\subfloat[Pointcut compositions and effect on the captured instance type]{ 
+\label{table1}
+\centering
+\begin{tabular}[b]{|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
+\hline 
+pc1 type & pc2 type     &\&\&         &$\|$  \\[1ex]
+\hline
+B & C & C & B \\[1ex]
+\hline
+B & A & \emptyset & R\\[1ex]
+\hline 
+ \end{tabular}
+}
+\caption{An example to illustrate composition's effect on types}
+\label{fig:compotypes}
+\end{figure}
+
+
+\paragraph{Semantics}
+The composition of two instance pointcuts is computed by composing their instance pointcut expressions.
+An instance pointcut can have at most four expression elements; before (part of) add ($ba$) and after add ($aa$) form the add expression and, before remove($br$) and after remove($ar$) form the remove expression. Let us define an instance pointcut as $IP = ba_{IP}\;\|\;aa_{IP}\;\textrm{UNTIL}\;br_{IP}\;\| ar_{IP}$. Each element contains a pointcut expression referred with the following notation; $ba_{IP}\_expression$. 
 \begin{align}
 	IP1 = ba_{IP1}\;\|\;aa_{IP1}\;\textrm{UNTIL}\;br_{IP1}\;\| ar_{IP1} 
 \label{i1}	\\
@@ -199,7 +216,7 @@ An instance pointcut can have at most four expression elements; before (part of)
 \label{i2}
 \end{align}
 
-Let us define a new pointcut as; $IP3 = IP1\;\textrm{\&\&}\;IP2$. This operation is results in the following formulation:
+Let us define a new pointcut as; $IP3 = IP1\;\textrm{\&\&}\;IP2$. By distributivity this operation is results in the following formulation:
 
 \begin{align}
 \begin{split}
@@ -219,6 +236,8 @@ IP3 \rightarrow \textrm{remove expression}  =& \left( br_{IP1}\;\|\;br_{IP2}\rig
 \end{split}
 \end{align}
 
+Notice that the remove expressions are applied $\|$ instead of \&\&. If we narrow down removal criteria by \&\& then it is possible that some objects which are added will not be removed. By keeping the removal criteria for both of the composed pointcuts, we ensure that all the added object can be removed. So we can say that the \&\& and the $\|$ operations only effect the expression elements in the add expression.
+
 Composition of before and after event via \&\& will be empty as explained at the beginning of this section. Composing two events of the same type with a logical operator is formulated as follows:
 \begin{align*}
 event(exp_1)\;\&\&\;event(exp_2) = event(exp_1\;\&\&\;exp_2) \\
@@ -237,8 +256,6 @@ IP3 =& \overbrace{\left( ba_{IP1}\;\textrm{\&\&}\;ba_{IP2}\right)}^{ba_{IP3}}\;\
 \end{split}
 \end{align}
 
-Notice that the remove expressions are applied $\|$ instead of \&\&. If we narrow down removal criteria by \&\& then it is possible that some objects which are added will not be removed. By keeping the removal criteria for both of the composed pointcuts, we ensure that all the added object can be removed. So we can say that the \&\& and the $\|$ operations only effect the expression elements in the add expression.
-
 If we define another instance pointcut as $ IP4 = IP1\;\|\;IP2$, after performing the above formulations:
 \begin{align}
 \begin{split}
@@ -253,26 +270,45 @@ Using the same composition principles, instance pointcuts can also be composed w
 
 \begin{align}
 \begin{split}
-IP5 & = IP1\;||\;(ba_{new}\;UNTIL\;after(ar_{new})) \\
+IP5 & = IP1\;||\;(ba_{new}\;UNTIL\;ar_{new}) \\
    & = \overbrace{\left( ba_{IP1}\;\|\;ba_{new}\right)}^{ba_{IP5}}\;\|\;\overbrace{\left( aa_{IP1} \right)}^{aa_{IP5}}\;\\
 &\textrm{UNTIL} \\
 &\underbrace{\left( br_{IP1}\right)}_{br_{IP5}}\;\|\;\underbrace{\left( ar_{IP1}\;\|\;ar_{new} \right)}_{ar_{IP5}}\;\\  
 \end{split}
 \end{align}
 
-Let us illustrate these concepts with a concrete example. The first instance pointcut shown in Listing \ref{lst:refmain} selects the \texttt{Product}s which are marked as \emph{low-selling} by the \texttt{OnlineShop} class, its add expression contains a single after event. The second pointcut selects the \texttt{Product}s which are added to the wish-list of a \texttt{Customer}, and also contains a single after event. Then the add expression of \texttt{composition} is created by factoring out the \texttt{args} pointcut as; \lstinline!after((call(* OnlineShop.setLowSelling(..)) || call(* Customer.addToWishList(..))) && args(instance))!. 
+Let us illustrate these concepts with a concrete example. The first instance pointcut  (\texttt{lowSelling})  shown in Listing \ref{lst:refmain} selects the \texttt{Product}s which are marked as \emph{low-selling} by the \texttt{OnlineShop} class and remove those products which are discontinued by the \texttt{Vendor}. The second pointcut (\texttt{wishList})  selects the \texttt{BookProduct}s which are added to the wish-list of a \texttt{Customer}, removes them when they are out of the wishlist.
 
 \begin{lstlisting}[float=h!, caption={Two instance pointcuts composed to obtain a new one}, label={lst:refmain}]
-instance pointcut lowSelling<Product>: after(call(* OnlineShop.setLowSelling(..))  && args(instance));
-instance pointcut wishList<Product>: after(call(* Customer.addToWishList(..)) && args(instance)) ;
+instance pointcut lowSelling<Product>: after(call(* OnlineShop.setLowSelling(..))  && args(instance)) UNTIL before(call(* Vendor.discontinue(..)) && args(instance));
+instance pointcut wishList<BookProduct>: after(call(* Customer.addToWishList(..)) && args(instance)) UNTIL before(call(* Customer.removeFromWishList(..)) && args(instance)) ;
 instance pointcut composition<Product>: lowSelling || purchase;
 \end{lstlisting}
 
-Similarly we can define a new pointcut, this time by composing a pointcut with an expression element, then the \texttt{composition2} pointcut has the following add expression; \lstinline!after(call(* OnlineShop.setLowSelling(..))  && args(instance) && if(instance.getPrice() > 10))!.
+The new instance pointcut \texttt{composition} is the result of an $\|$ operation between \texttt{lowSelling} and \texttt{wishList}. Then the add and remove expressions of \texttt{composition} is created by factoring out the \texttt{args} pointcut and is shown in Listing \ref{lst:newpc}. 
 
-\begin{lstlisting}[float=h!, caption={Two instance pointcuts composed to obtain a new one}, label={lst:refmain}]
-instance pointcut composition2<Product>: lowSelling && after(if(instance.getPrice() > 10));
+\begin{lstlisting}[float=h!, caption={The new instance pointcut after composition}, label={lst:newpc}]
+instance pointcut composition<Product>: 
+after((call(* OnlineShop.setLowSelling(..)) || call(* Customer.addToWishList(..))) && args(instance)) 
+UNTIL 
+before((call(* Vendor.discontinue(..)) || call(* Customer.removeFromWishList(..))) && args(instance))
 \end{lstlisting}
+
+
+Similarly we can define a new pointcut (Listing \ref{lst:comp2}), this time by composing a pointcut with an expression element, then the \texttt{composition2} pointcut has the pointcut expression shown in Listing \ref{lst:comp2exp}.
+
+\begin{lstlisting}[float=h!, caption={An instance pointcuts and an expression is composed}, label={lst:comp2}]
+instance pointcut composition2<Product>: lowSelling && (after(if(instance.getPrice() > 10)) UNTIL before(call(* OnlineShop.removeFromShop(..)) && args(instance));
+\end{lstlisting}
+
+
+\begin{lstlisting}[float=h!, caption={composition2 pointcut expression in full}, label={lst:comp2}]
+instance pointcut composition2<Product>: 
+(call(* OnlineShop.setLowSelling(..))  && args(instance) && if(instance.getPrice() > 10)) 
+UNTIL
+before((call(* Vendor.discontinue(..)) || call(* OnlineShop.removeFromShop(..))) && args(instance));
+\end{lstlisting}
+
 
 
 \subsubsection{Subset and Superset Relationships}
@@ -289,7 +325,7 @@ There are two mechanism to define relationships between instance pointcuts, \emp
 \label{fig:grammar3}
 \end{figure}
 
-For the following declaration \lstinline!subsetIP1 subsetof IP1!, the subset relationship imposes that the instance set created by \texttt{subsetIP1} has to be the subset of the instance set of \texttt{IP1}. Hence, if later in the implementation, the scope of \texttt{subsetIP1} is broadened, it should still follow the subset restriction. When the\emph{instance type} is not declared like in the example then it is inherited from the superset \texttt{IP1}. It is also possible to declare subsets by using type refinement. For example \lstinline!subsetIP1<SubType> subsetof IP1 = IP1<SubType>!, creates a subset of \texttt{IP1} by selecting the instances of type \texttt{SubType}. 
+For the following declaration \lstinline!subsetIP1 subsetof IP1!, the subset relationship imposes that the instance set created by \texttt{subsetIP1} has to be the subset of the instance set of \texttt{IP1}. Hence, if later in the implementation, the scope of \texttt{subsetIP1} is broadened, it should still follow the subset restriction. When the\emph{instance type} is not declared like in the example then it is inferred from the superset \texttt{IP1}. It is also possible to declare subsets by using type refinement. For example \lstinline!subsetIP1<SubType> subsetof IP1 = IP1<SubType>!, creates a subset of \texttt{IP1} by selecting the instances of type \texttt{SubType}. A subset must declare a co-variant type of its superset and superset must declare a contra-variant type.
 For the superset declaration \lstinline!supersetIP1 supersetof IP1!, the superset relationship imposes that the instance set created by \texttt{supersetIP1} has to contain the set of \texttt{IP1}. This rule should hold even if the scope of \texttt{supersetIP1} is narrowed. When the instance type is not declared then the instance type of \texttt{IP1} is copied. 
 
 The right-hand side of a relationship declaration can be a full instance pointcut expression, formed by add and remove pointcuts. For subsets, \&\& instance pointcut composition rule is applied, composing this expression with the superset's and for supersets, $\|$ composition rule is applied to the subset's, composing the expression with the subset's. 
@@ -298,70 +334,95 @@ Subset and superset relationships enforce consistency between instance pointcuts
 
 \todo[inline]{example}
 
+\subsection{Using Instance Pointcuts}
+Upto now we have explained the syntax and semantics for instance pointcuts. In this section we will explain how to use instance pointcut in the context of an AO languge, namely, AspectJ. The instance pointcut defined in Listing \ref{lst:usage} satisfies the following requirement; \textsf{Maintain a set which contains products that are currently out of stock, once they become available remove them from the set}.
 
+\begin{lstlisting}[float=h!, caption={An instance pointcut for out of stock products}, label={lst:usage}]
+aspect MyAspect{
+	static instance pointcut outOfStock<Product>: after(call(* Product.outOfStock(..)) && target(instance)) UNTIL after(call(* Vendor.stock(..)) && args(instance));
+	...
+}
+\end{lstlisting}
+
+\paragraph{Set Access}
+Instance pointcuts reify a set and this set can be accessed through the pointcut. When a pointcut is referenced outside of a pointcut expression (composition, subset etc.), it means that its set is accessed. Then the \emph{read} methods of the multiset\textbf{(google guava?)} interface can be used to retrieve objects from the set. Write methods are not allowed since, it creates data inconsistencies and in may result in concurrent modification exceptions. The set can also be referenced with a type refinement, which will return a subset of the original set with objects of refined type. 
+
+\begin{lstlisting}[float=h!, caption={Calculate a damage estimate for out of stock beauty products}, label={lst:setaccess}]
+public static double calculateDamages()
+{
+	double damage = 0;
+	for(BeautyProduct p: MyAspect.outOfStock<BeautyProduct>)
+		damage = damage + p.getPrice();
+	return damage;
+}
+\end{lstlisting}
+
+In Listing \ref{lst:setaccess},  a method called \texttt{calculateDamages} is defined \texttt{MyAspect}. This method calculates a rough estimate of the shop's damages when beauty products are out of stock. On line 4, the for loop iterates over the \texttt{BeautyProduct} subset of \texttt{outOfStock}'s set, which is accessed as a static field and also with the refinement syntax.
+
+
+\paragraph{Set Monitoring}
+An instance pointcuts definition defines two set change events; add event and remove event. These events are interesting since they signify that the object has become relevant or irrelevant. In order to select the join-points of these events, every instance pointcut definition automatically has two implicit regular pointcuts. These implicit pointcuts has the following naming convention; $\langle name \rangle\_add, \langle name \rangle\_remove$, where $\langle name \rangle$ is the name of the instance pointcut. These pointcuts allow the user to access the set change event and the object to be added or removed. In Listing \ref{lst:monitor1} a before advice using the \texttt{outOfStock_add} pointcut is shown. When a product is marked out of stock then it is added to the set, this advice uses the \texttt{Product} instance to be added and uses its information to notify the related \texttt{Vendor} that the product is out of stock.
+
+\begin{lstlisting}[float=h!, caption={Set monitoring pointcut used to notify vendors}, label={lst:monitor1}]
+before(Product p): outOfStock_add(p)
+{
+	OnlineShop.notifyVendor(p.getVendor, STOCK_MSG);
+}
+\end{lstlisting}
 
 \subsection{Compilation of Instance Pointcuts}
+In our current implementation, we compile instance pointcuts to AspectJ code. For the instance pointcut shown in Listing \ref{lst:usage} and the code snippets shown in Listings \ref{lst:setaccess} and \ref{lst:monitor1}, the AspectJ code shown in Listing \ref{lst:generated} is generated. 
 
-Instance pointcuts are implemented as an extension to AspectJ, they reuse AspectJ pointcut expressions, however specific use of advice specifiers \texttt{before} and \texttt{after} allow use of \texttt{returning} in the pointcut expression to capture returned objects. They are also compiled to AspectJ code, in this section we will discuss the compilation steps and which structures an instance pointcut is mapped to.
+The lines 2-27 are generated from the instance pointcut \texttt{outOfStock}. On line 2, a multiset, named \texttt{outOfStock_set} with the generics \texttt{Product} is instantiated. The generic type is inferred from the instance type declared in \texttt{outOfStock}. This particular instance pointcut has only two expression elements; an after element in the add expression and an after element in the remove expression. These expression elements result in two pointcuts shown in lines 4 and 5 and two advice bodies shown in lines 10-14 and 15-19 respectively. For adding elements to the set, \texttt{add_outOfStock_set} method (lines 20-23) and for removing \texttt{remove_outOfStock_set}(lines 24-27) are generated. The set monitoring pointcuts for these methods are \texttt{outOfStock_add(Product p)} and \texttt{outOfStock_remove(Product p)}, respectively.
 
-\begin{figure}
-\centering
-   \includegraphics[width=\textwidth] {images/pc.png}
-   \label{fig:shapes}
-\label{fig:ip}
-\caption{Instance pointcut static structure}
-\end{figure}
 
-%Instance pointcuts can be compiled to various AO-languages, for our prototype we chose AspectJ as the target language. A pseudo-code of the generator template for instance pointcuts is shown in Listing \ref{lst:ip2aj}. 
 
-%\begin{lstlisting}[float=H, caption={Code generation templates for instance pointcut to AspectJ generation }, label={lst:ip2aj}]
-%Enumeration ExpressionType {SELECT, REMOVE}
-%generate(InstancePointut pc){
-	%if(pc.isAbstact){
-		%'abstract pointcut' pc.name'('pc.instanceType 'instance)'
-		%'Set<'pc.instanceType'>' pc.name'_set'
-	%}
-	%else{
-		%'Set<'pc.instanceType'>' pc.name'_set = new TreeSet<'pc.instanceType'>();'
-		%generateAspectJCode(pc, SELECT);
-		%if(pc.removeExpression != null)
-			%generateAspectJCode(pc, REMOVE);
-  %}
-%}	
-%generateAspectJCode(InstancePointcut pc, ExpressionType eType){
-	%String pcname, setOperation, setName = pc.name + '_set';
-	%PointcutExpression expTemp;
-	%switch(eType){
-		%case REMOVE:{
-			%pcname = pc.name + '_remove';
-			%setOperation = 'remove';
-			%expTemp = pc.removeExp;
-		%}
-		%case SELECT:{
-			%pcname = pc.name;
-			%setOperation = 'add';
-			%expTemp = pc.exp;
-		%}
-	%}	
-	%if(exp.contains(ReturningStatement))	{
-		 %PointcutExpression newExp = expTemp.remove(ReturningStatement);	
-		%'pointcut' pcname'():' print(newExp) ';'
-		%'after() returning(' instanceType 'instance):' pcname'(){'		
-	%}
-	%else{
-		%'pointcut' pcname'('pc.instanceType 'instance):' print(expTemp) ';'
-		%'after(' pc.instanceType 'instance):' pcname'(instance){'	
-	%}
-	%'boolean flag ='setName.setOperation '(instance);
-	 %if(flag)
-		%print(instance  +' setOperation ');
-	%}'
-%}
-%\end{lstlisting}
+\begin{lstlisting}[float=h!, caption={The generated AspectJ code from \texttt{outOfStock} instance pointcut}, label={lst:generated}, escapechar=@]
+aspect MyAspect{
+	public static Multiset<Product> outOfStock_set =
+			new TreeMultiset<Product>();
+	pointcut outOfStock_aa(): call(* Product.outOfStock(..));
+	pointcut outOfStock_ar(): call(* Vendor.stock(..));
+	pointcut @\underline{outOfStock_add(Product p)}@: 
+		call(* MyAspect.add_outOfStock_set(..)) && within(MyAspect) && args(p);
+	pointcut outOfStock_remove(Product p): 
+		call(* MyAspect.remove_outOfStock_set(..)) && within(MyAspect) && args(p);
+	after():outOfStock_aa()
+	{
+		Product p = thisJoinPoint.getTarget();
+		add_outOfStock_set(p);
+	}
+	after():outOfStock_ar()
+	{
+		Product p = findArgument(thisJoinPoint.getArgs(),Product.class);
+		remove_outOfStock_set(p);
+	}
+	public boolean add_outOfStock_set(Product p)
+	{
+		return outOfStock_set.put(thisJoinPoint.getTarget());
+	}
+	public boolean remove_outOfStock_set(Product p)
+	{
+		return outOfStock_set.remove(p);
+	}
+	public static double calculateDamages()
+	{
+		Multiset<BeautyProduct> @\underline{outOfStock_BeautyProduct_set}@ = new TreeMultiset<BeautyProduct>();
+		for(Product p: outOfStock_set)
+			if(p instanceof BeautyProduct)
+				outOfStock_BeautyProduct_set.put(p)
+		double damage = 0;
+		for(BeautyProduct p:outOfStock_BeautyProduct_set)
+			damage = damage + p.getPrice();
+		return damage;
+	}
+	before(Product p):@\underline{outOfStock_add(p)}@
+	{
+		OnlineShop.notifyVendor(p.getVendor, STOCK_MSG);
+	}
+}
+\end{lstlisting}
 
-\section{Compilation of Instance Pointcuts}
-\todo[inline]{AspectJ code generation}
-\missingfigure{compilation algorithm?}
 
 \section{Related Work}
 \section{Discussion}

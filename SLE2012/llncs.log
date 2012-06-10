@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.6.5)  8 JUN 2012 09:37
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.6.10)  10 JUN 2012 12:49
 entering extended mode
 **llncs.tex
 ("C:\Users\hatunk\Google Drive\SLE2012\llncs.tex"
@@ -193,47 +193,7 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\bold-extra\bold-extra.sty"
-Package: bold-extra 2001/11/13 v0.1 Use fonts from cm/mf-extra/bold
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\enumerate.sty"
-Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
-\@enLab=\toks20
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\todonotes\todonotes.sty"
-Package: todonotes 2011/10/22 .dtx Todonotes source and documentation.
-Package: todonotes 2011/10/22
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
-Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
-\XKV@toks=\toks21
-\XKV@tempa@toks=\toks22
-\XKV@depth=\count124
-File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
-))
-(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
-Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-LaTeX Info: Redefining \color on input line 702.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
-Package xcolor Info: Model `RGB' extended on input line 1353.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-)
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer\tikz
 .sty
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf.sty
@@ -242,7 +202,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 ty
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfuti
 l-common.tex
-\pgfutil@everybye=\toks23
+\pgfutil@everybye=\toks20
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfuti
 l-latex.def
@@ -267,12 +227,12 @@ Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkey
 s.code.tex
-\pgfkeys@pathtoks=\toks24
-\pgfkeys@temptoks=\toks25
+\pgfkeys@pathtoks=\toks21
+\pgfkeys@temptoks=\toks22
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkey
 sfiltered.code.tex
-\pgfkeys@tmptoks=\toks26
+\pgfkeys@tmptoks=\toks23
 ))
 \pgf@x=\dimen130
 \pgf@y=\dimen131
@@ -284,10 +244,10 @@ sfiltered.code.tex
 \pgf@yc=\dimen137
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count125
-\c@pgf@countb=\count126
-\c@pgf@countc=\count127
-\c@pgf@countd=\count128
+\c@pgf@counta=\count124
+\c@pgf@countb=\count125
+\c@pgf@countc=\count126
+\c@pgf@countd=\count127
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgf.
 cfg
@@ -306,13 +266,31 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfs
 yssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count129
-\pgfsyssoftpath@bigbuffer@items=\count130
+\pgfsyssoftpath@smallbuffer@items=\count128
+\pgfsyssoftpath@bigbuffer@items=\count129
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfs
 ysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 702.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 re.code.tex
 Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
@@ -326,11 +304,11 @@ e.tex
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathpars
 er.code.tex
 \pgfmath@dimen=\dimen138
-\pgfmath@count=\count131
+\pgfmath@count=\count130
 \pgfmath@box=\box57
-\pgfmath@toks=\toks27
-\pgfmath@stack@operand=\toks28
-\pgfmath@stack@operation=\toks29
+\pgfmath@toks=\toks24
+\pgfmath@stack@operand=\toks25
+\pgfmath@stack@operation=\toks26
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunc
 tions.code.tex
@@ -350,7 +328,7 @@ tions.round.code.tex)
 tions.misc.code.tex)))
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloa
 t.code.tex
-\c@pgfmathroundto@lastzeros=\count132
+\c@pgfmathroundto@lastzeros=\count131
 ))
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 repoints.code.tex
@@ -388,7 +366,7 @@ File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box58
 \pgf@hbox=\box59
 \pgf@layerbox@main=\box60
-\pgf@picture@serial@count=\count133
+\pgf@picture@serial@count=\count132
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 regraphicstate.code.tex
@@ -422,7 +400,7 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 reshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
 \pgf@max=\dimen161
-\pgf@sys@shading@range@num=\count134
+\pgf@sys@shading@range@num=\count133
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfco
 reimage.code.tex
@@ -475,8 +453,8 @@ s.code.tex))
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
 \pgffor@iter=\dimen164
 \pgffor@skip=\dimen165
-\pgffor@stack=\toks30
-\pgffor@toks=\toks31
+\pgffor@stack=\toks27
+\pgffor@toks=\toks28
 ))
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
 kz\tikz.code.tex
@@ -485,7 +463,7 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflib
 raryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count135
+\pgf@plot@mark@count=\count134
 \pgfplotmarksize=\dimen166
 )
 \tikz@lastx=\dimen167
@@ -496,62 +474,127 @@ File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \tikzsiblingdistance=\dimen172
 \tikz@figbox=\box63
 \tikz@tempbox=\box64
-\tikztreelevel=\count136
-\tikznumberofchildren=\count137
-\tikznumberofcurrentchild=\count138
-\tikz@fig@count=\count139
+\tikztreelevel=\count135
+\tikznumberofchildren=\count136
+\tikznumberofcurrentchild=\count137
+\tikz@fig@count=\count138
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodul
 ematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count140
-\pgfmatrixcurrentcolumn=\count141
-\pgf@matrix@numberofcolumns=\count142
+\pgfmatrixcurrentrow=\count139
+\pgfmatrixcurrentcolumn=\count140
+\pgf@matrix@numberofcolumns=\count141
 )
-\tikz@expandcount=\count143
+\tikz@expandcount=\count142
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
 kz\libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
 )))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\bold-extra\bold-extra.sty"
+Package: bold-extra 2001/11/13 v0.1 Use fonts from cm/mf-extra/bold
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2012/02/19 v3.2f Customizing captions (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
+\captionmargin=\dimen173
+\captionmargin@=\dimen174
+\captionwidth=\dimen175
+\caption@indent=\dimen176
+\caption@parindent=\dimen177
+\caption@hangindent=\dimen178
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\small \vskip \abovecap
+tionskip \sbox \@tempboxa {{\bfseries #1.} #2}\ifdim \wd \@tempboxa >\hsize {\b
+fseries #1.} #2\par \else \global \@minipagefalse \hb@xt@ \hsize {\hfil \box \@
+tempboxa \hfil }\fi \vskip \belowcaptionskip .
+\c@ContinuedFloat=\count143
+Package caption Info: listings package is loaded.
+)
+\c@KVtest=\count144
+\sf@farskip=\skip45
+\sf@captopadj=\dimen179
+\sf@capskip=\skip46
+\sf@nearskip=\skip47
+\c@subfigure=\count145
+\c@subfigure@save=\count146
+\c@lofdepth=\count147
+\c@subtable=\count148
+\c@subtable@save=\count149
+\c@lotdepth=\count150
+\sf@top=\skip48
+\sf@bottom=\skip49
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\enumerate.sty"
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks29
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\todonotes\todonotes.sty"
+Package: todonotes 2011/10/22 .dtx Todonotes source and documentation.
+Package: todonotes 2011/10/22
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
+\XKV@toks=\toks30
+\XKV@tempa@toks=\toks31
+\XKV@depth=\count151
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+))
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
 kz\libraries\tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count144
-\calc@Bcount=\count145
-\calc@Adimen=\dimen173
-\calc@Bdimen=\dimen174
-\calc@Askip=\skip45
-\calc@Bskip=\skip46
+\calc@Acount=\count152
+\calc@Bcount=\count153
+\calc@Adimen=\dimen180
+\calc@Bdimen=\dimen181
+\calc@Askip=\skip50
+\calc@Bskip=\skip51
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count146
-\calc@Cskip=\skip47
+\calc@Ccount=\count154
+\calc@Cskip=\skip52
 )
-\c@@todonotes@numberoftodonotes=\count147
+\c@@todonotes@numberoftodonotes=\count155
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\courier.sty"
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
 ("C:\Users\hatunk\Google Drive\SLE2012\syntax.sty"
 Package: syntax 1996/05/17 1.07 Syntax typesetting (MDW)
-\grammarparsep=\skip48
-\grammarindent=\dimen175
-\sdstartspace=\skip49
-\sdendspace=\skip50
-\sdmidskip=\skip51
-\sdtokskip=\skip52
-\sdfinalskip=\skip53
-\sdrulewidth=\dimen176
-\sdcirclediam=\dimen177
-\sdindent=\dimen178
+\grammarparsep=\skip53
+\grammarindent=\dimen182
+\sdstartspace=\skip54
+\sdendspace=\skip55
+\sdmidskip=\skip56
+\sdtokskip=\skip57
+\sdfinalskip=\skip58
+\sdrulewidth=\dimen183
+\sdcirclediam=\dimen184
+\sdindent=\dimen185
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
 Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip54
+\@mathmargin=\skip59
 
 For additional information on amsmath, use the `?' option.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
@@ -560,53 +603,53 @@ Package: amstext 2000/06/29 v2.01
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks32
-\ex@=\dimen179
+\ex@=\dimen186
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen180
+\pmbraise@=\dimen187
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count148
+\inf@bad=\count156
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count149
-\leftroot@=\count150
+\uproot@=\count157
+\leftroot@=\count158
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count151
-\DOTSCASE@=\count152
+\classnum@=\count159
+\DOTSCASE@=\count160
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box65
 \strutbox@=\box66
-\big@size=\dimen181
+\big@size=\dimen188
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 
 
 Package amsmath Warning: Unable to redefine math accent \vec.
 
-\macc@depth=\count153
-\c@MaxMatrixCols=\count154
+\macc@depth=\count161
+\c@MaxMatrixCols=\count162
 \dotsspace@=\muskip10
-\c@parentequation=\count155
-\dspbrk@lvl=\count156
+\c@parentequation=\count163
+\dspbrk@lvl=\count164
 \tag@help=\toks33
-\row@=\count157
-\column@=\count158
-\maxfields@=\count159
+\row@=\count165
+\column@=\count166
+\maxfields@=\count167
 \andhelp@=\toks34
-\eqnshift@=\dimen182
-\alignsep@=\dimen183
-\tagshift@=\dimen184
-\tagwidth@=\dimen185
-\totwidth@=\dimen186
-\lineht@=\dimen187
+\eqnshift@=\dimen189
+\alignsep@=\dimen190
+\tagshift@=\dimen191
+\tagwidth@=\dimen192
+\totwidth@=\dimen193
+\lineht@=\dimen194
 \@envbody=\toks35
-\multlinegap=\skip55
-\multlinetaggap=\skip56
+\multlinegap=\skip60
+\multlinetaggap=\skip61
 \mathdisplay@stack=\toks36
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
@@ -668,9 +711,9 @@ Package: letltxmacro 2008/06/24 v1.3 Let assignment for LaTeX macros (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2010/02/22 v3.7 Keyval support for LaTeX options (HO)
 )
-\@linkdim=\dimen188
-\Hy@linkcounter=\count160
-\Hy@pagecounter=\count161
+\@linkdim=\dimen195
+\Hy@linkcounter=\count168
+\Hy@pagecounter=\count169
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2010/09/17 v6.81q Hyperref: PDFDocEncoding definition (HO)
@@ -678,7 +721,7 @@ File: pd1enc.def 2010/09/17 v6.81q Hyperref: PDFDocEncoding definition (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\intcalc.sty"
 Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
 )
-\Hy@SavedSpaceFactor=\count162
+\Hy@SavedSpaceFactor=\count170
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -690,7 +733,7 @@ Package hyperref Info: Plain pages OFF on input line 3917.
 Package hyperref Info: Backreferencing OFF on input line 3922.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4132.
-\c@Hy@tempcnt=\count163
+\c@Hy@tempcnt=\count171
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip11
@@ -704,9 +747,9 @@ Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\bigintcalc.sty"
 Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
 ))
-\Fld@menulength=\count164
-\Field@Width=\dimen189
-\Fld@charsize=\dimen190
+\Fld@menulength=\count172
+\Field@Width=\dimen196
+\Fld@charsize=\dimen197
 Package hyperref Info: Hyper figures OFF on input line 5526.
 Package hyperref Info: Link nesting OFF on input line 5531.
 Package hyperref Info: Hyper index ON on input line 5534.
@@ -720,9 +763,9 @@ LaTeX Info: Redefining \pageref on input line 5600.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
 Package: atbegshi 2010/03/25 v1.12 At begin shipout hook (HO)
 )
-\Hy@abspage=\count165
-\c@Item=\count166
-\c@Hfootnote=\count167
+\Hy@abspage=\count173
+\c@Item=\count174
+\c@Hfootnote=\count175
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
@@ -734,8 +777,8 @@ File: hpdftex.def 2010/09/17 v6.81q Hyperref driver for pdfTeX
 Package: atveryend 2010/03/24 v1.5 Hooks at very end of document (HO)
 Package atveryend Info: \enddocument detected (standard).
 )
-\Fld@listcount=\count168
-\c@bookmark@seq@number=\count169
+\Fld@listcount=\count176
+\c@bookmark@seq@number=\count177
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2010/03/16 v1.6 Rerun checks for auxiliary files (HO)
@@ -746,7 +789,7 @@ Package: uniquecounter 2009/12/18 v1.1 Provides unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 71.
 )
-\Hy@SectionHShift=\skip57
+\Hy@SectionHShift=\skip62
 )
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
@@ -758,40 +801,44 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 LaTeX Warning: Label `ip3step' multiply defined.
 
 
-LaTeX Warning: Label `lst:refmain' multiply defined.
+LaTeX Warning: Label `lst:comp2' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
  (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count170
-\scratchdimen=\dimen191
+\scratchcounter=\count178
+\scratchdimen=\dimen198
 \scratchbox=\box67
-\nofMPsegments=\count171
-\nofMParguments=\count172
+\nofMPsegments=\count179
+\nofMParguments=\count180
 \everyMPshowfont=\toks37
-\MPscratchCnt=\count173
-\MPscratchDim=\dimen192
-\MPnumerator=\count174
+\MPscratchCnt=\count181
+\MPscratchDim=\dimen199
+\MPnumerator=\count182
 \everyMPtoPDFconversion=\toks38
 )
-\c@lstlisting=\count175
+\c@lstlisting=\count183
  ABD: EveryShipout initializing macros
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box68
-Package hyperref Info: Link coloring OFF on input line 36.
+Package hyperref Info: Link coloring OFF on input line 47.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -802,11 +849,11 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2009/12/18 v1.3 Cleanup title references (HO)
 )
-\c@section@level=\count176
+\c@section@level=\count184
 )
-LaTeX Info: Redefining \ref on input line 36.
-LaTeX Info: Redefining \pageref on input line 36.
-LaTeX Info: Redefining \nameref on input line 36.
+LaTeX Info: Redefining \ref on input line 47.
+LaTeX Info: Redefining \pageref on input line 47.
+LaTeX Info: Redefining \nameref on input line 47.
 
 ("C:\Users\hatunk\Google Drive\SLE2012\llncs.out")
 ("C:\Users\hatunk\Google Drive\SLE2012\llncs.out")
@@ -849,7 +896,7 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-Underfull \vbox (badness 3503) has occurred while \output is active []
+Underfull \vbox (badness 1253) has occurred while \output is active []
 
  [4]
 ! Illegal unit of measure (pt inserted).
@@ -864,32 +911,21 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-[5]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
 Overfull \hbox (0.51596pt too wide) in paragraph at lines 127--128
 []\OT1/cmr/m/n/10 Provide checks for va-lid-ity of com-po-si-tion, empty sets a
 nd subset-
  []
 
 )
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 56.
- [6]
-Underfull \hbox (badness 3088) in paragraph at lines 93--95
-[][] [] [] [] [] []
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 96.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 96.
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \vskip 
-l.110 \end{lstlisting}
-                      
+l.82 \end{lstlisting}
+                     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -897,14 +933,39 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
+[6]
+Underfull \hbox (badness 3088) in paragraph at lines 110--112
+[][] [] [] [] [] []
+ []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 113.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 113.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \vskip 
+l.126 \end{lstlisting}
+                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
 [7]
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \vskip 
-l.130 \end{lstlisting}
+l.142 \end{lstlisting}
                       
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -912,46 +973,97 @@ I'll assume that you meant to say pt, for printer's points.
 To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
+
+[8]
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \vskip 
+l.158 \end{lstlisting}
+                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Underfull \hbox (badness 3088) in paragraph at lines 166--168
+[][] [] [] [] [] []
+ []
+
+! Use of \gr@implitem doesn't match its definition.
+<recently read> .
+                 
+l.175 \ldots
+            
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/types.png, id=185, 121.95563pt x 167.87718pt>
+File: images/types.png Graphic file (type png)
+ <use images/types.png>
+Underfull \hbox (badness 10000) in paragraph at lines 189--189
+\OT1/cmr/m/n/9 ple type
+ []
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.190 \hspace{20}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--203
+[]\OT1/cmr/m/n/9 pc1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--203
+[]\OT1/cmr/m/n/9 pc2
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.203 }
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.203 }
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \vskip 
-l.139 \end{lstlisting}
-                      
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+[9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \vskip 
-l.146 \end{lstlisting}
-                      
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[8] [9] [10]
+ [10 <C:/Users/hatunk/Google Drive/SLE2012/images/types.png (PNG copy)>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
-Overfull \hbox (9.27606pt too wide) in paragraph at lines 263--264
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
- []
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \vskip 
-l.269 \end{lstlisting}
+l.286 \end{lstlisting}
                       
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -963,7 +1075,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \vskip 
-l.275 \end{lstlisting}
+l.295 \end{lstlisting}
                       
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -975,38 +1087,133 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[12] [13] <images/pc.png, id=238, 532.99126pt x 199.49532pt>
-File: images/pc.png Graphic file (type png)
 
-<use images/pc.png>
-Underfull \hbox (badness 10000) in paragraph at lines 364--365
+LaTeX Warning: Reference `lst:comp2exp' on page 12 undefined on input line 298.
 
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \vskip 
+l.302 \end{lstlisting}
+                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \vskip 
+l.310 \end{lstlisting}
+                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 1603) has occurred while \output is active []
+
+ [13]
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \vskip 
+l.345 \end{lstlisting}
+                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \vskip 
+l.358 \end{lstlisting}
+                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (6.73802pt too wide) in paragraph at lines 360--361
+\OT1/cmr/m/n/10 prod-ucts are out of stock. On line 4, the for loop it-er-ates 
+over the \OT1/pcr/m/n/10 BeautyProduct
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 371.
+[14]
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \vskip 
+l.371 \end{lstlisting}
+                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
-Underfull \vbox (badness 5316) has occurred while \output is active []
+[15]
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \vskip 
+l.424 \end{lstlisting}
+                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
- [14 <C:/Users/hatunk/Google Drive/SLE2012/images/pc.png>] [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 371.
 
-("C:\Users\hatunk\Google Drive\SLE2012\llncs.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 371.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 432.
+[16] [17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 432.
+ ("C:\Users\hatunk\Google Drive\SLE2012\llncs.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 432.
 Package rerunfilecheck Info: File `llncs.out' has not changed.
-(rerunfilecheck)             Checksum: 8EE5BF9045BC4F4DBD13DA227569154D;753.
+(rerunfilecheck)             Checksum: 0117F4A0FE14D3D61DCC84FB3DADAA9A;751.
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16375 strings out of 494019
- 288652 string characters out of 3143871
- 498420 words of memory out of 3000000
- 19185 multiletter control sequences out of 15000+200000
+ 17553 strings out of 494019
+ 309107 string characters out of 3143870
+ 626090 words of memory out of 3000000
+ 20271 multiletter control sequences out of 15000+200000
  11042 words of font info for 40 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 63i,24n,97p,1406b,1248s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,24n,97p,1406b,1255s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
@@ -1027,9 +1234,9 @@ c/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courie
 r/ucrb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.
 pfb>
-Output written on llncs.pdf (15 pages, 325796 bytes).
+Output written on llncs.pdf (17 pages, 334110 bytes).
 PDF statistics:
- 341 PDF objects out of 1000 (max. 8388607)
- 128 named destinations out of 1000 (max. 500000)
+ 448 PDF objects out of 1000 (max. 8388607)
+ 209 named destinations out of 1000 (max. 500000)
  111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
