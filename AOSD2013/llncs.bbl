@@ -1,0 +1,67 @@
+\begin{thebibliography}{10}
+
+\bibitem{kiczales2001overview}
+Kiczales, G., Hilsdale, E., Hugunin, J., Kersten, M., Palm, J., Griswold, W.:
+\newblock An overview of aspectj.
+\newblock ECOOP 2001—Object-Oriented Programming (2001)  327--354
+
+\bibitem{masuharafine}
+Masuhara, H., Endoh, Y., Yonezawa, A.:
+\newblock A fine-grained join point model for more reusable aspects.
+\newblock In Kobayashi, N., ed.: Programming Languages and Systems. Volume 4279
+  of Lecture Notes in Computer Science.
+\newblock Springer Berlin / Heidelberg (2006)  131--147 10.1007/11924661_8.
+
+\bibitem{bourrillionguava}
+Bourrillion, K.,  et~al.:
+\newblock Guava: Google core libraries for java 1.5+(2010)
+
+\bibitem{sakurai2004association}
+Sakurai, K., Masuhara, H., Ubayashi, N., Matuura, S., Komiya, S.:
+\newblock Design and implementation of an aspect instantiation mechanism.
+\newblock Transactions on aspect-oriented software development I (2006)
+  259--292
+
+\bibitem{pearce2006relationship}
+Pearce, D., Noble, J.:
+\newblock Relationship aspects.
+\newblock In: Proceedings of the 5th international conference on
+  Aspect-oriented software development, ACM (2006)  75--86
+
+\bibitem{bodden2008relational}
+Bodden, E., Shaikh, R., Hendren, L.:
+\newblock Relational aspects as tracematches.
+\newblock In: Proceedings of the 7th international conference on
+  Aspect-oriented software development, ACM (2008)  84--95
+
+\bibitem{kawauchi:aosd-aosdsec04}
+Kawauchi, K., Masuhara, H.:
+\newblock {Dataflow Pointcut for Integrity Concerns}.
+\newblock In {Win}, B.., Shah, V., Joosen, W., Bodkin, R., eds.: AOSDSEC:
+  {AOSD} Technology for Application-Level Security. (March 2004)
+
+\bibitem{cluet1998designing}
+Cluet, S.:
+\newblock Designing oql: Allowing objects to be queried.
+\newblock Information systems \textbf{23}(5) (1998)  279--305
+
+\bibitem{Gasiunas2011}
+Gasiunas, V., Satabin, L., Mezini, M., N{\'u}{\~n}ez, A., Noy{\'e}, J.:
+\newblock Escala: modular event-driven object interactions in scala.
+\newblock In: Proceedings of the tenth international conference on
+  Aspect-oriented software development. AOSD '11, New York, NY, USA, ACM (March
+  2011)  227--240
+
+\bibitem{Bergmans2001b}
+Bergmans, L.M., Aksit, M.:
+\newblock How to deal with encapsulation in aspect-orientation.
+\newblock In: Proceedings of OOPSLA 2001 Workshop on Advanced Separation of
+  Concerns in Object-Oriented Systems. (2001)
+
+\bibitem{hannemann:oopsla02}
+Hannemann, J., Kiczales, G.:
+\newblock Design pattern implementation in {Java} and {AspectJ}.
+\newblock In: Proceedings of the 17th ACM conference on Object-oriented
+  programming, systems, languages, and applications, ACM Press (2002)  161--173
+
+\end{thebibliography}
