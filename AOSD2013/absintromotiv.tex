@@ -38,11 +38,11 @@ Objects can be categorized by how they are used (passed as arguments to method c
 Therefore we must be able to identify and select those objects.
 We want to expose sets of objects belonging to the same category by means of a dedicated language construct such that the implementation of context-dependent concerns can explicitly refer to the category.
 
-\begin{figure}[h]
+\begin{figure*}
 \includegraphics[width=\textwidth]{images/myonlineshop.png}%
 \caption{A simple online shop application}%
 \label{fig:shop}%
-\end{figure}
+\end{figure*}
 
 Below, we outline the architecture and design of an online store application. We use this scenario to give examples of categorizing objects according to how they are used and how to use these categories in the implementation of concerns. It must be noted that we intend to support the addition of \emph{unanticipated} concerns, i.e., the program code is not prepared to support abstractions, like specific object categories, required by the new concerns.
 At the end of this section, we conclude requirements for solving the encountered challenges in these examples.

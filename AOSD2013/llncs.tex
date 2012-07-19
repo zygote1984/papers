@@ -3,7 +3,6 @@
 % for Lecture Notes in Computer Science, version 2.4
 \documentclass{acm_proc_article-sp}
 
-\usepackage{llncsdoc}
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{listings, tikz, xcolor}
@@ -16,10 +15,11 @@
 \usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{MnSymbol}
+\DeclareCaptionType{copyrightbox}
 %
 \lstset{ 
 	language = [AspectJ]Java,
-  basicstyle=\ttfamily\small,
+  basicstyle=\sffamily\small,
   numbers=left,
 	numberstyle=\tiny\color[rgb]{0.25,0.25,0.25},
 	numberblanklines=false,
@@ -28,16 +28,19 @@
   tabsize=2,
 	emph={aspect,declare, adapter, instance, pointcut, adaptee, adapts, select, UNTIL,pc, instanceType, exp, removeExp, subsetof, supersetof}, 
 	emphstyle=\textbf,
-	stringstyle=\textsf,
+%	stringstyle=\textsf,
 	showstringspaces= false,
 	frame=single,
 	captionpos = b,
 	numberbychapter=false,
-	breakatwhitespace = true
+	breakatwhitespace = true,
+	columns=fullflexible
 	}
 \lstset{prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rhookswarrow}}} % requires \usepackage{MnSymbol}
 %\lstset{postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rcurvearrowse\space}}} % requires \usepackage{MnSymbol}	
 	
+\usetikzlibrary{arrows,shapes.multipart,shapes.arrows,shapes.misc,calc,fit,shadows,positioning,patterns} 
+
 \newcommand\bh{\tikz[remember picture]
 					\node (begin highlight) {};
 			 }
@@ -47,16 +50,20 @@
 		 \draw[yellow,line width=10pt,opacity=0.3] (begin highlight) -- (end
 			highlight);
 		 }
-	
+
+\newcommand{\lstinlineabstract}[1]{\lstinline[emph={#1},emphstyle=\textit]{#1}}
 \begin{document}
 
 
 \title{Instance Pointcuts:}
 \subtitle{An Aspect-Oriented Mechanism \\for \\Maintaining Object Categories}
 
-\author{Kardelen Hatun \and Christoph Bockisch \and Mehmet Ak\c{s}it}
-\institute{TRESE, University of Twente \\7500AE Enschede \\The Netherlands \\
-\url{http://www.utwente.nl/ewi/trese/}\\
+\numberofauthors{1}
+\author{
+\alignauthor
+Kardelen Hatun \hspace{2cm} Christoph Bockisch \hspace{2cm} Mehmet Ak\c{s}it\\
+\affaddr{TRESE, University of Twente, 7500AE Enschede, The Netherlands}\\
+\affaddr{\url{http://www.utwente.nl/ewi/trese/}}\\
 \email{ \{hatunk,c.m.bockisch,aksit\}@ewi.utwente.nl}
 }
 
@@ -73,6 +80,7 @@ In the remainder of this section, we will explain instance pointcuts in detail. 
 %\missingfigure{Static Structure of instance pointcuts}
 
 \subsection{Features}
+\label{sec:features}
 
 A concrete instance pointcut definition consists of a left hand-side and a right-hand side. 
 On the left-hand side the pointcut's name and a type reference of interest is declared. 
@@ -177,7 +185,7 @@ It is also possible to compose instance pointcuts to obtain a new instance point
 
 <ip-ref> ::= <name> \alt <name>(`<' <refined-instance-type> `>')?
 
-\ldots
+%\ldots
 \end{grammar}
 \caption{Syntax for instance pointcut composition}
 \label{fig:grammar2}
@@ -208,9 +216,9 @@ pc1 type & pc2 type     &\&\&         &$\|$  \\[1ex]
 \hline
 B & C & C & B \\[1ex]
 \hline
-B & A & \emptyset & R\\[1ex]
+B & A & $\emptyset$ & R\\[1ex]
 \hline 
- \end{tabular}
+\end{tabular}
 }
 \caption{An example to illustrate composition's effect on types}
 \label{fig:compotypes}
@@ -405,69 +413,261 @@ before(Product p): outOfStock_add(p)
 
 
 \subsection{Compilation of Instance Pointcuts}
-In our current implementation, we compile instance pointcuts to AspectJ code. For the instance pointcut shown in Listing~\ref{lst:usage} and the code snippets shown in Listings~\ref{lst:setaccess} and~\ref{lst:monitor1}, the generated AspectJ code is divided into several listings.
 
-\begin{lstlisting}[float=h!, caption={The generated AspectJ pointcuts from \texttt{outOfStock} instance pointcut}, label={lst:generated1}]
-aspect MyAspect{
-	public static Multiset<Product> outOfStock_set =
-			new TreeMultiset<Product>();
-	pointcut outOfStock_aa(Product instance): call(* Product.outOfStock(..)) && target(instance);
-	pointcut outOfStock_ar(Product instance): call(* Vendor.stock(..)) && args(instance);
-	pointcut outOfStock_add(Product p): 
-		call(* MyAspect.add_outOfStock_set(..)) && within(MyAspect) && args(p);
-	pointcut outOfStock_remove(Product p): 
-		call(* MyAspect.remove_outOfStock_set(..)) && within(MyAspect) && args(p);
-\end{lstlisting}	
+%TODO: access method IPAspect.ipc vs. IPAspect.ipc()
 
+We have implemented the instance pointcut language with the EMFText language workbench.
+For this purpose, we have defined the AspectJ grammar based on the one published in \textbf{???} and extended it with the grammar for instance pointcuts which was presented interspersed with the rest of this section.
+During compilation, the instance pointcut definitions are transformed into semantically equivalent source code, the remaining definitions are preserved as they are; the result is compiled with the AspectJ compiler.
+A goal for our compiler implementation is to support modular compilation.
+This means to compile an aspect with instance pointcuts that depend on instance pointcuts defined in other aspects, it must be sufficient to know their declaration (i.e., the name and type); it should not be necessary for the compiler to know the actual expression or the referenced instance pointcuts.
 
-In Listing~\ref{lst:generated1} the multiset and the pointcuts generated from instance pointcut \texttt{outOfStock} is shown. On line 2, a \texttt{Multiset} \cite{bourrillionguava}, named \texttt{outOfStock_set} with the generics \texttt{Product} is instantiated. The generic type is inferred from the instance type declared in \texttt{outOfStock}. This particular instance pointcut has only two expression elements, an after element in the add expression and an after element in the remove expression. These expression elements result in two pointcuts shown in lines 4 and 5. The pointcuts are created with parameters of the declared instance type and by directly copying the pointcut expressions in expression elements. On lines 6--9 the set monitoring pointcuts are shown.
+The Listing~\ref{lst:management} shows the code which is generated by our compiler for managing the data of an instance pointcut; the variables \emph{\$\{Type\}} and \emph{\$\{ipc\}} stand for the instance pointcut's type and name.
+First, a \lstinline{WeakHashMap} is defined for storing the instances currently selected by an instance pointcut (cf.\ line~\ref{lst:management:map}).
+We use weak references to avoid keeping objects alive which are not reachable from the base application anymore.
+The keys of the map are the objects which are selected by the instance pointcut; the mapped value is a counter of how often the object has been selected by the instance pointcut.
+The generated method \emph{\$\{ipc\}} returns all objects which are currently mapped (cf.\ lines~\ref{lst:management:data:start}--\ref{lst:management:data:end}).
 
-\begin{lstlisting}[float=h!,firstnumber = {10}, caption={The generated AspectJ advices from \texttt{outOfStock} instance pointcut}, label={lst:generated2}]	
-	after(Product p):outOfStock_aa(p)
-	{
-		MyAspect.add_outOfStock_set(p);
-	}
-	after(Product p):outOfStock_ar(p)
-	{
-		MyAspect.remove_outOfStock_set(p);
-	}
-\end{lstlisting}	
+Furthermore, methods are generated to increase or decrease the counter of selected objects; if an object does not have an associated counter yet or the counter reached zero, the object is added to or removed from the map, respectively (cf.\ lines~\ref{lst:management:bookkeeping:start}--\ref{lst:management:bookkeeping:end}).
+After having performed their operation, both method invoke an empty method, passing the added or removed object.
+We generate a public, named pointcut selecting these calls, exposing the respective events (cf.\ lines~\ref{lst:management:added:pc} and~\ref{lst:management:removed:pc}).
 
-In Listing~\ref{lst:generated2} two advice bodies shown in lines 10--13 and 14--17. The first advice is responsible for performing the add to set action and the second one is responsible for removal. For the \texttt{returning} clause there is a special case. When it is used in instance pointcut expressions an \texttt{after() returning(..)} advice is generated to capture the instance. 
+\lstset{
+morecomment=[s][\itshape]{\$\{}{\}},
+moredelim=[is][\rmfamily\itshape]{|}{|},
+deleteemph={instance},
+escapechar={~}
+}
+\begin{lstlisting}[caption={Template of generated code for instance set management.},label=lst:management]
+private static WeakHashMap<${Type}, Integer> ${ipc}_data = new WeakHashMap<${Type}, Integer>(); ~\label{lst:management:map}~
 
-\begin{lstlisting}[float=h!, firstnumber = {18},caption={The set add/remove methods for \texttt{outOfStock} instance pointcut}, label={lst:generated3}]		
-	public static boolean add_outOfStock_set(Product p)
-	{
-		return outOfStock_set.put(p);
-	}
-	public static boolean remove_outOfStock_set(Product p)
-	{
-		return outOfStock_set.remove(p);
-	}
+public static Set<${Type}> ${ipc}() { ~\label{lst:management:data:start}~
+	return Collections.unmodifiableSet(${ipc}_data.keySet());
+} ~\label{lst:management:data:end}~
+
+public static void ${ipc}_addInstance(${Type} instance) { ~\label{lst:management:bookkeeping:start}~
+	|increase counter associated with instance by the ${ipc}_data map|
+	${ipc}_instanceAdded(instance); ~\label{lst:management:added}~
+}
+
+public static void ${ipc}_removeInstance(${Type} instance) {
+	|decrease counter associated with instance by the ${ipc}_data map|
+	|if the counter reaches 0, remove instance from the map|
+	${ipc}_instanceRemoved(instance); ~\label{lst:management:removed}~
+} ~\label{lst:management:bookkeeping:end}~
+
+private static void ${ipc}_instanceAdded(${Type} instance) {}
+
+private static void ${ipc}_instanceRemoved(${Type} instance) {}
+
+public pointcut ${ipc}_add(${Type} instance) : call(private static void Aspect.${ipc}_instanceAdded(${Type})) && args(instance); ~\label{lst:management:added:pc}~
+public pointcut ${ipc}_remove(${Type} instance) : call(private static void Aspect.${ipc}_instanceRemoved(${Type})) && args(instance); ~\label{lst:management:removed:pc}~
 \end{lstlisting}
 
+Next, these bookkeeping methods have to be executed at the events specified in the instance pointcut expression.
+At first sight, realizing this by generating AspectJ pointcuts and advice seems to be a solution.
+However, the way AspectJ handles binding values and restricting their types in pointcuts prevents a modular compilation of instance pointcuts:
 
-For adding elements to the set, \texttt{add_outOfStock_set} method (Listing~\ref{lst:generated3}, lines 18--21) and for removing \texttt{remove_outOfStock_set} (lines 22--25) are generated. The set monitoring pointcuts for these methods are \texttt{outOfStock_add(Product p)} and \texttt{outOfStock_remove(Product p)}, respectively. 
+An instance pointcut expression can be transformed into several named AspectJ pointcuts which bind a single value, the \emph{instance}.
+However, in AspectJ the result value of a join point is bound by the \lstinline{after returning} keyword in the advice definition instead of in the pointcut definition.
+Therefore, the generated AspectJ code depends on which value is bound; this means that it must be known which value is bound when making a reference to a pointcut.
+It is also not possible to work around this, using AspectJ's reflective \lstinline{thisJoinPoint} keyword, as this does not expose the result value at all.
+Another, similar limitation is that AspectJ does not allow to narrow down the type restriction for the bound value of a referred pointcut.
+Thus, in order to be able to transform an instance pointcuts definition to AspectJ, it is necessary to know the definitions of all instance pointcuts it refers to and to inline their definition.
 
+For these reasons , our current implementation is based on the ALIA4J\footnote{The Advanced-dispatching Language Implementation Architecture for Java. See \url{http://www.alia4j.org/alia4j/}.}~\cite{Bockisch2012,Bockisch2011} implementation approach and framework for advanced dispatching languages.
+At its core, ALIA4J contains a meta-model of advanced dispatching declarations, called \emph{\LIAM}, and a framework for execution environments that handle these declarations, called \emph{FIAL}.
+The term advanced dispatching refers to late-binding mechanisms including, e.g., predicate dispatching and pointcut-advice mechanisms.
 
-\begin{lstlisting}[float=h!, firstnumber = {26},caption={The examples from Listing~\ref{lst:setaccess} and Listing~\ref{lst:monitor1}}, label={lst:generated4}]	
-	public static double calculateDamages()
-	{
-		double damage = 0;
-		for(Product p:MyAspect.outOfStock_set)
-			damage = damage + p.getPrice();
-		return damage;
+An instance pointcut, generally consists of four underlying pointcut definitions: specifying join points (1) \emph{before} or (2) \emph{after} which an instance is to be \emph{added} to the selected instances; and specifying join points (3) \emph{before} or (4) \emph{after} which an instance is to be \emph{removed}.
+For each pointcut definition, we generate a method that creates a corresponding LIAM model; the methods are called \lstinline!${ipc}_add_before!, \lstinline!${ipc}_add_after!, \lstinline!${ipc}_remove_before!, and \lstinline!${ipc}_remove_after!.
+
+In LIAM, a \emph{Specialization} can represent a partial AspectJ pointcut and a full pointcut expression can be represented as the disjunction of a set of \emph{Specializations} (discussed in detail elsewhere~\cite{Bockisch2007}). 
+Figure~\ref{fig:specialization} shows the meta-model for a specialization in ALIA4J consisting of three parts.
+A \emph{Pattern} specifies syntactic and lexical properties of matched dispatch site (or join point shadows).
+The \emph{Predicate} and \emph{Atomic Predicate} entities model conditions on the dynamic state a dispatch depends on (dynamic pointcut designators).
+The \emph{Context} entities model access to values like the called object or argument values.
+Contexts which are directly referred to by the Specialization are exposed to associated advice.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[x=30mm,y=12mm]
+\tikzset{CODE/.style={draw,chamfered rectangle,chamfered rectangle corners=north east,text centered,minimum height=1.6em}}
+\tikzset{CLASSES/.style={draw,rectangle,text centered,minimum height=1.6em}}
+\tikzset{CLASS/.style={draw,rectangle,text centered,minimum height=1.6em}}
+\tikzset{MULTIPART CLASS/.style={CLASS,rectangle split,rectangle split parts=2}}
+
+\tikzset{EXTENDS/.style={draw,-open triangle 90}}
+\tikzset{ASSOCIATES/.style={draw,-angle 90}}
+\tikzset{INSTANTIATES/.style={draw,dashed,-angle 90}}
+\tikzset{AGGREGATES/.style={draw,open diamond-angle 90}}
+
+\tikzset{CARDINALITY/.style={auto=right,near end,font=\tiny}}
+
+\tikzset{DINGBATS/.style={circle,fill=white,inner sep=-0.5pt}}
+
+\begin{scope}[text width=2.5cm]
+\node[CLASS] (specialization) at (0,-1) {\lstinline{Specialization}};
+\path (specialization)
+  -- +(-1,-1) node[CLASS] (context) {\lstinlineabstract{Context}}
+  -- +(+0,-1) node[CLASS] (expression) {\lstinline{Predicate}}
+  -- +(+1,-1) node[CLASS] (pattern) {\lstinline{Pattern}};
+\path (expression)
+  -- +(0,-1) node[CLASS] (atomic predicate) {\lstinlineabstract{AtomicPredicate}};
+\end{scope}
+
+\path [AGGREGATES] (specialization) -- +(0,-0.5) -| (pattern);
+\path [AGGREGATES] (specialization) -- +(0,-0.5) -| node[CARDINALITY] {*} (context);
+\path [AGGREGATES] (specialization) -- +(0,-0.5) -| node[CARDINALITY] {0..1}  (expression);
+
+\path [AGGREGATES] (context.-135) -- ++(0,-5mm) -| node[CARDINALITY] {*} (context.-160);
+
+\path [AGGREGATES] (atomic predicate) -| node[CARDINALITY] {*} (context);
+
+\path [AGGREGATES] (expression) -- node[CARDINALITY] {0..1} (atomic predicate);
+\path [AGGREGATES] (expression.-45) -- ++(0,-5mm) -| node[CARDINALITY] {0..2} (expression.-20);
+
+\end{tikzpicture}
+\caption{Meta-model of a Specialization in ALIA4J.}
+\label{fig:specialization}
+\end{figure}
+
+Depending on the definition of the instance pointcut, LIAM models of the underlying pointcuts have to be created in different ways.
+For pointcut expressions that are directly provided, we use a library function provided by ALIA4J which takes a String containing an AspectJ pointcut as input.
+We have extended this library to also understand the \lstinline{returning} pointcut designator.
+All these parts are optional; a missing part can be represented as an empty set of Specializations in LIAM.
+
+\begin{lstlisting}[caption={Example of an instance pointcut using composition and type refinement}, label=lst:example:compo:ref,moreemph=instance]
+instance pointcut ${ipc}<${Type}>:
+ipc1<${Type2}> || ~\label{lst:example:ip:or}~
+before(${pc_add_before}) || after(${pc_add_after}) UNTIL 
+before(${pc_remove_before}) || after(${pc_remove_after};
+\end{lstlisting}
+
+For the example instance pointcut presented in listing~\ref{lst:example:compo:ref}, we show the code generated for the method creating the LIAM model for the add/before pointcut in listing~\ref{lst:example:compoRefGen}; the other methods are generated analogously.
+Line~\ref{lst:example:simple} shows the transformation of an AspectJ pointcut into a set of Specializations in the LIAM meta-model by passing the pointcut as a String---represented by \lstinline!${pc_add_before}! in~\ref{lst:example:compo:ref} and~\ref{lst:example:compoRefGen}---the above mentioned library function.
+
+What is generated from an instance pointcut reference, is shown in line~\ref{lst:example:ref}: the LIAM model of the corresponding underlying pointcut of the referenced instance pointcut is invoked (cf.~line\ref{lst:example:ref}).
+If there is a type refinement defined for this instance pointcut reference, we add a restriction to the retrieved Specializations.
+The implementation of the \lstinline!addTypeConstraint! method returns a copy of the passed Specializations where the Predicate is extended with a test that the bound value is an instance of \lstinline!${Type2}! (cf.\ line~\ref{lst:example:restriction}).
+Finally, the full LIAM model of the pointcut definition is retrieved by forming the disjunction of the LIAM model for the direct pointcut expression and the LIAM model for the instance-pointcut-reference expression (cf.\ line~\ref{lst:example:composition})---which can itself consist of conjunctions and disjunctions of multiple instance-pointcut references.
+
+\begin{lstlisting}[caption={Generated code for creating the LIAM model for the add/before pointcut of the example instance pointcut.},label={lst:example:compoRefGen}]
+public static Set<Specialization> ${ipc}_add_before() {
+	private static Set<Specialization> ${ipc}_add_before;
+	if (${ipc}_add_before == null) {
+		Set<Specialization> simpleIPExpr = Util.toSpecializatons("${pc_add_before}", ${Type}); ~\label{lst:example:simple}~
+		
+		Set<Specialization> ipRefExpr = ipc1_add_before(); ~\label{lst:example:ref}~
+		ipRefExpr = Util.addTypeConstraint(ipRefExpr, ${Type2}); ~\label{lst:example:restriction}~
+		
+		${ipc}_add_before = Util.orSpecializations(ipRefExpr, simpleIPExpr); ~\label{lst:example:composition}~
 	}
-	before(Product p): outOfStock_add(p)
-	{
-		OnlineShop.notifyVendor(p.getVendor, STOCK_MSG);
-	}
+	return ${ipc}_add_before;
 }
 \end{lstlisting}
 
-The \texttt{calculateDamages} method defined in Listing~\ref{lst:setaccess}, uses the set access property by referencing \texttt{MyAspect.outOfStock}. This statement is transformed into a reference to the \texttt{Multiset} of \texttt{outOfStock} as \texttt{MyAspect.outOfStock_set} in Listing~\ref{lst:generated4}. The advice shown in Listing~\ref{lst:monitor1} is copied verbatim, since it does not use any of the extended syntax.
+The disjunction performed in line~\ref{lst:example:composition} of listing~\ref{lst:example:compoRefGen} corresponds to the usage of the \lstinline{||} operator in line~\ref{lst:example:ip:or}, listing~\ref{lst:example:compo:ref}.
+When the \lstinline{&&} operator is used instead, the method \lstinline{andSpecialization} is used in the generated code, but only in creation of the pointcuts for adding instances to the map. For the removal pointcuts, the simple pointcut expression and the instance pointcut reference expression is always \emph{or}ed.
 
-When generating code for composed instance pointcuts, first the composition is performed by pre-processing then the processed instance pointcut is generated with the same generation rules. 
+Finally, the created LIAM models of the pointcuts must be associated with advice invoking the add or remove method for the instance pointcut.
+In a LIAM model this is achieved by defining an Attachment, which roughly corresponds to a pointcut-advice pair.
+An attachment refers to a set of Specializations, to an \emph{Action}, which specifies the advice functionality, and a \emph{Schedule Information}, which models the time relative to a join point when the action should be executed, i.e., ``before,'' ``after,'' or ``around''.
+
+Listing~\ref{lst:deployment} shows the generated code for creating and deploying the bookkeeping Attachments.
+The first Attachment uses the set of Specializations returned by the \lstinline!${ipc}add_before! method (cf.\ line~\ref{lst:deploy:specializations}) and specifies the \lstinline!${ipc}_addInstance! method as action to execute at the selected join points (cf.\ line~\ref{lst:deploy:action}).
+As relative execution time, the Attachment uses a ``SystemScheduleInfo''; this is provided by ALIA4J for Attachments performing maintenance whose action should be performed before or after all user actions at a join point, such that all user actions observe the same state of the maintained date.
+Thus, when reaching a selected join point the instance is added to the instance pointcut's multiset before (cf.\ line~\ref{lst:deploy:schedule}) any other action can access its current content.
+The other Attachments are created analogously.
+In the end, all Attachments are deployed through the ALIA4J \lstinline{System}.
+
+\begin{lstlisting}[caption={Deployment of the bookkeeping for an instance pointcut.},label=lst:deployment]
+public static void ${ipc}_deploy() {
+	org.alia4j.fial.System.deploy( ~\label{lst:deploy:deploy}~
+		new Attachment(
+			${ipc}_add_before(), ~\label{lst:deploy:specializations}~
+			createStaticAction(void.class, ${Aspect}.class, "${ipc}_addInstance", new Class[]{${Type}.class}) ~\label{lst:deploy:action}~
+			SystemScheduleInfo.BEFORE_FARTHEST), ~\label{lst:deploy:schedule}~
+		|Create Attachments for the other three parts analogously.|
+		|For the ``after'' parts, use SystemScheduleInfo.AFTER_FARTHEST.|
+		|For the ``remove'' parts, specify method ${ipc}_removeInstance.|
+		);
+}
+\end{lstlisting}
+
+To ensure this consistency also between AspectJ advice and our implementation of instance pointcuts, the AspectJ point\-cut-advice definitions must be processed by ALIA4J.
+This provides an AspectJ integration which works together with the standard AspectJ tooling.
+Using command line arguments the AspectJ compiler can be instructed to omit the weaving phase.
+The advice bodies are converted to methods and pointcut expressions are attached to them using Java's annotations which are read by the ALIA4J-AspectJ integration and transformed into Attachments at program start-up.
+The code generated by our compiler consists of the above explained methods, as well as plain AspectJ definitions.
+When compiling this code with the mentioned command line options, the regular AspectJ pointcut-advice and the behavior of the instance pointcuts are both executed by ALIA4J, thus ensuring a consistent execution order.
+
+
+%
+%
+%In our current implementation, we compile instance pointcuts to AspectJ code. For the instance pointcut shown in Listing~\ref{lst:usage} and the code snippets shown in Listings~\ref{lst:setaccess} and~\ref{lst:monitor1}, the generated AspectJ code is divided into several listings.
+%
+%\begin{lstlisting}[float=h!, caption={The generated AspectJ pointcuts from \texttt{outOfStock} instance pointcut}, label={lst:generated1}]
+%aspect MyAspect{
+%	public static Multiset<Product> outOfStock_set =
+%			new TreeMultiset<Product>();
+%	pointcut outOfStock_aa(Product instance): call(* Product.outOfStock(..)) && target(instance);
+%	pointcut outOfStock_ar(Product instance): call(* Vendor.stock(..)) && args(instance);
+%	pointcut outOfStock_add(Product p): 
+%		call(* MyAspect.add_outOfStock_set(..)) && within(MyAspect) && args(p);
+%	pointcut outOfStock_remove(Product p): 
+%		call(* MyAspect.remove_outOfStock_set(..)) && within(MyAspect) && args(p);
+%\end{lstlisting}	
+%
+%
+%In Listing~\ref{lst:generated1} the multiset and the pointcuts generated from instance pointcut \texttt{outOfStock} is shown. On line 2, a \texttt{Multiset} \cite{bourrillionguava}, named \texttt{outOfStock_set} with the generics \texttt{Product} is instantiated. The generic type is inferred from the instance type declared in \texttt{outOfStock}. This particular instance pointcut has only two expression elements, an after element in the add expression and an after element in the remove expression. These expression elements result in two pointcuts shown in lines 4 and 5. The pointcuts are created with parameters of the declared instance type and by directly copying the pointcut expressions in expression elements. On lines 6--9 the set monitoring pointcuts are shown.
+%
+%\begin{lstlisting}[float=h!,firstnumber = {10}, caption={The generated AspectJ advices from \texttt{outOfStock} instance pointcut}, label={lst:generated2}]	
+%	after(Product p):outOfStock_aa(p)
+%	{
+%		MyAspect.add_outOfStock_set(p);
+%	}
+%	after(Product p):outOfStock_ar(p)
+%	{
+%		MyAspect.remove_outOfStock_set(p);
+%	}
+%\end{lstlisting}	
+%
+%In Listing~\ref{lst:generated2} two advice bodies shown in lines 10--13 and 14--17. The first advice is responsible for performing the add to set action and the second one is responsible for removal. For the \texttt{returning} clause there is a special case. When it is used in instance pointcut expressions an \texttt{after() returning(..)} advice is generated to capture the instance. 
+%
+%\begin{lstlisting}[float=h!, firstnumber = {18},caption={The set add/remove methods for \texttt{outOfStock} instance pointcut}, label={lst:generated3}]		
+%	public static boolean add_outOfStock_set(Product p)
+%	{
+%		return outOfStock_set.put(p);
+%	}
+%	public static boolean remove_outOfStock_set(Product p)
+%	{
+%		return outOfStock_set.remove(p);
+%	}
+%\end{lstlisting}
+%
+%
+%For adding elements to the set, \texttt{add_outOfStock_set} method (Listing~\ref{lst:generated3}, lines 18--21) and for removing \texttt{remove_outOfStock_set} (lines 22--25) are generated. The set monitoring pointcuts for these methods are \texttt{outOfStock_add(Product p)} and \texttt{outOfStock_remove(Product p)}, respectively. 
+%
+%
+%\begin{lstlisting}[float=h!, firstnumber = {26},caption={The examples from Listing~\ref{lst:setaccess} and Listing~\ref{lst:monitor1}}, label={lst:generated4}]	
+%	public static double calculateDamages()
+%	{
+%		double damage = 0;
+%		for(Product p:MyAspect.outOfStock_set)
+%			damage = damage + p.getPrice();
+%		return damage;
+%	}
+%	before(Product p): outOfStock_add(p)
+%	{
+%		OnlineShop.notifyVendor(p.getVendor, STOCK_MSG);
+%	}
+%}
+%\end{lstlisting}
+%
+%The \texttt{calculateDamages} method defined in Listing~\ref{lst:setaccess}, uses the set access property by referencing \texttt{MyAspect.outOfStock}. This statement is transformed into a reference to the \texttt{Multiset} of \texttt{outOfStock} as \texttt{MyAspect.outOfStock_set} in Listing~\ref{lst:generated4}. The advice shown in Listing~\ref{lst:monitor1} is copied verbatim, since it does not use any of the extended syntax.
+%
+%When generating code for composed instance pointcuts, first the composition is performed by pre-processing then the processed instance pointcut is generated with the same generation rules. 
 
 \section{Related Work}
 AO-extensions for improving aspect-object relationships are proposed in several studies. Sakurai et al.~\cite{sakurai2004association} proposed Association Aspects. This is an extention to aspect instantiation mechanisms in AspectJ to declaratively associate an aspect to a tuple of objects. In this work the type of object tuples are declared with \texttt{perobjects} clause and the specific objects are selected by pointcuts. This work offers a method for defining relationships between objects. Similar to association aspects, Relationship Aspects \cite{pearce2006relationship} also offer a declarative mechanism to define relationships between objects, which are cross-cutting to the OO-implementation. This work focuses on managing relationships between associated objects. Bodden et al.~ \cite{bodden2008relational} claim that the previous two lack generality and propose a tracematch-based approach. Although the semantics of the approaches are very similar, Bodden et al.\ combine features of thread safety, memory safety, per-association state and binding of primitive values or values of non-weavable classes. Our approach, also extending AO, differs from these approaches since our aim is not defining new relationships but using the existing structures as a base to group objects together for behavior extensions. Our approach also offers additional features of composition and refinement.
