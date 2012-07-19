@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.6.20)  22 JUN 2012 10:08
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.6.20)  19 JUL 2012 13:52
 entering extended mode
 **llncs.tex
 ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.tex"
@@ -185,7 +185,6 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
-("C:\Users\hatunk\Google Drive\AOSD2013\llncsdoc.sty")
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
@@ -903,12 +902,103 @@ LaTeX Font Info:    Redeclaring math accent \widehat on input line 1845.
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 1846.
 LaTeX Font Info:    Redeclaring math accent \vec on input line 1848.
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\newfloat.sty"
+Package: newfloat 2011/11/16 v1.0a Defining new floating environments (AR)
+)
+Package newfloat Info: New float `copyrightbox' with options `' on input line 1
+8.
+\c@copyrightbox=\count158
+\newfloat@ftype=\count159
+Package newfloat Info: float type `copyrightbox'=8 on input line 18.
+\c@locopyrightboxdepth=\count160
+
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 ) (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.st
 y
 File: lstlang1.sty 2004/09/05 1.3 listings language file
-) ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.aux"
+)
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
+kz\libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflib
+raryarrows.code.tex
+File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
+\arrowsize=\dimen186
+))
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
+kz\libraries\tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\shapes
+\pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v2.10 (rcs-revision 1.2)
+\pgfnodepartlowerbox=\box41
+\pgfnodeparttwobox=\box42
+\pgfnodepartthreebox=\box43
+\pgfnodepartfourbox=\box44
+\pgfnodeparttwentybox=\box45
+\pgfnodepartnineteenbox=\box46
+\pgfnodeparteighteenbox=\box47
+\pgfnodepartseventeenbox=\box48
+\pgfnodepartsixteenbox=\box49
+\pgfnodepartfifteenbox=\box50
+\pgfnodepartfourteenbox=\box51
+\pgfnodepartthirteenbox=\box52
+\pgfnodeparttwelvebox=\box53
+\pgfnodepartelevenbox=\box54
+\pgfnodeparttenbox=\box55
+\pgfnodepartninebox=\box56
+\pgfnodeparteightbox=\box57
+\pgfnodepartsevenbox=\box58
+\pgfnodepartsixbox=\box59
+\pgfnodepartfivebox=\box60
+))
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
+kz\libraries\tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\shapes
+\pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v2.10 (rcs-revision 1.1)
+))
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
+kz\libraries\tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\shapes
+\pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2008/10/07 v2.10 (rcs-revision 1.3)
+))
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
+kz\libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2009/09/04 v2.10 (rcs-revision 1.6)
+)
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
+kz\libraries\tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2008/06/21 v2.10 (rcs-revision 1.3)
+)
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
+kz\libraries\tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2008/01/13 v2.10 (rcs-revision 1.3)
+
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
+kz\libraries\tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2009/11/15 v2.10 (rcs-revision 1.2)
+
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflib
+raryfadings.code.tex
+File: pgflibraryfadings.code.tex 2008/02/07 v2.10 (rcs-revision 1.3)
+)))
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\ti
+kz\libraries\tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2008/01/15 v2.10 (rcs-revision 1.2)
+
+(D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflib
+rarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2008/03/03 v2.10 (rcs-revision 1.13)
+)) ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.aux"
 
 LaTeX Warning: Label `ip3step' multiply defined.
 
@@ -916,53 +1006,53 @@ LaTeX Warning: Label `ip3step' multiply defined.
 LaTeX Warning: Label `ip3step' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 55.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    ... okay on input line 55.
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count158
-\scratchdimen=\dimen186
-\scratchbox=\box41
-\nofMPsegments=\count159
-\nofMParguments=\count160
+\scratchcounter=\count161
+\scratchdimen=\dimen187
+\scratchbox=\box61
+\nofMPsegments=\count162
+\nofMParguments=\count163
 \everyMPshowfont=\toks49
-\MPscratchCnt=\count161
-\MPscratchDim=\dimen187
-\MPnumerator=\count162
+\MPscratchCnt=\count164
+\MPscratchDim=\dimen188
+\MPnumerator=\count165
 \everyMPtoPDFconversion=\toks50
 )
-\c@lstlisting=\count163
+\c@lstlisting=\count166
  ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box42
+\AtBeginShipoutBox=\box62
 
 
 Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
 (hyperref)                using 11in.
 
-Package hyperref Info: Link coloring OFF on input line 51.
+Package hyperref Info: Link coloring OFF on input line 55.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -972,71 +1062,47 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2009/12/18 v1.3 Cleanup title references (HO)
 )
-\c@section@level=\count164
+\c@section@level=\count167
 )
-LaTeX Info: Redefining \ref on input line 51.
-LaTeX Info: Redefining \pageref on input line 51.
-LaTeX Info: Redefining \nameref on input line 51.
+LaTeX Info: Redefining \ref on input line 55.
+LaTeX Info: Redefining \pageref on input line 55.
+LaTeX Info: Redefining \nameref on input line 55.
 
 ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.out")
 ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.out")
 \@outlinefile=\write4
 
-! Undefined control sequence.
-l.58 \institute
-               {TRESE, University of Twente \\7500AE Enschede \\The Netherla...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 59.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 59.
+("C:\Users\hatunk\Google Drive\AOSD2013\absintromotiv.tex"
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 59.
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 59.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 2.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 58--60
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 2.
 
- []
-
-("C:\Users\hatunk\Google Drive\AOSD2013\absintromotiv.tex" [1
-
-{C:/Users/hatunk/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-]
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.33 
-      [2
+ [1{C:/Users/hatunk/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-] <images/myonlineshop.png, id=73, 687.56876pt x 256.96pt>
+
+]
+<images/myonlineshop.png, id=117, 687.56876pt x 256.96pt>
 File: images/myonlineshop.png Graphic file (type png)
 
 <use images/myonlineshop.png>
-Overfull \hbox (264.0pt too wide) in paragraph at lines 42--43
-[][] 
- []
-
-
 Overfull \hbox (10.61049pt too wide) in paragraph at lines 51--52
 \T1/aer/m/n/9 a new \T1/pcr/m/n/9 Item \T1/aer/m/n/9 in-stance is cre-ated and 
 added to the \T1/pcr/m/n/9 ShoppingBag
@@ -1048,41 +1114,36 @@ Overfull \hbox (68.98314pt too wide) in paragraph at lines 54--56
 pcr/m/n/9 shoppingBag.happyItems
  []
 
-LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <8> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 58.
-LaTeX Font Info:    Try loading font information for T1+aess on input line 64.
+LaTeX Font Info:    Try loading font information for T1+aess on input line 57.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aess.fd"
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 )
-Overfull \hbox (48.80273pt too wide) in paragraph at lines 78--79
-[][][][][][][][][][]  
- []
-
-
 Overfull \hbox (26.62178pt too wide) in paragraph at lines 83--86
 []\T1/aer/m/n/9 The OO-solution is scat-tered among \T1/pcr/m/n/9 ShoppingBag \
 T1/aer/m/n/9 and \T1/pcr/m/n/9 Customer
  []
 
+LaTeX Font Info:    Try loading font information for TS1+aess on input line 94.
+
+LaTeX Font Info:    No file TS1aess.fd. on input line 94.
+
+LaTeX Font Warning: Font shape `TS1/aess/m/n' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textasteriskcentered' on input line 94.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.86 
-      [3 <C:/Users/hatunk/Google Drive/AOSD2013/images/myonlineshop.png (PNG co
-py)>]
-Overfull \hbox (35.97783pt too wide) in paragraph at lines 112--113
-[][][][][][][][][][][][][][][][] 
- []
-
-
+l.121 
+       [2]
 Overfull \hbox (2.83334pt too wide) in paragraph at lines 122--123
 []\T1/aer/m/n/9 In or-der to over-come the short-com-ings of ex-ist-ing ap-proa
 ches,
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (4.35205pt too wide) in paragraph at lines 129--130
@@ -1093,115 +1154,74 @@ Overfull \hbox (4.35205pt too wide) in paragraph at lines 129--130
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.92 
-      [4]
-Overfull \hbox (7.97734pt too wide) in paragraph at lines 128--129
-[][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (17.57744pt too wide) in paragraph at lines 128--129
-[][][][][][][][][][][][] 
- []
-
+l.73 \section{Instance Pointcuts}
+                                  [3 <C:/Users/hatunk/Google Drive/AOSD2013/ima
+ges/myonlineshop.png (PNG copy)>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (13.26472pt too wide) in paragraph at lines 131--133
+Overfull \hbox (13.26472pt too wide) in paragraph at lines 144--146
 \T1/aer/m/n/9 in-stance in the method ar-gu-ments and binds it to the \T1/pcr/m
 /n/9 instance
  []
-
-
-Overfull \hbox (7.97734pt too wide) in paragraph at lines 144--145
-[][][][][][][][][][][][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.161 
-       [5]
-Overfull \hbox (1.86258pt too wide) in paragraph at lines 162--164
+l.149 
+       [4]
+Overfull \hbox (1.86258pt too wide) in paragraph at lines 181--183
 \T1/aer/m/n/9 the set of \T1/pcr/m/n/9 Product \T1/aer/m/n/9 in-stances se-lect
 ed by \T1/pcr/m/n/9 lowSelling\T1/aer/m/n/9 . Note
  []
 
 
-Overfull \hbox (10.2501pt too wide) in paragraph at lines 162--164
+Overfull \hbox (10.2501pt too wide) in paragraph at lines 181--183
 \T1/aer/m/n/9 that this no-ta-tion will also se-lect sub-types of \T1/pcr/m/n/9
  BeautyProduct\T1/aer/m/n/9 . 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--173
+Underfull \hbox (badness 10000) in paragraph at lines 190--192
 [][]
  []
 
 
-Underfull \hbox (badness 6808) in paragraph at lines 171--173
+Underfull \hbox (badness 6808) in paragraph at lines 190--192
 [] [] [] [] [] \T1/aer/m/n/9 ([]
  []
 
-! Use of \gr@implitem doesn't match its definition.
-<recently read> .
-                 
-l.180 \ldots
-            
-If you say, e.g., `\def\a1{...}', then you must always
-put `1' after `\a', since control sequence names are
-made up of letters only. The macro here has not been
-followed by the required stuff, so I'm ignoring it.
-
-<images/types.png, id=188, 121.95563pt x 167.87718pt>
+<images/types.png, id=225, 121.95563pt x 167.87718pt>
 File: images/types.png Graphic file (type png)
  <use images/types.png>
-Underfull \hbox (badness 10000) in paragraph at lines 214--214
+Underfull \hbox (badness 10000) in paragraph at lines 233--233
 []\T1/aer/m/n/9 pc1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--214
+Underfull \hbox (badness 10000) in paragraph at lines 233--233
 []\T1/aer/m/n/9 pc2
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.214 }
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.214 }
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (1.55971pt too wide) in paragraph at lines 231--232
-[]\T1/aer/m/n/9 Let us de-fine a new in-stance point-cut as; $\OML/cmm/m/it/9 I
-P\OT1/cmr/m/n/9 3 \U/MnSymbolD/m/n/9   \OML/cmm/m/it/9 IP\OT1/cmr/m/n/9 1 [] \O
-ML/cmm/m/it/9 IP\OT1/cmr/m/n/9 2$\T1/aer/m/n/9 .
- []
+Underfull \vbox (badness 7256) has occurred while \output is active []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.244 \begin{align*}
-                     [6 <C:/Users/hatunk/Google Drive/AOSD2013/images/types.png
- (PNG copy)>]
-Underfull \vbox (badness 1460) has occurred while \output is active []
-
+l.248 \end{align}
+                  [5]
+Overfull \hbox (1.55971pt too wide) in paragraph at lines 250--251
+[]\T1/aer/m/n/9 Let us de-fine a new in-stance point-cut as; $\OML/cmm/m/it/9 I
+P\OT1/cmr/m/n/9 3 \U/MnSymbolD/m/n/9   \OML/cmm/m/it/9 IP\OT1/cmr/m/n/9 1 [] \O
+ML/cmm/m/it/9 IP\OT1/cmr/m/n/9 2$\T1/aer/m/n/9 .
+ []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1209,13 +1229,18 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \hbox (badness 2717) in paragraph at lines 343--345
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.357 
+       [6 <C:/Users/hatunk/Google Drive/AOSD2013/images/types.png (PNG copy)>]
+Underfull \hbox (badness 2717) in paragraph at lines 386--388
 [][] [] \T1/aer/m/n/9 ([] []
  []
 
 
-Underfull \hbox (badness 2717) in paragraph at lines 343--345
+Underfull \hbox (badness 2717) in paragraph at lines 386--388
 [][] [] \T1/aer/m/n/9 ([] []
  []
 
@@ -1223,197 +1248,170 @@ Underfull \hbox (badness 2717) in paragraph at lines 343--345
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (21.9307pt too wide) in paragraph at lines 352--356
-[]\T1/aer/m/n/9 For the dec-la-ra-tion [][][][][][][][][][][][][][][]
- []
-
-
-Overfull \hbox (5.8525pt too wide) in paragraph at lines 352--356
-[][][][][][][][][][][][][][][][][][][][][][][] \T1/aer/m/n/9 cre-ates
- []
-
-
-Overfull \hbox (45.98132pt too wide) in paragraph at lines 352--356
-\T1/aer/m/n/9 su-per-set dec-la-ra-tion [][][][][][][][][][][][][][][]
+Overfull \hbox (2.95297pt too wide) in paragraph at lines 395--399
+[][][][][][][][][][][][][][][][][][][][][][][] \T1/aer/m/n/9 cre-ates a sub-
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.356 
+l.409 
        [7]
-Overfull \hbox (1.17706pt too wide) in paragraph at lines 393--394
+Overfull \hbox (1.17706pt too wide) in paragraph at lines 437--438
 \T1/aer/m/n/9 An in-stance point-cut def-i-ni-tion de-fines two set change even
 ts,
  []
 
 
-Overfull \hbox (10.44643pt too wide) in paragraph at lines 393--394
+Overfull \hbox (10.44643pt too wide) in paragraph at lines 437--438
 \T1/aer/m/n/9 moved. In List-ing []13[], a be-fore ad-vice us-ing the \T1/pcr/m
 /n/9 outOfStock_-
  []
 
 
-Overfull \hbox (7.63112pt too wide) in paragraph at lines 393--394
+Overfull \hbox (7.63112pt too wide) in paragraph at lines 437--438
 \T1/pcr/m/n/9 Product \T1/aer/m/n/9 in-stance to be added and no-ti-fies the re
 -lated \T1/pcr/m/n/9 Vendor
  []
 
+LaTeX Font Info:    Font shape `T1/aess/m/it' in size <8> not available
+(Font)              Font shape `T1/aess/m/sl' tried instead on input line 478.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.394 
-       [8]
-Overfull \hbox (16.54869pt too wide) in paragraph at lines 423--424
-\T1/aer/m/n/9 in-stance point-cut \T1/pcr/m/n/9 outOfStock \T1/aer/m/n/9 is sho
-wn. On line 2, a \T1/pcr/m/n/9 Multiset
+l.500 public 
+             pointcut ${ipc}_remove(${Type} instance) : call(private static ...
+[8]
+Underfull \hbox (badness 1540) in paragraph at lines 514--514
+\T1/aer/m/n/9 chi-tec-ture for Java. See []$\T1/pcr/m/n/9 http : / / www . alia
+4j . org /
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Citation `Bockisch2012' on page \thepage  undefined on input lin
+e 514.
 
 
-Overfull \hbox (12.67023pt too wide) in paragraph at lines 450--451
-[]\T1/aer/m/n/9 For adding el-e-ments to the set, \T1/pcr/m/n/9 add_-outOfStock
-_-set \T1/aer/m/n/9 method
+LaTeX Warning: Citation `Bockisch2011' on page \thepage  undefined on input lin
+e 514.
+
+! Undefined control sequence.
+<recently read> \LIAM 
+                      
+l.515 ...atching declarations, called \emph{\LIAM}
+                                                  , and a framework for exec...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (5.1445pt too wide) in paragraph at lines 514--517
+\T1/aer/m/n/9 work for ad-vanced dis-patch-ing lan-guages. At its core, ALIA4J
  []
 
 
-Overfull \hbox (28.19502pt too wide) in paragraph at lines 450--451
-\T1/aer/m/n/9 (List-ing []16[], lines 18--21) and for re-mov-ing \T1/pcr/m/n/9 
-remove_-outOfStock_-
+LaTeX Warning: Citation `Bockisch2007' on page \thepage  undefined on input lin
+e 521.
+
+
+Overfull \hbox (8.40964pt too wide) in paragraph at lines 566--567
+ [][] 
  []
 
 
-Overfull \hbox (14.40858pt too wide) in paragraph at lines 468--469
-\T1/aer/m/n/9 the set ac-cess prop-erty by ref-er-enc-ing \T1/pcr/m/n/9 MyAspec
-t.outOfStock\T1/aer/m/n/9 .
- []
-
-
-Overfull \hbox (11.40204pt too wide) in paragraph at lines 468--469
-\T1/aer/m/n/9 This state-ment is trans-formed into a ref-er-ence to the \T1/pcr
-/m/n/9 Multiset
+Overfull \hbox (2.48155pt too wide) in paragraph at lines 586--590
+\T1/aer/m/n/9 instance-pointcut-reference ex-pres-sion (cf. line []9[])---which
+ can
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.472 \section{Related Work}
-                             [9]
-("C:\Users\hatunk\Google Drive\AOSD2013\llncs.bbl"pdfTeX warning (ext4): destin
-ation with the same identifier (name{page.}) has been already used, duplicate i
-gnored
-<to be read again> 
-                   \relax 
-l.66 
-      [10])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 491.
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.491 \end{document}
-                     [11
-
+l.600 		${
+          ipc}_add_before = Util.orSpecializations(ipRefExpr, simpleIPExpr);...
+[9]
+Overfull \hbox (1.79263pt too wide) in paragraph at lines 613--619
+\T1/aer/m/n/9 uses the set of Spe-cial-iza-tions re-turned by the [][][][][][][
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 491.
+ []
+
+
+Overfull \hbox (1.84793pt too wide) in paragraph at lines 613--619
+\T1/aer/m/n/9 method (cf. line []4[]) and spec-i-fies the [][][][][][][] method
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.718 
+       [10] ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.bbl")
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 727.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.727 \end{document}
+                     [11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 727.
  ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 491.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 727.
+Package rerunfilecheck Info: File `llncs.out' has not changed.
+(rerunfilecheck)             Checksum: 853F843FFF97D3E16D4830AB7718D2D7;1386.
 
 
-Package rerunfilecheck Warning: File `llncs.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: Checksums for `llncs.out':
-(rerunfilecheck)             Before: 232EA65C8FED635B454FEEFFFB2BA094;830
-(rerunfilecheck)             After:  1E9AD7C926116C3BE71CA114D866ECE5;742.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 19478 strings out of 494019
- 334718 string characters out of 3143870
- 506365 words of memory out of 3000000
- 22090 multiletter control sequences out of 15000+200000
- 65378 words of font info for 105 fonts, out of 3000000 for 9000
+ 21136 strings out of 494019
+ 383274 string characters out of 3143870
+ 567546 words of memory out of 3000000
+ 23656 multiletter control sequences out of 15000+200000
+ 74764 words of font info for 117 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 56i,25n,97p,1437b,1458s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{figure.caption.24} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.16} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.1.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.1.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.3.4} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.3.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.3.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.3.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.1.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.2.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.2.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.1.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.1.1} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.1} has been referenced but does not exist, 
-replaced by a fixed one
-
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{C:/Program Files (x
-86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/mnsymbol/MnSymbol8.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/mnsymbol/MnSymbol9.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmss8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrb8a.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/urw/times/utmri8a.pfb>
-Output written on llncs.pdf (11 pages, 344744 bytes).
+ 56i,25n,97p,1437b,1752s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{C:
+/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc} <C:\Users\hatunk\AppData\Loca
+l\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm0800.pk><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol8.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol9.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmsl8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmsl9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmss8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmssi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti
+9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on llncs.pdf (11 pages, 435791 bytes).
 PDF statistics:
- 485 PDF objects out of 1000 (max. 8388607)
- 226 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 606 PDF objects out of 1000 (max. 8388607)
+ 257 named destinations out of 1000 (max. 500000)
+ 279 words of extra memory for PDF output out of 10000 (max. 10000000)
 

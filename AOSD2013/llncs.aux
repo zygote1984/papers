@@ -1,16 +1,19 @@
 \relax 
-\ifx\hyper@anchor\@undefined
-\global \let \oldcontentsline\contentsline
-\gdef \contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
-\global \let \oldnewlabel\newlabel
-\gdef \newlabel#1#2{\newlabelxx{#1}#2}
-\gdef \newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
-\AtEndDocument{\let \contentsline\oldcontentsline
-\let \newlabel\oldnewlabel}
-\else
-\global \let \hyper@last\relax 
-\fi
-
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
 \citation{kiczales2001overview}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{\thepage }{section.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Motivation}{\thepage }{section.2}}
@@ -47,8 +50,6 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Syntax for instance pointcut composition\relax }}{\thepage }{figure.caption.13}}
 \newlabel{fig:grammar2}{{3}{\thepage }{Syntax for instance pointcut composition\relax \relax }{figure.caption.13}{}}
 \@writefile{toc}{\contentsline {paragraph}{Semantics}{\thepage }{section*.15}}
-\newlabel{i1}{{1}{\thepage }{Semantics\relax }{equation.3.1}{}}
-\newlabel{i2}{{2}{\thepage }{Semantics\relax }{equation.3.2}{}}
 \newlabel{fig:types}{{4a}{\thepage }{Subfigure 4a\relax }{subfigure.4.1}{}}
 \newlabel{sub@fig:types}{{(a)}{a}{Subfigure 4a\relax }{subfigure.4.1}{}}
 \newlabel{table1}{{4b}{\thepage }{Subfigure 4b\relax }{subfigure.4.2}{}}
@@ -57,6 +58,8 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {A simple type hierarchy}}}{\thepage }{subfigure.4.1}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Instance pointcut compositions and effect on the captured instance type}}}{\thepage }{subfigure.4.2}}
 \newlabel{fig:compotypes}{{4}{\thepage }{An example to illustrate composition's effect on types\relax \relax }{figure.caption.14}{}}
+\newlabel{i1}{{1}{\thepage }{Semantics\relax }{equation.3.1}{}}
+\newlabel{i2}{{2}{\thepage }{Semantics\relax }{equation.3.2}{}}
 \newlabel{i3add}{{3}{\thepage }{Semantics\relax }{equation.3.3}{}}
 \newlabel{ip3step}{{4}{\thepage }{Semantics\relax }{equation.3.4}{}}
 \newlabel{ip3step}{{5}{\thepage }{Semantics\relax }{equation.3.5}{}}
@@ -92,11 +95,11 @@
 \newlabel{lst:management:added}{{9}{\thepage }{Template of generated code for instance set management}{lstnumber.14.9}{}}
 \newlabel{lst:management:removed}{{15}{\thepage }{Template of generated code for instance set management}{lstnumber.14.15}{}}
 \newlabel{lst:management:bookkeeping:end}{{16}{\thepage }{Template of generated code for instance set management}{lstnumber.14.16}{}}
-\newlabel{lst:management:added:pc}{{22}{\thepage }{Template of generated code for instance set management}{lstnumber.14.22}{}}
-\newlabel{lst:management:removed:pc}{{23}{\thepage }{Template of generated code for instance set management}{lstnumber.14.23}{}}
 \citation{Bockisch2012}
 \citation{Bockisch2011}
 \citation{Bockisch2007}
+\newlabel{lst:management:added:pc}{{22}{\thepage }{Template of generated code for instance set management}{lstnumber.14.22}{}}
+\newlabel{lst:management:removed:pc}{{23}{\thepage }{Template of generated code for instance set management}{lstnumber.14.23}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Meta-model of a Specialization in ALIA4J.\relax }}{\thepage }{figure.caption.24}}
 \newlabel{fig:specialization}{{6}{\thepage }{Meta-model of a Specialization in ALIA4J.\relax \relax }{figure.caption.24}{}}
 \newlabel{lst:example:compo:ref}{{15}{\thepage }{Example of an instance pointcut using composition and type refinement\relax }{lstlisting.15}{}}
@@ -106,16 +109,13 @@
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {16}Generated code for creating the LIAM model for the add/before pointcut of the example instance pointcut.}{\thepage }{lstlisting.16}}
 \newlabel{lst:example:simple}{{4}{\thepage }{Generated code for creating the LIAM model for the add/before pointcut of the example instance pointcut}{lstnumber.16.4}{}}
 \newlabel{lst:example:ref}{{6}{\thepage }{Generated code for creating the LIAM model for the add/before pointcut of the example instance pointcut}{lstnumber.16.6}{}}
-\newlabel{lst:example:restriction}{{7}{\thepage }{Generated code for creating the LIAM model for the add/before pointcut of the example instance pointcut}{lstnumber.16.7}{}}
-\newlabel{lst:example:composition}{{9}{\thepage }{Generated code for creating the LIAM model for the add/before pointcut of the example instance pointcut}{lstnumber.16.9}{}}
 \citation{sakurai2004association}
 \citation{pearce2006relationship}
 \citation{bodden2008relational}
 \citation{kawauchi:aosd-aosdsec04}
 \citation{cluet1998designing}
-\citation{Gasiunas2011}
-\citation{Bergmans2001b}
-\citation{masuharafine}
+\newlabel{lst:example:restriction}{{7}{\thepage }{Generated code for creating the LIAM model for the add/before pointcut of the example instance pointcut}{lstnumber.16.7}{}}
+\newlabel{lst:example:composition}{{9}{\thepage }{Generated code for creating the LIAM model for the add/before pointcut of the example instance pointcut}{lstnumber.16.9}{}}
 \newlabel{lst:deployment}{{17}{\thepage }{Deployment of the bookkeeping for an instance pointcut}{lstlisting.17}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {17}Deployment of the bookkeeping for an instance pointcut.}{\thepage }{lstlisting.17}}
 \newlabel{lst:deploy:deploy}{{2}{\thepage }{Deployment of the bookkeeping for an instance pointcut}{lstnumber.17.2}{}}
@@ -124,18 +124,20 @@
 \newlabel{lst:deploy:schedule}{{6}{\thepage }{Deployment of the bookkeeping for an instance pointcut}{lstnumber.17.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Related Work}{\thepage }{section.4}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion and Future Work}{\thepage }{section.5}}
+\citation{Gasiunas2011}
+\citation{Bergmans2001b}
+\citation{masuharafine}
 \citation{hannemann:oopsla02}
 \bibstyle{splncs}
 \bibdata{biblio}
 \bibcite{kiczales2001overview}{1}
 \bibcite{masuharafine}{2}
-\bibcite{bourrillionguava}{3}
-\bibcite{sakurai2004association}{4}
-\bibcite{pearce2006relationship}{5}
-\bibcite{bodden2008relational}{6}
-\bibcite{kawauchi:aosd-aosdsec04}{7}
-\bibcite{cluet1998designing}{8}
-\bibcite{Gasiunas2011}{9}
-\bibcite{Bergmans2001b}{10}
-\bibcite{hannemann:oopsla02}{11}
+\bibcite{sakurai2004association}{3}
+\bibcite{pearce2006relationship}{4}
+\bibcite{bodden2008relational}{5}
+\bibcite{kawauchi:aosd-aosdsec04}{6}
+\bibcite{cluet1998designing}{7}
+\bibcite{Gasiunas2011}{8}
+\bibcite{Bergmans2001b}{9}
+\bibcite{hannemann:oopsla02}{10}
 \@writefile{toc}{\contentsline {section}{\numberline {6}References}{\thepage }{section.6}}

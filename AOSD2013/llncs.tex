@@ -133,7 +133,12 @@ For two operations that are executed sequentially, the end of the first and the 
 
 
 \begin{lstlisting}[float=h!, caption={A basic instance pointcut declaration with add and remove expressions}, label={lst:basic}]
-instance pointcut customers<Customer>: after(call(SessionManager.createCustomer(..)) && returning(instance)) UNTIL before(call(SessionManager.destroyCustomer(..)) && args(instance))
+static instance pointcut customers<Customer>: 
+	after(call(SessionManager.createCustomer(..)) && 
+				returning(instance)) 
+	UNTIL 
+	before(call(SessionManager.destroyCustomer(..)) && 
+				args(instance))
 \end{lstlisting}
 
 The instance pointcut in Listing~\ref{lst:basic} shows a basic example. The left-hand side of the instance pointcut indicates that the pointcut is called \texttt{customers} and it is interested in selecting \texttt{Customer} objects. 
@@ -147,9 +152,12 @@ On the right hand side, there are two expressions separated by the \texttt{UNTIL
 An instance pointcut reifies an object set as a \emph{multiset}. Multisets allow multiple appearances of an object. The instance pointcut shown in Listing~\ref{lst:wishlisted} selects \texttt{Product} instances, which are added to the wishlist of a \texttt{Customer}. The remove expression removes a \texttt{Product} instance if it is removed from the wish-list of a \texttt{Customer}. With this pointcut we would like to represent the currently wishlisted products. Multiset makes sure that \texttt{Product}s can be added for each add to wishlist operation. When the same product is added to wishlists of two different customers, and if one of them removes it from the wishlist, then there's still one entry of that instance is left in the set.  If instance pointcuts only supported a set then as soon as a customer removes a product from his wishlist, its only copy will be removed and it will appear removed from all customers' wishlists.
 
 \begin{lstlisting}[float=h!, caption={An instance pointcut utilizing multiset property}, label={lst:wishlisted}]
-instance pointcut multi_wish<Product>: 
-before(call(Customer.addToWishList(..)) && args(instance))
- UNTIL before(call(Customer.removeFromWishList(..)) && args(instance))
+static instance pointcut multi_wish<Product>: 
+	before(call(Customer.addToWishList(..)) && 
+				args(instance))
+	UNTIL 
+	before(call(Customer.removeFromWishList(..)) && 
+				args(instance))
 \end{lstlisting}
 
 
@@ -158,13 +166,16 @@ before(call(Customer.addToWishList(..)) && args(instance))
 Instance pointcuts can be referenced by other instance pointcuts, they can be refined to create a subset or broadened to create a superset. 
 
 \begin{lstlisting}[float=h!, caption={An instance pointcut selecting low-selling products}, label={lst:ref1}]
-instance pointcut lowSelling<Product>: after(call(* OnlineShop.setLowSelling(..))  && args(instance));
+static instance pointcut lowSelling<Product>: 
+	after(call(* OnlineShop.setLowSelling(..)) && 
+				args(instance));
 \end{lstlisting}
 
 \subsubsection{Referencing and Type Refinement}
 Instance pointcuts are referenced by their name. Optionally the reference can also take an additional statement for \emph{type refinement}, which selects a subset of the instance pointcut of refined type. Type refinements require that the refined type is a subtype of the original instance type. For example the instance pointcut \texttt{lowSelling} (Listing~\ref{lst:ref1}) can be refined as in the following:
 \begin{lstlisting}[float=h!]
-instance pointcut lowSellingBeauty<BeautyProduct>: lowSelling<BeautyProduct>
+static instance pointcut lowSellingBeauty<BeautyProduct>: 
+	lowSelling<BeautyProduct>
 \end{lstlisting}
 
 This selects the subset of \texttt{BeautyProduct} instances from the set of \texttt{Product} instances selected by \texttt{lowSelling}. 
@@ -177,7 +188,7 @@ It is also possible to compose instance pointcuts to obtain a new instance point
 \begin{figure}[h]
 \begin{grammar}
 <instance-pointcut> ::= `instance pointcut' <name> `<' <instance-type> `>' `:'
-(<ip-ref-expr> <boolean-operator>)? (<ip-expr> `UNTIL' <ip-expr>)? 
+(<ip-ref-expr> <boolean-operator>)? (<ip-expr> (`UNTIL' <ip-expr>)?)? 
 
 <boolean-operator> ::= `&&' \alt `||'
 
@@ -312,33 +323,57 @@ IP5 & = IP1\;||\;(ba_{new}\;UNTIL\;ar_{new}) \\
 Let us illustrate these concepts with a concrete example. The first instance pointcut  (\texttt{lowSelling})  shown in Listing~\ref{lst:refmain} selects the \texttt{Product}s which are marked as \emph{low-selling} by the \texttt{OnlineShop} class and remove those products which are discontinued by the \texttt{Vendor}. The second instance pointcut (\texttt{wishList})  selects the \texttt{BookProduct}s which are added to the wishlist of a \texttt{Customer} and removes them when they are out of the wishlist.
 
 \begin{lstlisting}[float=h!, caption={Two instance pointcuts composed to obtain a new one}, label={lst:refmain}]
-instance pointcut lowSelling<Product>: after(call(* OnlineShop.setLowSelling(..))  && args(instance)) UNTIL before(call(* Vendor.discontinue(..)) && args(instance));
-instance pointcut wishList<BookProduct>: after(call(* Customer.addToWishList(..)) && args(instance)) UNTIL before(call(* Customer.removeFromWishList(..)) && args(instance)) ;
-instance pointcut composition<Product>: lowSelling || purchase;
+static instance pointcut lowSelling<Product>: 
+	after(call(* OnlineShop.setLowSelling(..)) &&
+				args(instance)) 
+	UNTIL 
+	before(call(* Vendor.discontinue(..)) &&
+				args(instance));
+				
+static instance pointcut wishList<BookProduct>: 
+	after(call(* Customer.addToWishList(..)) &&
+				args(instance)) 
+	UNTIL 
+	before(call(* Customer.removeFromWishList(..)) &&
+				args(instance)) ;
+				
+static instance pointcut composition<Product>: 
+	lowSelling || purchase;
 \end{lstlisting}
 
 The new instance pointcut \texttt{composition} is the result of an $\|$ operation between \texttt{lowSelling} and \texttt{wishList}. Then the add and remove expressions of \texttt{composition} is created by factoring out the \texttt{args} pointcut and the composed instance pointcut expression is shown in Listing~\ref{lst:newpc}. 
 
 \begin{lstlisting}[float=h!, caption={The new instance pointcut after composition}, label={lst:newpc}]
-instance pointcut composition<Product>: 
-after((call(* OnlineShop.setLowSelling(..)) || call(* Customer.addToWishList(..))) && args(instance)) 
-UNTIL 
-before((call(* Vendor.discontinue(..)) || call(* Customer.removeFromWishList(..))) && args(instance))
+static instance pointcut composition<Product>: 
+	after((call(* OnlineShop.setLowSelling(..)) || call(* Customer.addToWishList(..))) && 
+				args(instance)) 
+	UNTIL 
+	before((call(* Vendor.discontinue(..)) || call(* Customer.removeFromWishList(..))) && 
+				args(instance))
 \end{lstlisting}
 
 
 Similarly we can define a new instance pointcut (Listing~\ref{lst:comp2}), this time by composing an instance pointcut with an expression element, then the \texttt{composition2} instance pointcut has the pointcut expression shown in Listing~\ref{lst:comp2exp}.
 
 \begin{lstlisting}[float=h!, caption={An instance pointcut and an expression is composed}, label={lst:comp2}]
-instance pointcut composition2<Product>: lowSelling && (after(if(instance.getPrice() > 10)) UNTIL before(call(* OnlineShop.removeFromShop(..)) && args(instance));
+static instance pointcut composition2<Product>: 
+	lowSelling && 
+	(after(if(instance.getPrice() > 10)) 
+	UNTIL 
+	before(call(* OnlineShop.removeFromShop(..)) && 
+				args(instance));
 \end{lstlisting}
 
 
 \begin{lstlisting}[float=h!, caption={The composition2 instance pointcut after composition}, label={lst:comp2exp}]
-instance pointcut composition2<Product>: 
-(call(* OnlineShop.setLowSelling(..))  && args(instance) && if(instance.getPrice() > 10)) 
-UNTIL
-before((call(* Vendor.discontinue(..)) || call(* OnlineShop.removeFromShop(..))) && args(instance));
+static instance pointcut composition2<Product>: 
+	after(call(* OnlineShop.setLowSelling(..)) && 
+				args(instance) && 
+				if(instance.getPrice() > 10)) 
+	UNTIL
+	before((call(* Vendor.discontinue(..)) || 
+				call(* OnlineShop.removeFromShop(..))) && 
+				args(instance));
 \end{lstlisting}
 
 
@@ -374,7 +409,8 @@ Up to now we have explained the syntax and semantics for instance pointcuts. In 
 
 \begin{lstlisting}[float=h!, caption={An instance pointcut for out of stock products}, label={lst:usage}]
 aspect MyAspect{
-	static instance pointcut outOfStock<Product>: after(call(* Product.outOfStock(..)) && target(instance)) UNTIL after(call(* Vendor.stock(..)) && args(instance));
+	static instance pointcut outOfStock<Product>: 
+		after(call(* Product.outOfStock(..)) && target(instance)) UNTIL after(call(* Vendor.stock(..)) && args(instance));
 	...
 }
 \end{lstlisting}
@@ -538,7 +574,7 @@ We have extended this library to also understand the \lstinline{returning} point
 All these parts are optional; a missing part can be represented as an empty set of Specializations in LIAM.
 
 \begin{lstlisting}[caption={Example of an instance pointcut using composition and type refinement}, label=lst:example:compo:ref,moreemph=instance]
-instance pointcut ${ipc}<${Type}>:
+static instance pointcut ${ipc}<${Type}>:
 ipc1<${Type2}> || ~\label{lst:example:ip:or}~
 before(${pc_add_before}) || after(${pc_add_after}) UNTIL 
 before(${pc_remove_before}) || after(${pc_remove_after};
