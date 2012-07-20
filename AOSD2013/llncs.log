@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.6.20)  19 JUL 2012 13:52
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.6.20)  20 JUL 2012 12:17
 entering extended mode
 **llncs.tex
 ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.tex"
@@ -1099,37 +1099,31 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<images/myonlineshop.png, id=117, 687.56876pt x 256.96pt>
+<images/myonlineshop.png, id=114, 687.56876pt x 256.96pt>
 File: images/myonlineshop.png Graphic file (type png)
 
 <use images/myonlineshop.png>
-Overfull \hbox (10.61049pt too wide) in paragraph at lines 51--52
+Overfull \hbox (10.61049pt too wide) in paragraph at lines 58--59
 \T1/aer/m/n/9 a new \T1/pcr/m/n/9 Item \T1/aer/m/n/9 in-stance is cre-ated and 
 added to the \T1/pcr/m/n/9 ShoppingBag
  []
 
-
-Overfull \hbox (68.98314pt too wide) in paragraph at lines 54--56
-\T1/pcr/m/n/9 happyItems \T1/aer/m/n/9 set, which is ac-cessed through the \T1/
-pcr/m/n/9 shoppingBag.happyItems
- []
-
-LaTeX Font Info:    Try loading font information for T1+aess on input line 57.
+LaTeX Font Info:    Try loading font information for T1+aess on input line 64.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aess.fd"
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 )
-Overfull \hbox (26.62178pt too wide) in paragraph at lines 83--86
+Overfull \hbox (26.62178pt too wide) in paragraph at lines 90--93
 []\T1/aer/m/n/9 The OO-solution is scat-tered among \T1/pcr/m/n/9 ShoppingBag \
 T1/aer/m/n/9 and \T1/pcr/m/n/9 Customer
  []
 
-LaTeX Font Info:    Try loading font information for TS1+aess on input line 94.
-
-LaTeX Font Info:    No file TS1aess.fd. on input line 94.
+LaTeX Font Info:    Try loading font information for TS1+aess on input line 101
+.
+LaTeX Font Info:    No file TS1aess.fd. on input line 101.
 
 LaTeX Font Warning: Font shape `TS1/aess/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textasteriskcentered' on input line 94.
+(Font)              for symbol `textasteriskcentered' on input line 101.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1138,25 +1132,20 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.121 
+l.130 
        [2]
-Overfull \hbox (2.83334pt too wide) in paragraph at lines 122--123
+Overfull \hbox (2.83334pt too wide) in paragraph at lines 131--132
 []\T1/aer/m/n/9 In or-der to over-come the short-com-ings of ex-ist-ing ap-proa
 ches,
- []
-
-
-Overfull \hbox (4.35205pt too wide) in paragraph at lines 129--130
-\T1/aer/m/n/9 sub-sets, su-per-sets or com-po-si-tions is re-quired. 
  []
 
 )pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.73 \section{Instance Pointcuts}
-                                  [3 <C:/Users/hatunk/Google Drive/AOSD2013/ima
-ges/myonlineshop.png (PNG copy)>]
+l.76 
+      [3 <C:/Users/hatunk/Google Drive/AOSD2013/images/myonlineshop.png (PNG co
+py)>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1170,7 +1159,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.149 
+l.153 
        [4]
 Overfull \hbox (1.86258pt too wide) in paragraph at lines 181--183
 \T1/aer/m/n/9 the set of \T1/pcr/m/n/9 Product \T1/aer/m/n/9 in-stances se-lect
@@ -1193,9 +1182,19 @@ Underfull \hbox (badness 6808) in paragraph at lines 190--192
 [] [] [] [] [] \T1/aer/m/n/9 ([]
  []
 
-<images/types.png, id=225, 121.95563pt x 167.87718pt>
+<images/types.png, id=223, 121.95563pt x 167.87718pt>
 File: images/types.png Graphic file (type png)
  <use images/types.png>
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+[]\T1/aer/m/n/9 (a) |A sim-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+\T1/aer/m/n/9 ple type
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 233--233
 []\T1/aer/m/n/9 pc1
  []
@@ -1206,23 +1205,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 233--233
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \vbox (badness 7256) has occurred while \output is active []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.248 \end{align}
-                  [5]
-Overfull \hbox (1.55971pt too wide) in paragraph at lines 250--251
+Overfull \hbox (1.55971pt too wide) in paragraph at lines 251--252
 []\T1/aer/m/n/9 Let us de-fine a new in-stance point-cut as; $\OML/cmm/m/it/9 I
 P\OT1/cmr/m/n/9 3 \U/MnSymbolD/m/n/9   \OML/cmm/m/it/9 IP\OT1/cmr/m/n/9 1 [] \O
 ML/cmm/m/it/9 IP\OT1/cmr/m/n/9 2$\T1/aer/m/n/9 .
  []
 
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.252 
+       [5]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1233,74 +1227,47 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.357 
-       [6 <C:/Users/hatunk/Google Drive/AOSD2013/images/types.png (PNG copy)>]
-Underfull \hbox (badness 2717) in paragraph at lines 386--388
-[][] [] \T1/aer/m/n/9 ([] []
- []
-
-
-Underfull \hbox (badness 2717) in paragraph at lines 386--388
-[][] [] \T1/aer/m/n/9 ([] []
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (2.95297pt too wide) in paragraph at lines 395--399
-[][][][][][][][][][][][][][][][][][][][][][][] \T1/aer/m/n/9 cre-ates a sub-
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.409 
-       [7]
-Overfull \hbox (1.17706pt too wide) in paragraph at lines 437--438
+l.366 \end{lstlisting}
+                       [6 <C:/Users/hatunk/Google Drive/AOSD2013/images/types.p
+ng (PNG copy)>]
+Overfull \hbox (1.17706pt too wide) in paragraph at lines 440--441
 \T1/aer/m/n/9 An in-stance point-cut def-i-ni-tion de-fines two set change even
 ts,
  []
 
 
-Overfull \hbox (10.44643pt too wide) in paragraph at lines 437--438
+Overfull \hbox (10.44643pt too wide) in paragraph at lines 440--441
 \T1/aer/m/n/9 moved. In List-ing []13[], a be-fore ad-vice us-ing the \T1/pcr/m
 /n/9 outOfStock_-
  []
 
 
-Overfull \hbox (7.63112pt too wide) in paragraph at lines 437--438
+Overfull \hbox (7.63112pt too wide) in paragraph at lines 440--441
 \T1/pcr/m/n/9 Product \T1/aer/m/n/9 in-stance to be added and no-ti-fies the re
 -lated \T1/pcr/m/n/9 Vendor
  []
 
-LaTeX Font Info:    Font shape `T1/aess/m/it' in size <8> not available
-(Font)              Font shape `T1/aess/m/sl' tried instead on input line 478.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.500 public 
-             pointcut ${ipc}_remove(${Type} instance) : call(private static ...
-[8]
-Underfull \hbox (badness 1540) in paragraph at lines 514--514
+l.463 
+       [7]
+LaTeX Font Info:    Font shape `T1/aess/m/it' in size <8> not available
+(Font)              Font shape `T1/aess/m/sl' tried instead on input line 481.
+
+Underfull \hbox (badness 1540) in paragraph at lines 517--517
 \T1/aer/m/n/9 chi-tec-ture for Java. See []$\T1/pcr/m/n/9 http : / / www . alia
 4j . org /
  []
 
-
-LaTeX Warning: Citation `Bockisch2012' on page \thepage  undefined on input lin
-e 514.
-
-
-LaTeX Warning: Citation `Bockisch2011' on page \thepage  undefined on input lin
-e 514.
-
 ! Undefined control sequence.
 <recently read> \LIAM 
                       
-l.515 ...atching declarations, called \emph{\LIAM}
+l.518 ...atching declarations, called \emph{\LIAM}
                                                   , and a framework for exec...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1308,62 +1275,63 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \hbox (5.1445pt too wide) in paragraph at lines 514--517
-\T1/aer/m/n/9 work for ad-vanced dis-patch-ing lan-guages. At its core, ALIA4J
- []
-
-
-LaTeX Warning: Citation `Bockisch2007' on page \thepage  undefined on input lin
-e 521.
-
-
-Overfull \hbox (8.40964pt too wide) in paragraph at lines 566--567
- [][] 
- []
-
-
-Overfull \hbox (2.48155pt too wide) in paragraph at lines 586--590
-\T1/aer/m/n/9 instance-pointcut-reference ex-pres-sion (cf. line []9[])---which
- can
- []
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.600 		${
-          ipc}_add_before = Util.orSpecializations(ipRefExpr, simpleIPExpr);...
-[9]
-Overfull \hbox (1.79263pt too wide) in paragraph at lines 613--619
+l.530 
+       [8]
+Overfull \hbox (8.40964pt too wide) in paragraph at lines 569--570
+ [][] 
+ []
+
+
+Overfull \hbox (2.48155pt too wide) in paragraph at lines 589--593
+\T1/aer/m/n/9 instance-pointcut-reference ex-pres-sion (cf. line []9[])---which
+ can
+ []
+
+
+Overfull \hbox (1.79263pt too wide) in paragraph at lines 616--622
 \T1/aer/m/n/9 uses the set of Spe-cial-iza-tions re-turned by the [][][][][][][
 ]
  []
 
 
-Overfull \hbox (1.84793pt too wide) in paragraph at lines 613--619
+Overfull \hbox (1.84793pt too wide) in paragraph at lines 616--622
 \T1/aer/m/n/9 method (cf. line []4[]) and spec-i-fies the [][][][][][][] method
 
  []
 
+
+Underfull \vbox (badness 5924) has occurred while \output is active []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.718 
-       [10] ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.bbl")
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 727.
+l.643 
+       [9] ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.bbl"pdfTeX warning (ex
+t4): destination with the same identifier (name{page.}) has been already used, 
+duplicate ignored
+<to be read again> 
+                   \relax 
+l.25 
+      [10])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 730.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.727 \end{document}
-                     [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 727.
+l.730 \end{document}
+                     [11
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 730.
  ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 727.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 730.
 Package rerunfilecheck Info: File `llncs.out' has not changed.
-(rerunfilecheck)             Checksum: 853F843FFF97D3E16D4830AB7718D2D7;1386.
+(rerunfilecheck)             Checksum: 72C901564FE9C74525FB0F539BF73FD1;1292.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1373,13 +1341,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 21136 strings out of 494019
- 383274 string characters out of 3143870
- 567546 words of memory out of 3000000
- 23656 multiletter control sequences out of 15000+200000
+ 21130 strings out of 494019
+ 383223 string characters out of 3143870
+ 565570 words of memory out of 3000000
+ 23643 multiletter control sequences out of 15000+200000
  74764 words of font info for 117 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 56i,25n,97p,1437b,1752s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,25n,97p,1437b,1727s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{C:
 /Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{C:/Program F
@@ -1409,9 +1377,9 @@ mti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti
  Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on llncs.pdf (11 pages, 435791 bytes).
+Output written on llncs.pdf (11 pages, 437523 bytes).
 PDF statistics:
- 606 PDF objects out of 1000 (max. 8388607)
- 257 named destinations out of 1000 (max. 500000)
- 279 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 613 PDF objects out of 1000 (max. 8388607)
+ 264 named destinations out of 1000 (max. 500000)
+ 271 words of extra memory for PDF output out of 10000 (max. 10000000)
 

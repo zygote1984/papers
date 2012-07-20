@@ -9,12 +9,11 @@
 \BOOKMARK [2][-]{subsection.3.2}{Refinement and Composition}{section.3}% 9
 \BOOKMARK [3][-]{subsubsection.3.2.1}{Referencing and Type Refinement}{subsection.3.2}% 10
 \BOOKMARK [3][-]{subsubsection.3.2.2}{Instance Pointcut Composition}{subsection.3.2}% 11
-\BOOKMARK [3][-]{subsubsection.3.2.3}{Subset and Superset Relationships}{subsection.3.2}% 12
-\BOOKMARK [3][-]{subsubsection.3.2.4}{Checking}{subsection.3.2}% 13
-\BOOKMARK [2][-]{subsection.3.3}{Using Instance Pointcuts}{section.3}% 14
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Set Access}{subsection.3.3}% 15
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Set Monitoring}{subsection.3.3}% 16
-\BOOKMARK [2][-]{subsection.3.4}{Compilation of Instance Pointcuts}{section.3}% 17
-\BOOKMARK [1][-]{section.4}{Related Work}{}% 18
-\BOOKMARK [1][-]{section.5}{Conclusion and Future Work}{}% 19
-\BOOKMARK [1][-]{section.6}{References}{}% 20
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Checking}{subsection.3.2}% 12
+\BOOKMARK [2][-]{subsection.3.3}{Using Instance Pointcuts}{section.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Set Access}{subsection.3.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Set Monitoring}{subsection.3.3}% 15
+\BOOKMARK [2][-]{subsection.3.4}{Compilation of Instance Pointcuts}{section.3}% 16
+\BOOKMARK [1][-]{section.4}{Related Work}{}% 17
+\BOOKMARK [1][-]{section.5}{Conclusion and Future Work}{}% 18
+\BOOKMARK [1][-]{section.6}{References}{}% 19

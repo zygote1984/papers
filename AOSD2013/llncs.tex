@@ -56,7 +56,7 @@
 
 
 \title{Instance Pointcuts:}
-\subtitle{An Aspect-Oriented Mechanism \\for \\Maintaining Object Categories}
+\subtitle{An Aspect-Oriented Mechanism for Maintaining Object Categories}
 
 \numberofauthors{1}
 \author{
@@ -211,10 +211,10 @@ When composing two instance pointcuts with sibling types, for the \&\& operation
 
 %The composition also has an effect on the types of the instances that are added to the set. To better explain this effect we have created a small example, where a members of a simple type hierarchy (Figure~\ref{fig:types}) are used in instance pointcuts. Table~\ref{table1} shows four distinct cases. In the first case we compose two instance pointcuts \texttt{pc1<B>} and \texttt{pc2<C>} with an \&\& operation, the resulting instance pointcut from this composition can only select the narrower type \texttt{C} since the composed expression is stricter and the type restriction comes from \texttt{pc2}. However with $\|$ operation we can capture \texttt{B} types as well as \texttt{C} types, so the resulting composition will select a mixture. In the second row a case with sibling types are shown. For the \&\& operation the resulting composition cannot select any types since the types \texttt{A} and \texttt{B} cannot have a common instance. The $\|$ operation will again select a mix of instances of type \texttt{A} and \texttt{B}, then the instance type for the composed instance pointcut should be \texttt{R} to contain the subtypes.
 
-\begin{figure}[h!]
+\begin{figure*}%[h]
 \centering
 \subfloat[A simple type hierarchy]{
-\includegraphics[width=0.13\textwidth]{images/types.png}
+\includegraphics[width=0.10\textwidth]{images/types.png}
 \label{fig:types}
 }
 \hspace{40pt}
@@ -231,9 +231,10 @@ B & A & $\emptyset$ & R\\[1ex]
 \hline 
 \end{tabular}
 }
+\vspace{10pt}
 \caption{An example to illustrate composition's effect on types}
 \label{fig:compotypes}
-\end{figure}
+\end{figure*}
 
 
 \paragraph{Semantics}
@@ -378,31 +379,33 @@ static instance pointcut composition2<Product>:
 
 
 
-\subsubsection{Subset and Superset Relationships}
-There are two mechanisms to define relationships between instance pointcuts, \emph{subsetting} and \emph{supersetting}. The declaration of these relationships impose some restrictions on the \emph{referencing} instance pointcut. In Figure~\ref{fig:grammar3} the relationship syntax is shown.
-
-\begin{figure}[h]
-\begin{grammar}
-<instance-pointcut> ::= \ldots \alt `instance pointcut' <name> (`<' <instance-type> `>')? <relationship> `:' <ip-expr> (`UNTIL' <ip-expr>)?  \alt
-	`instance pointcut' <name> (`<' <instance-type> `>')? <relationship> `:' <ip-ref>
-
-<relationship> ::= `subsetof' <ip-ref> \alt `supersetof' <ip-ref>
-\end{grammar}
-\caption{Grammar definition for relationship declarations}
-\label{fig:grammar3}
-\end{figure}
-
-For the declaration \lstinline!instance pointcut subsetIP1 subsetof IP1:...!, the subset relationship imposes that the instance set created by \texttt{subsetIP1} has to be the subset of the instance set of \texttt{IP1}. When the \emph{instance type} is not declared like in the example then it is inferred from the referenced instance pointcut, \texttt{IP1}. It is also possible to declare subsets by using type refinement. For example
-\lstinline!instance pointcut subsetIP1<SubType> subsetof IP1: IP1<SubType>!
-creates a subset of \texttt{IP1} by selecting the instances of type \texttt{SubType}. For the subset relationship the referencing type must declare a co-variant type of the referenced instance pointcut.
-For the superset declaration \lstinline!instance pointcut supersetIP1 supersetof IP1:...!, the superset relationship imposes that the instance set created by \texttt{supersetIP1} contains the set of \texttt{IP1}. This rule holds even if the scope of \texttt{supersetIP1} is narrowed. When the instance type is not declared then the instance type of \texttt{IP1} is copied. For the superset relationship referencing instance pointcut must declare a contra-variant type.
-
-The right-hand side of a relationship declaration can be a full instance pointcut expression, formed by add and remove expressions. For subset relationships, \&\& composition rule and for superset relationships, $\|$ composition rule is applied, composing this expression with the referenced instance pointcut's expression.
-
-Subset and superset relationships enforce consistency between instance pointcuts and reduce redundancy. Being able to select subsets/supersets of instance pointcuts eliminates the need for defining separate instance pointcuts, which may result in erroneous selections. Since the subsets only support subtypes and supersets support only the supertypes of the referenced instance pointcut's type, it works with the system's type hierarchy in a natural manner. 
+%\subsubsection{Subset and Superset Relationships}
+%There are two mechanisms to define relationships between instance pointcuts, \emph{subsetting} and \emph{supersetting}. The declaration of these relationships impose some restrictions on the \emph{referencing} instance pointcut. In Figure~\ref{fig:grammar3} the relationship syntax is shown.
+%
+%\begin{figure}[h]
+%\begin{grammar}
+%<instance-pointcut> ::= \ldots \alt `instance pointcut' <name> (`<' <instance-type> `>')? <relationship> `:' <ip-expr> (`UNTIL' <ip-expr>)?  \alt
+	%`instance pointcut' <name> (`<' <instance-type> `>')? <relationship> `:' <ip-ref>
+%
+%<relationship> ::= `subsetof' <ip-ref> \alt `supersetof' <ip-ref>
+%\end{grammar}
+%\caption{Grammar definition for relationship declarations}
+%\label{fig:grammar3}
+%\end{figure}
+%
+%For the declaration \lstinline!instance pointcut subsetIP1 subsetof IP1:...!, the subset relationship imposes that the instance set created by \texttt{subsetIP1} has to be the subset of the instance set of \texttt{IP1}. When the \emph{instance type} is not declared like in the example then it is inferred from the referenced instance pointcut, \texttt{IP1}. It is also possible to declare subsets by using type refinement. For example
+%\lstinline!instance pointcut subsetIP1<SubType> subsetof IP1: IP1<SubType>!
+%creates a subset of \texttt{IP1} by selecting the instances of type \texttt{SubType}. For the subset relationship the referencing type must declare a co-variant type of the referenced instance pointcut.
+%For the superset declaration \lstinline!instance pointcut supersetIP1 supersetof IP1:...!, the superset relationship imposes that the instance set created by \texttt{supersetIP1} contains the set of \texttt{IP1}. This rule holds even if the scope of \texttt{supersetIP1} is narrowed. When the instance type is not declared then the instance type of \texttt{IP1} is copied. For the superset relationship referencing instance pointcut must declare a contra-variant type.
+%
+%The right-hand side of a relationship declaration can be a full instance pointcut expression, formed by add and remove expressions. For subset relationships, \&\& composition rule and for superset relationships, $\|$ composition rule is applied, composing this expression with the referenced instance pointcut's expression.
+%
+%Subset and superset relationships enforce consistency between instance pointcuts and reduce redundancy. Being able to select subsets/supersets of instance pointcuts eliminates the need for defining separate instance pointcuts, which may result in erroneous selections. Since the subsets only support subtypes and supersets support only the supertypes of the referenced instance pointcut's type, it works with the system's type hierarchy in a natural manner. 
 
 \subsubsection{Checking}
-Instance pointcuts also have checking mechanisms to warn the user for potential errors and enforcing some constraints. In some cases it can be possible to identify if a set is empty or not during compile time, for example when the pointcut expressions defined in expression elements of the instance pointcut do not match any join points. For the subset and superset relationships, type checking is performed to see if they satisfy the typing restrictions. Currently more advanced checks and verifications are still future work.
+Instance pointcuts also have checking mechanisms to warn the user for potential errors and enforcing some constraints. In some cases it can be possible to identify if a set is empty or not during compile time, for example when the pointcut expressions defined in expression elements of the instance pointcut do not match any join points. 
+%For the subset and superset relationships, type checking is performed to see if they satisfy the typing restrictions. 
+Currently more advanced checks and verifications are still future work.
 
 \subsection{Using Instance Pointcuts}
 Up to now we have explained the syntax and semantics for instance pointcuts. In this section we will explain how to use instance pointcut in the context of an AO languge, namely, AspectJ. The instance pointcut defined in Listing~\ref{lst:usage} maintains a set of \texttt{Product}s that are currently out of stock.
@@ -424,7 +427,7 @@ Instance pointcuts reify a set and this set can be accessed through the identifi
 public static double calculateDamages()
 {
 	double damage = 0;
-	for(Product p: MyAspect.outOfStock)
+	for(Product p: MyAspect.outOfStock())
 		damage = damage + p.getPrice();
 	return damage;
 }
@@ -474,7 +477,7 @@ moredelim=[is][\rmfamily\itshape]{|}{|},
 deleteemph={instance},
 escapechar={~}
 }
-\begin{lstlisting}[caption={Template of generated code for instance set management.},label=lst:management]
+\begin{lstlisting}[float, caption={Template of generated code for instance set management.},label=lst:management]
 private static WeakHashMap<${Type}, Integer> ${ipc}_data = new WeakHashMap<${Type}, Integer>(); ~\label{lst:management:map}~
 
 public static Set<${Type}> ${ipc}() { ~\label{lst:management:data:start}~
@@ -573,7 +576,7 @@ For pointcut expressions that are directly provided, we use a library function p
 We have extended this library to also understand the \lstinline{returning} pointcut designator.
 All these parts are optional; a missing part can be represented as an empty set of Specializations in LIAM.
 
-\begin{lstlisting}[caption={Example of an instance pointcut using composition and type refinement}, label=lst:example:compo:ref,moreemph=instance]
+\begin{lstlisting}[float,caption={Example of an instance pointcut using composition and type refinement}, label=lst:example:compo:ref,moreemph=instance]
 static instance pointcut ${ipc}<${Type}>:
 ipc1<${Type2}> || ~\label{lst:example:ip:or}~
 before(${pc_add_before}) || after(${pc_add_after}) UNTIL 
@@ -588,7 +591,7 @@ If there is a type refinement defined for this instance pointcut reference, we a
 The implementation of the \lstinline!addTypeConstraint! method returns a copy of the passed Specializations where the Predicate is extended with a test that the bound value is an instance of \lstinline!${Type2}! (cf.\ line~\ref{lst:example:restriction}).
 Finally, the full LIAM model of the pointcut definition is retrieved by forming the disjunction of the LIAM model for the direct pointcut expression and the LIAM model for the instance-pointcut-reference expression (cf.\ line~\ref{lst:example:composition})---which can itself consist of conjunctions and disjunctions of multiple instance-pointcut references.
 
-\begin{lstlisting}[caption={Generated code for creating the LIAM model for the add/before pointcut of the example instance pointcut.},label={lst:example:compoRefGen}]
+\begin{lstlisting}[float,caption={Generated code for creating the LIAM model for the add/before pointcut of the example instance pointcut.},label={lst:example:compoRefGen}]
 public static Set<Specialization> ${ipc}_add_before() {
 	private static Set<Specialization> ${ipc}_add_before;
 	if (${ipc}_add_before == null) {
@@ -617,7 +620,7 @@ Thus, when reaching a selected join point the instance is added to the instance 
 The other Attachments are created analogously.
 In the end, all Attachments are deployed through the ALIA4J \lstinline{System}.
 
-\begin{lstlisting}[caption={Deployment of the bookkeeping for an instance pointcut.},label=lst:deployment]
+\begin{lstlisting}[float,caption={Deployment of the bookkeeping for an instance pointcut.},label=lst:deployment]
 public static void ${ipc}_deploy() {
 	org.alia4j.fial.System.deploy( ~\label{lst:deploy:deploy}~
 		new Attachment(
