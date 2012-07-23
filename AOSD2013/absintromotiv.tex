@@ -8,6 +8,11 @@ We offer a means to access all objects currently selected by an instance pointcu
 Our approach improves modularity by providing a fine-grained mechanism and a declarative syntax to define and maintain object categories.
 \end{abstract}
 
+% A category with the (minimum) three required fields
+\category{D.3.1}{Formal Definition and Theory}[syntax, semantics]
+%A category including the fourth, optional field follows...
+\category{D.3.4}{Processors}[code generation]
+
 \section{Introduction}
 In object-oriented programming (OOP), objects encapsulate state and behavior; objects also have a life-cycle, which means that the same object can play different roles at different times.
 Which role an object is currently playing can affect the object's own behavior or how it is handled.
@@ -31,7 +36,7 @@ The specification utilizes \emph{pointcut expressions} to select events that def
 
 New instance pointcuts can be derived from existing ones. Firstly, a new instance pointcut can be derived from another one by restricting the type of selected objects. 
 %Secondly, a \emph{subset} or a \emph{super-set} of an existing instance pointcut can be declared whereby the specification of the life-cycle phase is either narrowed down or broadened. 
-Secondly, instance pointcut declarations can be composed arbitrarily by means of boolean operators. In this paper we present instance pointcuts as an extension to AspectJ \cite{kiczales2001overview} and explain its semantics by showing a transformation from the new syntax to plain AspectJ and advanced dispatching library calls. 
+Secondly, instance pointcut declarations can be composed arbitrarily by means of boolean operators. In this paper we present instance pointcuts as an extension to AspectJ \cite{kiczales2001overview} and explain its semantics by explaining our compiler which transforms instance pointcuts to plain AspectJ and advanced dispatching library calls. 
 
 
 \emph{TO THE REVIEWER: A version of this paper is submitted to SLE2012 conference. In case that submission gets accepted, this paper will be withdrawn from AOSD2013. There is new material in this paper, which is not present in the SLE2012 submission. This paper includes a section on compilation, which presents a complete implementation whereas the SLE paper only presents a possible compilation option which is also different from the compilation method presented here. We have also dropped some part of the instance pointcut syntax in this paper, which was found redundant after further consideration.}
@@ -55,21 +60,21 @@ Below, we outline the architecture and design of an online store application. We
 At the end of this section, we conclude requirements for solving the encountered challenges in these examples.
 
 \subsection{Example Architecture}
-An online shop is a sophisticated web application and objects of the same type can exist at different stages of the life-cycle. In Figure~\ref{fig:shop} the static structure of a simplified online shop is shown. When a new user logs in, \texttt{SessionManager} creates a \texttt{Customer} object to represent the user's session. A customer has a \texttt{ShoppingBag} and a \texttt{WishList}. The abstract class \texttt{Product} is a super-type of all products in the shop and represents product data. The \texttt{Product}'s subclasses are \texttt{BeautyProduct}, \texttt{BookProduct} etc. When the customer selects a product and clicks ``add to shopping bag'', a new \texttt{Item} instance is created and added to the \texttt{ShoppingBag} object; the \texttt{Item} instance contains the \texttt{Product} and quantity of that \texttt{Product}. A customer can add/remove items from his shopping bag. When the shopping is finished the \texttt{checkOut()} method is invoked on \texttt{Customer}, which returns an object of type \texttt{Order}. A \texttt{Customer} can also add or remove \texttt{Product}s to/from his \texttt{WishList}; the \texttt{WishList} holds a list of \texttt{Products}, whereas \texttt{ShoppingBag} holds a list of \texttt{Item}s.
+An online shop is a sophisticated web application and objects of the same type can exist at different stages of the life-cycle. In Figure~\ref{fig:shop} the static structure of a simplified online shop is shown. When a new user logs in, \lstinline{SessionManager} creates a \lstinline{Customer} object to represent the user's session. A customer has a \lstinline{ShoppingBag} and a \lstinline{WishList}. The abstract class \lstinline{Product} is a super-type of all products in the shop and represents product data. The \lstinline{Product}'s subclasses are \lstinline{BeautyProduct}, \lstinline{BookProduct} etc. When the customer selects a product and clicks ``add to shopping bag'', a new \lstinline{Item} instance is created and added to the \lstinline{ShoppingBag} object; the \lstinline{Item} instance contains the \lstinline{Product} and quantity of that \lstinline{Product}. A customer can add/remove items from his shopping bag. When the shopping is finished the \lstinline{checkOut()} method is invoked on \lstinline{Customer}, which returns an object of type \lstinline{Order}. A \lstinline{Customer} can also add or remove \lstinline{Product}s to/from his \lstinline{WishList}; the \lstinline{WishList} holds a list of \lstinline{Products}, whereas \lstinline{ShoppingBag} holds a list of \lstinline{Item}s.
 
 \subsection{Unanticipated Extensions}
-Let's assume a new requirement for applying a happy-hour discount is introduced. The discount should be applied at check-out to \texttt{Item}s which have been added to a customer's shopping bag between certain hours.
-In order to realize this extension in an OO-approach, one needs to invasively change the system code: First we need to keep a set of items that were added to a shopping bag within the timing condition. When the user finally checks out, we have to apply the discount to the items in the set. Listing~\ref{lst:happyhour} shows that we need to insert code in multiple places to satisfy the new requirement. First a set, called \texttt{happyItems}, is created (Line 1) in class \texttt{ShoppingBag}, to keep track of items that are added during the happy-hour. In the \texttt{addToShoppingBag} method the timing condition is checked, and when the condition is satisfied the created \texttt{Item} is added to \texttt{happyItems} (Lines 6--8).  In the \texttt{Customer} class, more code is inserted to the \texttt{checkOut} method to apply the discount to the items in \texttt{happyItems} set (Line 21). 
+Let's assume a new requirement for applying a happy-hour discount is introduced. The discount should be applied at check-out to \lstinline{Item}s which have been added to a customer's shopping bag between certain hours.
+In order to realize this extension in an OO-approach, one needs to invasively change the system code: First we need to keep a set of items that were added to a shopping bag within the timing condition. When the user finally checks out, we have to apply the discount to the items in the set. Listing~\ref{lst:happyhour} shows that we need to insert code in multiple places to satisfy the new requirement. First a set, called \lstinline{happyItems}, is created (Line~\ref{lst:happyhour:happyitems}) in class \lstinline{ShoppingBag}, to keep track of items that are added during the happy-hour. In the \lstinline{addToShoppingBag} method the timing condition is checked, and when the condition is satisfied the created \lstinline{Item} is added to \lstinline{happyItems} (Lines~\ref{lst:happyhour:add:begin}--~\ref{lst:happyhour:add:end}).  In the \lstinline{Customer} class, more code is inserted to the \lstinline{checkOut} method to apply the discount to the items in \lstinline{happyItems} set (Line~\ref{lst:happyhour:checkout}). 
 
 \begin{lstlisting}[float, caption={A Java implementation of happy-hour discount rule}, label={lst:happyhour}]
 class ShoppingBag{
 	...
-	Set<Item> happyItems = createSet();
+	Set<Item> happyItems = createSet(); ~\label{lst:happyhour:happyitems}~
 	public boolean addToShoppingBag(Product p, int amount)
 	{
-		Item item = ItemFactory.createItem(p,amount);
+		Item item = ItemFactory.createItem(p,amount); ~\label{lst:happyhour:add:begin}~
 		if('timing condition')
-			happyItems.put(item)
+			happyItems.put(item);~\label{lst:happyhour:add:end}~
 		...
 	}
 	public boolean removeFromShoppingBag(Item item, int amount)
@@ -82,40 +87,40 @@ class Customer{
 	...
 	public checkOut()
 	{
-		ProductManager. applyHappyHourDiscount(this.shoppingBag.happyItems);
+		ProductManager. applyHappyHourDiscount(this.shoppingBag.happyItems);~\label{lst:happyhour:checkout}~
 	}
 }
 \end{lstlisting}
 
-The OO-solution is scattered among \texttt{ShoppingBag} and \texttt{Customer} classes and tangled to multiple methods. Even for a single discount rule, the code for the discount concern and the book-keeping that comes with it creates cluttering. If we would like to apply multiple discount rules for the \emph{check-out} event, this implementation style is clearly not suitable.
-An aspect-oriented implementation can offer a better solution by encapsulating the concern in an aspect. In Listing~\ref{lst:happyhouraop} the \texttt{newItem} pointcut (Lines 2--4) selects join-points where a customer adds a product to his bag: A new \texttt{Item} is created in the \texttt{addToShoppingBag} method. The advice is executed when \texttt{newItem} is matched; after returning the new \texttt{Item}, the timing condition is checked and if it holds it is added to \texttt{happyItems}. 
+The OO-solution is scattered among \lstinline{ShoppingBag} and \lstinline{Customer} classes and tangled to multiple methods. Even for a single discount rule, the code for the discount concern and the book-keeping that comes with it creates cluttering. If we would like to apply multiple discount rules for the \emph{check-out} event, this implementation style is clearly not suitable.
+An aspect-oriented implementation can offer a better solution by encapsulating the concern in an aspect. In Listing~\ref{lst:happyhouraop} the \lstinline{newItem} pointcut (Lines~\ref{lst:happyaop:newitem:b}--~\ref{lst:happyaop:newitem:e}) selects join-points where a customer adds a product to his bag: A new \lstinline{Item} is created in the \lstinline{addToShoppingBag} method. The advice is executed when \lstinline{newItem} is matched; after returning the new \lstinline{Item}, the timing condition is checked and if it holds it is added to \lstinline{happyItems}. 
 %\textbf{the condition should better be checked in an if-pointcut.}
 
-We also define the \texttt{removeItem} pointcut (Lines 5--7) and advise it (Lines 15--18) to remove an item from \texttt{happyItems} if it is removed from a shopping bag.
-Finally, we define a pointcut for selecting the \texttt{Customer.checkOut()} join-point (Lines 8--9) and before the method is executed we apply the discount to items in \texttt{happyItems}.
+We also define the \lstinline{removeItem} pointcut (Lines~\ref{lst:happyaop:remove:b}--~\ref{lst:happyaop:remove:e}) and advise it (Lines~\ref{lst:happyaop:remadvice:b}--~\ref{lst:happyaop:remadvice:e}) to remove an item from \lstinline{happyItems} if it is removed from a shopping bag.
+Finally, we define a pointcut for selecting the \lstinline{Customer.checkOut()} join-point (Lines~\ref{lst:happyaop:checkout:b}--~\ref{lst:happyaop:checkout:e}) and before the method is executed we apply the discount to items in \lstinline{happyItems}.
 %An AO implementation, although offers a non-invasive solution, also suffers from boilerplate code written for book-keeping. 
 
-\begin{lstlisting}[float, caption={An Aspectj implementation of happy-hour discount rule}, label={lst:happyhouraop}]
+\begin{lstlisting}[float=h, caption={An Aspectj implementation of happy-hour discount rule}, label={lst:happyhouraop}]
 Set<Item> happyItems = createSet();
-pointcut newItem(Item item): 
+pointcut newItem(Item item): ~\label{lst:happyaop:newitem:b}~
 	call(* ItemFactory.createItem(..)) && 
 				if('timing condition') && 
-				withincode(* ShoppingBag.addToShoppingBag(..));
-pointcut removeItem(Item item): 
+				withincode(* ShoppingBag.addToShoppingBag(..));~\label{lst:happyaop:newitem:e}~
+pointcut removeItem(Item item): ~\label{lst:happyaop:remove:b}~
 	call(* ShoppingBag.removeFromShoppingBag(..)) && 
-				args(item);
-pointcut checkOut(Customer customer): 
+				args(item); ~\label{lst:happyaop:remove:e}~
+pointcut checkOut(Customer customer): ~\label{lst:happyaop:checkout:b}~
 	call(* Customer.checkOut()) && 
-				target(customer);
+				target(customer); ~\label{lst:happyaop:checkout:e}~
 
 after() returning(Item item): newItem(item)
 {
 		happyItems.put(item);
 }
-after(Item item): removeItem(item)
+after(Item item): removeItem(item) ~\label{lst:happyaop:remadvice:b}~
 {
 	happyItems.remove(item);
-}
+}~\label{lst:happyaop:remadvice:e}~
 before():checkOut(Customer customer)
 {
 	ProductManager.applyHappyHourDiscount(customer.items, happyItems);
@@ -125,15 +130,15 @@ before():checkOut(Customer customer)
 \paragraph{Discussion and Requirements}
 
 AOP already helps to localize the concern, e.g., of a specific discount policy, and to add it without the need to modify existing code.
-But most of the implementation of the discount policy as shown in Listing~\ref{lst:happyhouraop} consists of boilerplate code. Only the definition of the pointcut and the advice to \texttt{checkOut} are concern-specific.
-Furthermore, reusing existing sets by specifying subsets or composing them is not conveniently supported at all; e.g., if we want to find the subset of \texttt{BeautyProduct}s in a set of \texttt{Product} objects, we have to iterate over it and check instance types to create a new set.
+But most of the implementation of the discount policy as shown in Listing~\ref{lst:happyhouraop} consists of boilerplate code. Only the definition of the pointcut and the advice to \lstinline{checkOut} are concern-specific.
+Furthermore, reusing existing sets by refining or composing them is not conveniently supported at all; e.g., if we want to find the subset of \lstinline{BeautyProduct}s in a set of \lstinline{Product} objects, we have to iterate over it and check instance types to create a new set.
 
-In order to overcome the shortcomings of existing approaches, we need a way to declaratively select objects based their life-cycle phases, where the beginning and the end of a phase is marked by events. From the scenario described above and from our experience, we conclude the following requirements:
+In order to overcome the shortcomings of existing approaches, we need a way to declaratively select objects based on their life-cycle phases, where the beginning and the end of a phase is marked by events. From the scenario described above and from our experience, we conclude the following requirements:
 
 \begin{enumerate}[{Requirement}1{:}]
-\item A declarative way of reifying a set of objects by defining add/remove conditions must be provided.
+\item A declarative way of reifying a set of objects by defining add/remove conditional expressions must be provided.
 \item Since objects may recursively enter and exit a life-cycle phase, it must be counted how often the begin and end events have occurred for each object.
-\item Add/Remove expressions must select events and specify which object form the context of the event is selected.
+\item Add/Remove expressions must select events and specify which object from the context of the event is selected.
 \item It must be possible to access the set of objects which currently comprises an object category and to be notified when the set changes.
 \item A declarative way to obtain new sets by composing existing ones is required.
 \item Validity should be ensured for composition, either by construction or through compile-time checks.

@@ -12,6 +12,32 @@ Masuhara, H., Endoh, Y., Yonezawa, A.:
   of Lecture Notes in Computer Science.
 \newblock Springer Berlin / Heidelberg (2006)  131--147 10.1007/11924661_8.
 
+\bibitem{jamopp2010}
+Heidenreich, F., Johannes, J., Seifert, M., Wende, C.:
+\newblock Closing the gap between modelling and java.
+\newblock In van~den Brand, M., Ga\v{s}evic, D., Gray, J., eds.: Software
+  Language Engineering. Volume 5969 of Lecture Notes in Computer Science.
+\newblock Springer Berlin / Heidelberg (2010)  374--383
+  10.1007/978-3-642-12107-4_25.
+
+\bibitem{Bockisch2012}
+Bockisch, C., Sewe, A., Yin, H., Mezini, M., Aksit, M.:
+\newblock An in-depth look at alia4j.
+\newblock Journal of Object Technology \textbf{11}(1) (2012)  1--28
+
+\bibitem{Bockisch2011}
+Bockisch, C., Malakuti, S., Aksit, M., Katz, S.:
+\newblock Making aspects natural: events and composition.
+\newblock In: Proceedings of the 10th International Conference on
+  Aspect-Oriented Software Development, AOSD, ACM (2011)  285--300
+
+\bibitem{Bockisch2007}
+Bockisch, C., Mezini, M.:
+\newblock A flexible architecture for pointcut-advice language implementations.
+\newblock In: Proceedings of the 1st Workshop on Virtual Machines and
+  Intermediate Languages for Emerging Modularization Mechanisms, VMIL, ACM
+  (2007)
+
 \bibitem{sakurai2004association}
 Sakurai, K., Masuhara, H., Ubayashi, N., Matuura, S., Komiya, S.:
 \newblock Design and implementation of an aspect instantiation mechanism.
