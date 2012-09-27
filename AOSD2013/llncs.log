@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.6.20)  23 JUL 2012 15:19
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.8.28)  14 SEP 2012 14:56
 entering extended mode
 **llncs.tex
 ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.tex"
@@ -617,7 +617,34 @@ Package: syntax 1996/05/17 1.07 Syntax typesetting (MDW)
 \sdcirclediam=\dimen181
 \sdindent=\dimen182
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\classes\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks49
+\thm@bodyfont=\toks50
+\thm@headfont=\toks51
+\thm@notefont=\toks52
+\thm@headpunct=\toks53
+\thm@preskip=\skip60
+\thm@postskip=\skip61
+\thm@headsep=\skip62
+\dth@everypar=\toks54
+LaTeX Info: Redefining \qed on input line 283.
+
+
+! LaTeX Error: Command \proof already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.444 }
+       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2010/09/17 v6.81q Hypertext links for LaTeX
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
@@ -755,7 +782,7 @@ Package: uniquecounter 2009/12/18 v1.1 Provides unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 71.
 )
-\Hy@SectionHShift=\skip60
+\Hy@SectionHShift=\skip63
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mnsymbol\MnSymbol.sty"
 Package: MnSymbol 2007/01/21 v1.4 support for the MnSymbol font
@@ -902,15 +929,17 @@ LaTeX Font Info:    Redeclaring math accent \widehat on input line 1845.
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 1846.
 LaTeX Font Info:    Redeclaring math accent \vec on input line 1848.
 )
+\c@mydef=\count158
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\newfloat.sty"
 Package: newfloat 2011/11/16 v1.0a Defining new floating environments (AR)
 )
-Package newfloat Info: New float `copyrightbox' with options `' on input line 1
-8.
-\c@copyrightbox=\count158
-\newfloat@ftype=\count159
-Package newfloat Info: float type `copyrightbox'=8 on input line 18.
-\c@locopyrightboxdepth=\count160
+Package newfloat Info: New float `copyrightbox' with options `' on input line 2
+3.
+\c@copyrightbox=\count159
+\newfloat@ftype=\count160
+Package newfloat Info: float type `copyrightbox'=8 on input line 23.
+\c@locopyrightboxdepth=\count161
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
@@ -998,49 +1027,43 @@ File: tikzlibrarypatterns.code.tex 2008/01/15 v2.10 (rcs-revision 1.2)
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflib
 rarypatterns.code.tex
 File: pgflibrarypatterns.code.tex 2008/03/03 v2.10 (rcs-revision 1.13)
-)) ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.aux"
+)) ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 60.
 
-LaTeX Warning: Label `ip3step' multiply defined.
-
-
-LaTeX Warning: Label `ip3step' multiply defined.
-
-)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 55.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    ... okay on input line 60.
 
 (D:\Profiles\hatunk\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count161
+\scratchcounter=\count162
 \scratchdimen=\dimen187
 \scratchbox=\box61
-\nofMPsegments=\count162
-\nofMParguments=\count163
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count164
+\nofMPsegments=\count163
+\nofMParguments=\count164
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count165
 \MPscratchDim=\dimen188
-\MPnumerator=\count165
-\everyMPtoPDFconversion=\toks50
+\MPnumerator=\count166
+\everyMPtoPDFconversion=\toks56
 )
-\c@lstlisting=\count166
+\c@lstlisting=\count167
  ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
@@ -1052,7 +1075,7 @@ Package caption Info: End \AtBeginDocument code.
 Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
 (hyperref)                using 11in.
 
-Package hyperref Info: Link coloring OFF on input line 55.
+Package hyperref Info: Link coloring OFF on input line 60.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -1062,11 +1085,11 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2009/12/18 v1.3 Cleanup title references (HO)
 )
-\c@section@level=\count167
+\c@section@level=\count168
 )
-LaTeX Info: Redefining \ref on input line 55.
-LaTeX Info: Redefining \pageref on input line 55.
-LaTeX Info: Redefining \nameref on input line 55.
+LaTeX Info: Redefining \ref on input line 60.
+LaTeX Info: Redefining \pageref on input line 60.
+LaTeX Info: Redefining \nameref on input line 60.
 
 ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.out")
 ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.out")
@@ -1099,147 +1122,125 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<images/myonlineshop.png, id=115, 687.56876pt x 256.96pt>
-File: images/myonlineshop.png Graphic file (type png)
+<images/onlineshop2.png, id=125, 851.18pt x 236.885pt>
+File: images/onlineshop2.png Graphic file (type png)
 
-<use images/myonlineshop.png>
-LaTeX Font Info:    Try loading font information for T1+aess on input line 63.
+<use images/onlineshop2.png>
+LaTeX Font Info:    Try loading font information for T1+aess on input line 65.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aess.fd"
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 )
-Overfull \hbox (4.45456pt too wide) in paragraph at lines 95--98
-[]\T1/aer/m/n/9 The OO-solution is scat-tered among [][][] and [][][]
+LaTeX Font Info:    Font shape `T1/aess/m/it' in size <8> not available
+(Font)              Font shape `T1/aess/m/sl' tried instead on input line 92.
+
+Overfull \hbox (6.26375pt too wide) in paragraph at lines 101--102
+[][][][][][][][][][][][][][][][][][]  
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.102 
-       [2]
-LaTeX Font Info:    Try loading font information for TS1+aess on input line 106
+LaTeX Font Info:    Try loading font information for TS1+aess on input line 114
 .
-LaTeX Font Info:    No file TS1aess.fd. on input line 106.
-
+LaTeX Font Info:    No file TS1aess.fd. on input line 114.
 
 LaTeX Font Warning: Font shape `TS1/aess/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textasteriskcentered' on input line 106.
-
-
-Overfull \hbox (2.83334pt too wide) in paragraph at lines 136--137
-[]\T1/aer/m/n/9 In or-der to over-come the short-com-ings of ex-ist-ing ap-proa
-ches,
- []
-
-)pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.90 
-      [3 <C:/Users/hatunk/Google Drive/AOSD2013/images/myonlineshop.png (PNG co
-py)>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.165 \subsection{Refinement and Composition}
-                                              [4]
-Underfull \hbox (badness 10000) in paragraph at lines 191--193
-[][]
- []
-
-
-Underfull \hbox (badness 6808) in paragraph at lines 191--193
-[] [] [] [] [] \T1/aer/m/n/9 ([]
- []
+(Font)              for symbol `textasteriskcentered' on input line 114.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/types.png, id=238, 121.95563pt x 167.87718pt>
+
+Overfull \hbox (17.33365pt too wide) in paragraph at lines 137--144
+\T1/aer/m/n/9 ex-ist-ing code. How-ever main-te-nance of the \T1/pcr/m/n/9 surp
+riseDiscount
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.144 
+       [2])
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.122 
+       [3 <C:/Users/hatunk/Google Drive/AOSD2013/images/onlineshop2.png (PNG co
+py)>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <9> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 149.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.179 
+       [4]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/types.png, id=253, 121.95563pt x 167.87718pt>
 File: images/types.png Graphic file (type png)
  <use images/types.png>
-Underfull \hbox (badness 10000) in paragraph at lines 220--220
+Underfull \hbox (badness 10000) in paragraph at lines 229--229
 []\T1/aer/m/n/9 (a) |A sim-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--220
+Underfull \hbox (badness 10000) in paragraph at lines 229--229
 \T1/aer/m/n/9 ple type
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--234
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
 []\T1/aer/m/n/9 pc1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--234
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
 []\T1/aer/m/n/9 pc2
  []
 
-
-Overfull \hbox (1.55971pt too wide) in paragraph at lines 252--253
-[]\T1/aer/m/n/9 Let us de-fine a new in-stance point-cut as; $\OML/cmm/m/it/9 I
-P\OT1/cmr/m/n/9 3 \U/MnSymbolD/m/n/9   \OML/cmm/m/it/9 IP\OT1/cmr/m/n/9 1 [] \O
-ML/cmm/m/it/9 IP\OT1/cmr/m/n/9 2$\T1/aer/m/n/9 .
- []
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.268 \end{align*}
-                   [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+l.267 \[
+        Ipc1 \cup  Ipc2 = Ipc1\] [5]
+<images/interunionvis.png, id=277, 253.78815pt x 55.8888pt>
+File: images/interunionvis.png Graphic file (type png)
 
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+<use images/interunionvis.png>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.410 
-       [6 <C:/Users/hatunk/Google Drive/AOSD2013/images/types.png (PNG copy)>]
-Overfull \hbox (1.17706pt too wide) in paragraph at lines 445--446
+Overfull \hbox (1.17706pt too wide) in paragraph at lines 458--459
 \T1/aer/m/n/9 An in-stance point-cut def-i-ni-tion de-fines two set change even
 ts,
  []
 
 
-Overfull \hbox (2.44551pt too wide) in paragraph at lines 445--446
-\T1/aer/m/n/9 moved. In List-ing []13[], a be-fore ad-vice us-ing the [][][]
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.459 ...ection{Compilation of Instance Pointcuts}
-                                                   [7]
-LaTeX Font Info:    Font shape `T1/aess/m/it' in size <8> not available
-(Font)              Font shape `T1/aess/m/sl' tried instead on input line 486.
-
-Underfull \vbox (badness 2111) has occurred while \output is active []
-
-
-Underfull \hbox (badness 1540) in paragraph at lines 522--522
+l.472 ...ection{Compilation of Instance Pointcuts}
+                                                   [6 <C:/Users/hatunk/Google D
+rive/AOSD2013/images/types.png (PNG copy)> <C:/Users/hatunk/Google Drive/AOSD20
+13/images/interunionvis.png (PNG copy)>]
+Underfull \hbox (badness 1540) in paragraph at lines 535--535
 \T1/aer/m/n/9 chi-tec-ture for Java. See []$\T1/pcr/m/n/9 http : / / www . alia
 4j . org /
  []
@@ -1248,26 +1249,26 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.535 
-       [8]
-Overfull \hbox (8.40964pt too wide) in paragraph at lines 574--575
+l.541 
+       [7]
+Overfull \hbox (8.40964pt too wide) in paragraph at lines 587--588
  [][] 
  []
 
 
-Overfull \hbox (2.48155pt too wide) in paragraph at lines 594--598
+Overfull \hbox (2.48155pt too wide) in paragraph at lines 607--611
 \T1/aer/m/n/9 instance-pointcut-reference ex-pres-sion (cf. line []9[])---which
  can
  []
 
 
-Overfull \hbox (1.79263pt too wide) in paragraph at lines 621--627
+Overfull \hbox (1.79263pt too wide) in paragraph at lines 634--640
 \T1/aer/m/n/9 uses the set of Spe-cial-iza-tions re-turned by the [][][][][][][
 ]
  []
 
 
-Overfull \hbox (1.84793pt too wide) in paragraph at lines 621--627
+Overfull \hbox (1.84793pt too wide) in paragraph at lines 634--640
 \T1/aer/m/n/9 method (cf. line []4[]) and spec-i-fies the [][][][][][][] method
 
  []
@@ -1279,76 +1280,75 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.648 
-       [9] ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.bbl"pdfTeX warning (ex
+l.661 
+       [8] ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.bbl"pdfTeX warning (ex
 t4): destination with the same identifier (name{page.}) has been already used, 
 duplicate ignored
 <to be read again> 
                    \relax 
-l.22 
-      [10])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 737.
+l.7 
+     [9])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 759.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.737 \end{document}
-                     [11
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 737.
+l.759 \end{document}
+                     [10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 759.
  ("C:\Users\hatunk\Google Drive\AOSD2013\llncs.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 737.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 759.
 Package rerunfilecheck Info: File `llncs.out' has not changed.
-(rerunfilecheck)             Checksum: 72C901564FE9C74525FB0F539BF73FD1;1292.
+(rerunfilecheck)             Checksum: A102F89E43FC262B0ADFCAC1848C9087;1465.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 21166 strings out of 494019
- 383790 string characters out of 3143870
- 567662 words of memory out of 3000000
- 23672 multiletter control sequences out of 15000+200000
- 74764 words of font info for 117 fonts, out of 3000000 for 9000
+ 21179 strings out of 494019
+ 383924 string characters out of 3143870
+ 551461 words of memory out of 3000000
+ 23727 multiletter control sequences out of 15000+200000
+ 79857 words of font info for 125 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 56i,25n,97p,1446b,1727s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{C:
-/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc} <C:\Users\hatunk\AppData\Loca
+ 56i,12n,97p,1446b,1725s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{C:
+/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}{C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{C:/Program Files (x
+86)/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{C:/Program Files (x86)/M
+iKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolA.enc} <C:\Users\hatunk\AppData\Loca
 l\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm0800.pk><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol8.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol9.pfb><C:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsl8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmsl9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmss8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmssi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti
-9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on llncs.pdf (11 pages, 444275 bytes).
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmsl8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsl9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmss8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmss9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmssi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrb8a.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on llncs.pdf (10 pages, 497031 bytes).
 PDF statistics:
- 638 PDF objects out of 1000 (max. 8388607)
- 271 named destinations out of 1000 (max. 500000)
- 271 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 583 PDF objects out of 1000 (max. 8388607)
+ 217 named destinations out of 1000 (max. 500000)
+ 292 words of extra memory for PDF output out of 10000 (max. 10000000)
 
