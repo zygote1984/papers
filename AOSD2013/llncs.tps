@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1595
-NormalPos.bottom=856
+NormalPos.right=987
+NormalPos.bottom=452
 Class=LaTeXView
-Document=absintromotiv.tex
+Document=llncs.tex
 
 [Frame0_View0,0]
-TopLine=55
-Cursor=14319
+TopLine=274
+Cursor=17320
 
 [Frame1]
 Flags=0
@@ -29,14 +29,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1595
-NormalPos.bottom=856
+NormalPos.right=987
+NormalPos.bottom=452
 Class=LaTeXView
-Document=llncs.tex
+Document=absintromotiv.tex
 
 [Frame1_View0,0]
-TopLine=302
-Cursor=20648
+TopLine=191
+Cursor=13537
 
 [SessionInfo]
 FrameCount=2

@@ -1,89 +1,91 @@
 \begin{thebibliography}{10}
 
-\bibitem{kiczales2001overview}
-Kiczales, G., Hilsdale, E., Hugunin, J., Kersten, M., Palm, J., Griswold, W.:
-\newblock An overview of aspectj.
-\newblock ECOOP 2001—Object-Oriented Programming (2001)  327--354
-
-\bibitem{masuharafine}
-Masuhara, H., Endoh, Y., Yonezawa, A.:
-\newblock A fine-grained join point model for more reusable aspects.
-\newblock In Kobayashi, N., ed.: Programming Languages and Systems. Volume 4279
-  of Lecture Notes in Computer Science.
-\newblock Springer Berlin / Heidelberg (2006)  131--147 10.1007/11924661_8.
-
-\bibitem{jamopp2010}
-Heidenreich, F., Johannes, J., Seifert, M., Wende, C.:
-\newblock Closing the gap between modelling and java.
-\newblock In van~den Brand, M., Ga\v{s}evic, D., Gray, J., eds.: Software
-  Language Engineering. Volume 5969 of Lecture Notes in Computer Science.
-\newblock Springer Berlin / Heidelberg (2010)  374--383
-  10.1007/978-3-642-12107-4_25.
-
-\bibitem{Bockisch2012}
-Bockisch, C., Sewe, A., Yin, H., Mezini, M., Aksit, M.:
-\newblock An in-depth look at alia4j.
-\newblock Journal of Object Technology \textbf{11}(1) (2012)  1--28
+\bibitem{Bergmans2001b}
+L.~M. Bergmans and M.~Aksit.
+\newblock How to deal with encapsulation in aspect-orientation.
+\newblock In {\em Proceedings of OOPSLA 2001 Workshop on Advanced Separation of
+  Concerns in Object-Oriented Systems}, 2001.
 
 \bibitem{Bockisch2011}
-Bockisch, C., Malakuti, S., Aksit, M., Katz, S.:
+C.~Bockisch, S.~Malakuti, M.~Aksit, and S.~Katz.
 \newblock Making aspects natural: events and composition.
-\newblock In: Proceedings of the 10th International Conference on
-  Aspect-Oriented Software Development, AOSD, ACM (2011)  285--300
+\newblock In {\em Proceedings of the 10th International Conference on
+  Aspect-Oriented Software Development, AOSD}, pages 285--300. ACM, 2011.
 
 \bibitem{Bockisch2007}
-Bockisch, C., Mezini, M.:
+C.~Bockisch and M.~Mezini.
 \newblock A flexible architecture for pointcut-advice language implementations.
-\newblock In: Proceedings of the 1st Workshop on Virtual Machines and
-  Intermediate Languages for Emerging Modularization Mechanisms, VMIL, ACM
-  (2007)
+\newblock In {\em Proceedings of the 1st Workshop on Virtual Machines and
+  Intermediate Languages for Emerging Modularization Mechanisms, VMIL}. ACM,
+  2007.
 
-\bibitem{sakurai2004association}
-Sakurai, K., Masuhara, H., Ubayashi, N., Matuura, S., Komiya, S.:
-\newblock Design and implementation of an aspect instantiation mechanism.
-\newblock Transactions on aspect-oriented software development I (2006)
-  259--292
-
-\bibitem{pearce2006relationship}
-Pearce, D., Noble, J.:
-\newblock Relationship aspects.
-\newblock In: Proceedings of the 5th international conference on
-  Aspect-oriented software development, ACM (2006)  75--86
+\bibitem{Bockisch2012}
+C.~Bockisch, A.~Sewe, H.~Yin, M.~Mezini, and M.~Aksit.
+\newblock An in-depth look at alia4j.
+\newblock {\em Journal of Object Technology}, 11(1):1--28, 2012.
 
 \bibitem{bodden2008relational}
-Bodden, E., Shaikh, R., Hendren, L.:
+E.~Bodden, R.~Shaikh, and L.~Hendren.
 \newblock Relational aspects as tracematches.
-\newblock In: Proceedings of the 7th international conference on
-  Aspect-oriented software development, ACM (2008)  84--95
-
-\bibitem{kawauchi:aosd-aosdsec04}
-Kawauchi, K., Masuhara, H.:
-\newblock {Dataflow Pointcut for Integrity Concerns}.
-\newblock In {Win}, B.., Shah, V., Joosen, W., Bodkin, R., eds.: AOSDSEC:
-  {AOSD} Technology for Application-Level Security. (March 2004)
+\newblock In {\em Proceedings of the 7th international conference on
+  Aspect-oriented software development}, pages 84--95. ACM, 2008.
 
 \bibitem{cluet1998designing}
-Cluet, S.:
+S.~Cluet.
 \newblock Designing oql: Allowing objects to be queried.
-\newblock Information systems \textbf{23}(5) (1998)  279--305
+\newblock {\em Information systems}, 23(5):279--305, 1998.
 
 \bibitem{Gasiunas2011}
-Gasiunas, V., Satabin, L., Mezini, M., N{\'u}{\~n}ez, A., Noy{\'e}, J.:
+V.~Gasiunas, L.~Satabin, M.~Mezini, A.~N{\'u}{\~n}ez, and J.~Noy{\'e}.
 \newblock Escala: modular event-driven object interactions in scala.
-\newblock In: Proceedings of the tenth international conference on
-  Aspect-oriented software development. AOSD '11, New York, NY, USA, ACM (March
-  2011)  227--240
-
-\bibitem{Bergmans2001b}
-Bergmans, L.M., Aksit, M.:
-\newblock How to deal with encapsulation in aspect-orientation.
-\newblock In: Proceedings of OOPSLA 2001 Workshop on Advanced Separation of
-  Concerns in Object-Oriented Systems. (2001)
+\newblock In {\em Proceedings of the tenth international conference on
+  Aspect-oriented software development}, AOSD '11, pages 227--240, New York,
+  NY, USA, March 2011. ACM.
 
 \bibitem{hannemann:oopsla02}
-Hannemann, J., Kiczales, G.:
+J.~Hannemann and G.~Kiczales.
 \newblock Design pattern implementation in {Java} and {AspectJ}.
-\newblock In: Proceedings of the 17th ACM conference on Object-oriented
-  programming, systems, languages, and applications, ACM Press (2002)  161--173
+\newblock In {\em Proceedings of the 17th ACM conference on Object-oriented
+  programming, systems, languages, and applications}, pages 161--173. ACM
+  Press, 2002.
+
+\bibitem{jamopp2010}
+F.~Heidenreich, J.~Johannes, M.~Seifert, and C.~Wende.
+\newblock Closing the gap between modelling and java.
+\newblock In M.~van~den Brand, D.~Ga\v{s}evic, and J.~Gray, editors, {\em
+  Software Language Engineering}, volume 5969 of {\em Lecture Notes in Computer
+  Science}, pages 374--383. Springer Berlin / Heidelberg, 2010.
+\newblock 10.1007/978-3-642-12107-4_25.
+
+\bibitem{kawauchi:aosd-aosdsec04}
+K.~Kawauchi and H.~Masuhara.
+\newblock {Dataflow Pointcut for Integrity Concerns}.
+\newblock In B.~. {Win}, V.~Shah, W.~Joosen, and R.~Bodkin, editors, {\em
+  AOSDSEC: {AOSD} Technology for Application-Level Security}, Mar. 2004.
+
+\bibitem{kiczales2001overview}
+G.~Kiczales, E.~Hilsdale, J.~Hugunin, M.~Kersten, J.~Palm, and W.~Griswold.
+\newblock An overview of aspectj.
+\newblock {\em ECOOP 2001—Object-Oriented Programming}, pages 327--354, 2001.
+
+\bibitem{masuharafine}
+H.~Masuhara, Y.~Endoh, and A.~Yonezawa.
+\newblock A fine-grained join point model for more reusable aspects.
+\newblock In N.~Kobayashi, editor, {\em Programming Languages and Systems},
+  volume 4279 of {\em Lecture Notes in Computer Science}, pages 131--147.
+  Springer Berlin / Heidelberg, 2006.
+\newblock 10.1007/11924661_8.
+
+\bibitem{pearce2006relationship}
+D.~Pearce and J.~Noble.
+\newblock Relationship aspects.
+\newblock In {\em Proceedings of the 5th international conference on
+  Aspect-oriented software development}, pages 75--86. ACM, 2006.
+
+\bibitem{sakurai2004association}
+K.~Sakurai, H.~Masuhara, N.~Ubayashi, S.~Matuura, and S.~Komiya.
+\newblock Design and implementation of an aspect instantiation mechanism.
+\newblock {\em Transactions on aspect-oriented software development I}, pages
+  259--292, 2006.
 
 \end{thebibliography}
