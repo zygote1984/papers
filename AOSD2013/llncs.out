@@ -1,21 +1,24 @@
-\BOOKMARK [1][-]{section.1}{Introduction}{}
-\BOOKMARK [1][-]{section.2}{Motivation}{}
-\BOOKMARK [2][-]{subsection.2.1}{Example Architecture}{section.2}
-\BOOKMARK [2][-]{subsection.2.2}{Unanticipated Extensions}{section.2}
-\BOOKMARK [1][-]{section.3}{Approach}{}
-\BOOKMARK [2][-]{subsection.3.1}{Instance Pointcuts}{section.3}
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Add/Remove Expressions}{subsection.3.1}
-\BOOKMARK [3][-]{subsubsection.3.1.2}{Multisets}{subsection.3.1}
-\BOOKMARK [2][-]{subsection.3.2}{Refinement and Composition}{section.3}
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Referencing and Type Refinement}{subsection.3.2}
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Instance Pointcut Expression Refinement}{subsection.3.2}
-\BOOKMARK [3][-]{subsubsection.3.2.3}{Instance Pointcut Composition}{subsection.3.2}
-\BOOKMARK [2][-]{subsection.3.3}{Checking}{section.3}
-\BOOKMARK [2][-]{subsection.3.4}{Using Instance Pointcuts}{section.3}
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Set Access}{subsection.3.4}
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Set Monitoring}{subsection.3.4}
-\BOOKMARK [2][-]{subsection.3.5}{Compilation of Instance Pointcuts}{section.3}
-\BOOKMARK [1][-]{section.4}{Validation}{}
-\BOOKMARK [1][-]{section.5}{Related Work}{}
-\BOOKMARK [1][-]{section.6}{Conclusion and Future Work}{}
-\BOOKMARK [1][-]{section.7}{References}{}
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Motivation}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Example Architecture}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Unanticipated Extensions}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Problem Statement}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Approach}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Instance Pointcuts}{section.3}% 7
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Add/Remove Expressions}{subsection.3.1}% 8
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Multisets}{subsection.3.1}% 9
+\BOOKMARK [2][-]{subsection.3.2}{Refinement and Composition}{section.3}% 10
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Referencing and Type Refinement}{subsection.3.2}% 11
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Instance Pointcut Expression Refinement}{subsection.3.2}% 12
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Instance Pointcut Composition}{subsection.3.2}% 13
+\BOOKMARK [2][-]{subsection.3.3}{Using Instance Pointcuts}{section.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Set Access}{subsection.3.3}% 15
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Set Monitoring}{subsection.3.3}% 16
+\BOOKMARK [1][-]{section.4}{Compilation of Instance Pointcuts}{}% 17
+\BOOKMARK [2][-]{subsection.4.1}{Non-Composite Instance Pointcuts}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.2}{Composite Instance Pointcuts}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.3}{Compiling Plain AspectJ constructs}{section.4}% 20
+\BOOKMARK [1][-]{section.5}{Validation}{}% 21
+\BOOKMARK [1][-]{section.6}{Related Work}{}% 22
+\BOOKMARK [1][-]{section.7}{Conclusion and Future Work}{}% 23
+\BOOKMARK [1][-]{section.8}{References}{}% 24

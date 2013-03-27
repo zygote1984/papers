@@ -6,12 +6,6 @@ L.~M. Bergmans and M.~Aksit.
 \newblock In {\em Proceedings of OOPSLA 2001 Workshop on Advanced Separation of
   Concerns in Object-Oriented Systems}, 2001.
 
-\bibitem{Bockisch2011}
-C.~Bockisch, S.~Malakuti, M.~Aksit, and S.~Katz.
-\newblock Making aspects natural: events and composition.
-\newblock In {\em Proceedings of the 10th International Conference on
-  Aspect-Oriented Software Development, AOSD}, pages 285--300. ACM, 2011.
-
 \bibitem{Bockisch2007}
 C.~Bockisch and M.~Mezini.
 \newblock A flexible architecture for pointcut-advice language implementations.
