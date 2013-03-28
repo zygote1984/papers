@@ -1,0 +1,24 @@
+\begin{thebibliography}{1}
+
+\bibitem{Mernik:whenandhow}
+Mernik, M., Heering, J., Sloane, A.M.:
+\newblock When and how to develop domain-specific languages.
+\newblock ACM Comput. Surv. \textbf{37} (December 2005)  316--344
+
+\bibitem{fowler2010domain}
+Fowler, M., Parsons, R.:
+\newblock Domain-specific languages.
+\newblock Addison-Wesley (2010)
+
+\bibitem{Czarnecki:overview}
+Czarnecki, K.:
+\newblock Overview of generative software development.
+\newblock In: Unconventional Programming Paradigms. Volume 3566 of Lecture
+  Notes in Computer Science.
+\newblock Springer Berlin , Heidelberg (2005)  97--97
+
+\bibitem{LWC}
+:
+\newblock Language workbench competition comparison matrix (2011)
+
+\end{thebibliography}

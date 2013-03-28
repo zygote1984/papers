@@ -1,0 +1,49 @@
+\documentclass{acm_proc_article-sp}
+
+\begin{document}
+
+\title{A Framework for Defining and Injecting Aspect-Oriented Adapters}
+
+
+\numberofauthors{1} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+\alignauthor
+Kardelen Hatun (ACM Member: 1203340)\\
+       \affaddr{University of Twente}\\
+       \affaddr{Enschede, The Netherlands}\\
+       \email{hatunk@ewi.utwente.nl}
+}
+
+
+\maketitle
+
+
+\section{Motivation}
+In a component-based system, component binding is crucial. Such systems often use third party components, which may not provide an interface that is recognized by the base system. This requires an explicit and tailored implementation of the binding, which involves mapping of the concepts, i.e structures that represent the same information, that are common to the system and the component.  
+
+This binding is a potential cross-cutting concern. When there is a one-to-one mapping between the concepts, i.e. the concept is represented with a class or a field in both the component and the system, then the binding is merely a translation of types. However, in case of a one-to-many (when one structure representing a concept is scattered among multiple structures in the component) or many-to-one (the reverse of the former situation) then the binding concern becomes cross-cutting. This concern can be modularized by using an aspect-oriented way of defining and instantiating adapters. However current AO-languages do not offer a declarative way for describing the binding concern; an imperative programming language will lead to less readable and less maintainable implementation, which is fragile against software evolution.
+
+Our goal is to design a framework, which introduces declarative AO-language elements that are used to define and inject adapters, and a runtime library that is responsible for adapter injection.
+
+\section{Related Work}
+Existing aspect-oriented languages offer limited mechanisms for implementing adapters between interfaces. AspectJ~\cite{kiczales2001overview} inter-type declarations can be used to make system classes to implement appropriate interfaces, however this approach is type-invasive. CaesarJ~\cite{aracic2006overview} offers a more declarative approach with \emph{wrappers}, but their instantiation requires pointcut declarations or they should be explicitly instantiated in the base system. 
+
+In ~\cite{gluonj} an aspect-oriented framrwork called GluonJ is proposed in order to makes the relationship between aspects and aspect targets explicit, allowing better maintenance of glue code. However this approach does not specifically target component binding. In \cite{Pinto} introduces coordination aspects as a part of the Dynamic Aspect-Oriented Platform, which can be used as adapters between components. JasCo~\cite{Suvee} also presents a similar approach for binding components in special structures called connectors. Both of these works present strong and influential approaches for using aspect-orientation in component binding.  
+
+
+\section{Approach}
+Our approach is a framework which consists of a new language mechanism and a run-time library which offers a way to non-intrusively define and inject adapters. We make the declaration of adapters explicit in the aspect syntax. In an adapter declaration, the user indicates the types which they would like to adapt from and to. Then in the adapter body, an implementation is provided which defines the mapping from one type to the other. The adapters are registered by the runtime environment according to the types they adapt from and to. 
+
+Our injection component has a link to the adapter registry. This allows a flexible injection mechanism in the following way. The developer indicates that he wants to inject an object of type A to a field of type B. If the types of the object and field are incompatible, then the injection framework communicates with the adapter registry to find an \emph{A-to-B adapter}. If such an adapter exists, the object is automatically wrapped with that adapter and the adapter instance is injected to the field. By encapsulating this logic in a framework, we allow the developer to be oblivious to adapters. During injection it is also possible to point to a specific adapter, in that case framework performs type checks to ensure the given adapter is usable and gives context-relevant warning and error messages.
+
+
+\section{Results}
+Our approach aims to modularize the binding concern in a \emph{maintainable} way. We will evaluate our approach on a realistic component-based application, by re-attaching a component with our adapter-injection framework. We will investigate how scattering and tangling is reduced with our approach. We will perform a comparative study by evolving the component and quantifying the amount of code changes that need to be made with the old binding and our modularized binding. This study will help us evaluate the maintainability of our approach in the face of software evolution.
+
+\bibliographystyle{abbrv}
+\bibliography{sigproc}
+
+\end{document}

@@ -1,0 +1,36 @@
+\begin{thebibliography}{1}
+
+\bibitem{aracic2006overview}
+I.~Aracic, V.~Gasiunas, M.~Mezini, and K.~Ostermann.
+\newblock An overview of caesarj.
+\newblock {\em Transactions on Aspect-Oriented Software Development I}, pages
+  135--173, 2006.
+
+\bibitem{gluonj}
+S.~Chiba and R.~Ishikawa.
+\newblock Aspect-oriented programming beyond dependency injection.
+\newblock In {\em Proceedings of the 19th European conference on
+  Object-Oriented Programming}, ECOOP'05, pages 121--143, Berlin, Heidelberg,
+  2005. Springer-Verlag.
+
+\bibitem{kiczales2001overview}
+G.~Kiczales, E.~Hilsdale, J.~Hugunin, M.~Kersten, J.~Palm, and W.~Griswold.
+\newblock An overview of aspectj.
+\newblock {\em ECOOP 2001, Object-Oriented Programming}, pages 327--354, 2001.
+
+\bibitem{Pinto}
+M.~Pinto, L.~Fuentes, M.~E. Fayad, and J.~M. Troya.
+\newblock Separation of coordination in a dynamic aspect oriented framework.
+\newblock In {\em Proceedings of the 1st international conference on
+  Aspect-oriented software development}, AOSD '02, pages 134--140, New York,
+  NY, USA, 2002. ACM.
+
+\bibitem{Suvee}
+D.~Suv{\'e}e, W.~Vanderperren, and V.~Jonckers.
+\newblock Jasco: an aspect-oriented approach tailored for component based
+  software development.
+\newblock In {\em Proceedings of the 2nd international conference on
+  Aspect-oriented software development}, AOSD '03, pages 21--29, New York, NY,
+  USA, 2003. ACM.
+
+\end{thebibliography}

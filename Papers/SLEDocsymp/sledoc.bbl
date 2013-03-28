@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{LWC}
+Language workbench competition comparison matrix (2011),
+  \url{www.languageworkbenches.net}
+
+\bibitem{Czarnecki:overview}
+Czarnecki, K.: Overview of generative software development. In: Unconventional
+  Programming Paradigms, Lecture Notes in Computer Science, vol. 3566, pp.
+  97--97. Springer Berlin , Heidelberg (2005)
+
+\bibitem{fowler2010domain}
+Fowler, M., Parsons, R.: Domain-specific languages. Addison-Wesley (2010)
+
+\bibitem{Mernik:whenandhow}
+Mernik, M., Heering, J., Sloane, A.M.: When and how to develop domain-specific
+  languages. ACM Comput. Surv.  37,  316--344 (December 2005)
+
+\end{thebibliography}

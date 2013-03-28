@@ -1,0 +1,15 @@
+resuable integration modules can be
+
+- an atomic adapter that adapts objects which's properties are primitive types.
+
+- aggregators and splitters
+
+
+currently adapters are monolithic structures which encapsulate the "ugly" adaptation code between two objects. Adapting composite objects usually require adapting the composing objects individually then aggregating these adapted objects into a new object. This is the case when there is a one to one structural correspondance between the input interface and the output interface of the adapter. 
+
+can we find the reverse adapter of an adapter by using static analysis?
+	requirements
+		-there is no loss of data, for example if an adapter combines some data taken from the adaptee to create a new one and in the process the original data becomes unrecoverable, we cannot create a reverse adapter. 
+
+
+aggregators can also be used for splitting.

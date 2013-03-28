@@ -1,0 +1,12 @@
+\BOOKMARK [0][-]{chapter.1}{Instance Pointcuts:}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Introduction}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Motivation}{chapter.1}% 3
+\BOOKMARK [2][-]{subsection.1.2.1}{Example Architecture}{section.1.2}% 4
+\BOOKMARK [2][-]{subsection.1.2.2}{Unanticipated Extensions}{section.1.2}% 5
+\BOOKMARK [1][-]{section.1.3}{Instance Pointcuts}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.3.1}{Features}{section.1.3}% 7
+\BOOKMARK [2][-]{subsection.1.3.2}{Refinement and Composition}{section.1.3}% 8
+\BOOKMARK [2][-]{subsection.1.3.3}{Using Instance Pointcuts}{section.1.3}% 9
+\BOOKMARK [2][-]{subsection.1.3.4}{Compilation of Instance Pointcuts}{section.1.3}% 10
+\BOOKMARK [1][-]{section.1.4}{Related Work}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.5}{Conclusion and Future Work}{chapter.1}% 12
