@@ -1,0 +1,97 @@
+\begin{thebibliography}{10}
+
+\bibitem{Bergmans2001b}
+L.~M. Bergmans and M.~Aksit.
+\newblock How to deal with encapsulation in aspect-orientation.
+\newblock In {\em Proceedings of OOPSLA 2001 Workshop on Advanced Separation of
+  Concerns in Object-Oriented Systems}, 2001.
+
+\bibitem{Bockisch2007}
+C.~Bockisch and M.~Mezini.
+\newblock A flexible architecture for pointcut-advice language implementations.
+\newblock In {\em Proceedings of the 1st Workshop on Virtual Machines and
+  Intermediate Languages for Emerging Modularization Mechanisms, VMIL}. ACM,
+  2007.
+
+\bibitem{Bockisch2012}
+C.~Bockisch, A.~Sewe, H.~Yin, M.~Mezini, and M.~Aksit.
+\newblock An in-depth look at {ALIA4J}.
+\newblock {\em Journal of Object Technology}, 11(1):1--28, 2012.
+
+\bibitem{bodden2008relational}
+E.~Bodden, R.~Shaikh, and L.~Hendren.
+\newblock Relational aspects as tracematches.
+\newblock In {\em Proceedings of the 7th international conference on
+  Aspect-oriented software development}, pages 84--95. ACM, 2008.
+
+\bibitem{cluet1998designing}
+S.~Cluet.
+\newblock Designing oql: Allowing objects to be queried.
+\newblock {\em Information systems}, 23(5):279--305, 1998.
+
+\bibitem{DeLine2004}
+R.~DeLine and M.~F{\"a}hndrich.
+\newblock Typestates for objects.
+\newblock In M.~Odersky, editor, {\em ECOOP 2004 - Object-Oriented
+  Programming}, volume 3086 of {\em Lecture Notes in Computer Science}, pages
+  465--490. Springer Berlin Heidelberg, 2004.
+
+\bibitem{Gamma1995}
+E.~Gamma, R.~Helm, R.~Johnson, and J.~Vlissides.
+\newblock {\em Design Patterns: Elements of Reusable Object-Oriented Software}.
+\newblock Addison-Wesley, Reading, Massachusetts, 1995.
+
+\bibitem{Gasiunas2011}
+V.~Gasiunas, L.~Satabin, M.~Mezini, A.~N{\'u}{\~n}ez, and J.~Noy{\'e}.
+\newblock Escala: modular event-driven object interactions in scala.
+\newblock In {\em Proceedings of the tenth international conference on
+  Aspect-oriented software development}, AOSD '11, pages 227--240, New York,
+  NY, USA, March 2011. ACM.
+
+\bibitem{hannemann:oopsla02}
+J.~Hannemann and G.~Kiczales.
+\newblock Design pattern implementation in {Java} and {AspectJ}.
+\newblock In {\em Proceedings of the 17th ACM conference on Object-oriented
+  programming, systems, languages, and applications}, pages 161--173. ACM
+  Press, 2002.
+
+\bibitem{jamopp2010}
+F.~Heidenreich, J.~Johannes, M.~Seifert, and C.~Wende.
+\newblock Closing the gap between modelling and java.
+\newblock In M.~van~den Brand, D.~Ga\v{s}evic, and J.~Gray, editors, {\em
+  Software Language Engineering}, volume 5969 of {\em Lecture Notes in Computer
+  Science}, pages 374--383. Springer Berlin / Heidelberg, 2010.
+\newblock 10.1007/978-3-642-12107-4_25.
+
+\bibitem{kawauchi:aosd-aosdsec04}
+K.~Kawauchi and H.~Masuhara.
+\newblock {Dataflow Pointcut for Integrity Concerns}.
+\newblock In B.~{de Win}, V.~Shah, W.~Joosen, and R.~Bodkin, editors, {\em
+  AOSDSEC: {AOSD} Technology for Application-Level Security}, Mar. 2004.
+
+\bibitem{kiczales2001overview}
+G.~Kiczales, E.~Hilsdale, J.~Hugunin, M.~Kersten, J.~Palm, and W.~Griswold.
+\newblock An overview of aspectj.
+\newblock {\em ECOOP 2001 Object-Oriented Programming}, pages 327--354, 2001.
+
+\bibitem{masuharafine}
+H.~Masuhara, Y.~Endoh, and A.~Yonezawa.
+\newblock A fine-grained join point model for more reusable aspects.
+\newblock In N.~Kobayashi, editor, {\em Programming Languages and Systems},
+  volume 4279 of {\em Lecture Notes in Computer Science}, pages 131--147.
+  Springer Berlin / Heidelberg, 2006.
+\newblock 10.1007/11924661_8.
+
+\bibitem{pearce2006relationship}
+D.~Pearce and J.~Noble.
+\newblock Relationship aspects.
+\newblock In {\em Proceedings of the 5th international conference on
+  Aspect-oriented software development}, pages 75--86. ACM, 2006.
+
+\bibitem{sakurai2004association}
+K.~Sakurai, H.~Masuhara, N.~Ubayashi, S.~Matuura, and S.~Komiya.
+\newblock Design and implementation of an aspect instantiation mechanism.
+\newblock {\em Transactions on aspect-oriented software development I}, pages
+  259--292, 2006.
+
+\end{thebibliography}

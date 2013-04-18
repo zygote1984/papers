@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Thu Apr 04 13:43:30 CEST 2013
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=
+mainTexFile=llncs.tex
+outputFile=llncs.pdf
+langSpell=
+markDer=true
+srcDir=

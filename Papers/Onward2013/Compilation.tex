@@ -1,0 +1,281 @@
+\section{Compilation of Instance Pointcuts}
+\label{sect:compilation}
+
+A goal for our compiler implementation is to support modular compilation.
+This means to compile an aspect with instance pointcuts that refer to instance pointcuts defined in other aspects, it must be sufficient to know their declaration (i.e., the name and type); it should not be necessary for the compiler to know the actual expression or the referenced instance pointcuts.
+
+We have implemented the instance pointcut language using code transformation employing two tools.
+First, the parser of our language and the code generation templates are implemented with the EMFText\footnote{EMFText, see \url{http://www.emftext.org/}} language workbench.
+For this purpose, we have defined the AspectJ grammar by using JaMoPP\footnote{JaMoPP: Java Model Parser and Printer, see \url{http://jamopp.inf.tu-dresden.de}}~\cite{jamopp2010} as the foundation and extended it with the grammar for instance pointcuts which was presented interspersed with the previous section.
+
+Second, the generated code uses the ALIA4J\footnote{The Advanced-dispatching Language Implementation Architecture for Java. See \url{http://www.alia4j.org/alia4j/}.}~\cite{Bockisch2012} framework for so-called advanced dispatching language implementations.
+The term advanced dispatching refers to late-binding mechanisms including, e.g., predicate dispatching and pointcut-advice mechanisms.
+At its core, ALIA4J contains a meta-model of advanced dispatching declarations, called \emph{LIAM}, in which AspectJ pointcut and advice, as well as instance pointcuts can be expressed.
+
+We use ALIA4J to realize the crosscutting behavior of our language instead of AspectJ because the way AspectJ handles binding of values and restricting their types in pointcuts would prohibit a modular compilation of instance pointcuts.
+While in instance pointcuts the value binding is uniformly expressed in a pointcut expression, in AspectJ binding the result value must be specified in the advice definition (via the \lstinln{after returning} keyword) and all other values are bound in pointcut expressions.
+Therefore, AspectJ code generated for an instance pointcut expression would have to depend on which value is bound; this means that the code generation for a derived instance pointcut would also depend on the binding predicate (an implementation detail) of the referenced one.
+It is not possible to work around this, using AspectJ's reflective \lstinln{thisJoinPoint} keyword, as it does not expose the result value at all.
+Another, similar limitation is that AspectJ does not allow to narrow down the type restriction for the bound value of a referred pointcut.
+Thus, in order to be able to transform an instance pointcuts with type refinement to AspectJ, it is necessary to know the definitions of the referenced instance pointcut and inline its definition.
+
+Our compiler generates different code depending on whether the instance pointcut is a composite one or not and whether it is a refinement of an instance pointcut or not.
+Common to all cases is the code for managing the data of the instance pointcut.
+Listing~\ref{lst:management} exemplary shows that code; the variables \emph{\$\{Type\}} and \emph{\$\{ipc\}} stand for the instance pointcut's type and name, respectively.
+The natural text written in the comments provides a description of the code for which it stands.
+
+First, to store the instances currently selected by an instance pointcut as a multiset, a \lstinln{WeakHashMap} is defined (cf.\ line~\ref{lst:management:map}); the keys of the map are the selected objects and the mapped value is the cardinality.
+We use weak references to avoid keeping objects alive which are not reachable from the base application anymore.
+The generated method \emph{\$\{ipc\}} returns all objects which are currently mapped (cf.\ lines~\ref{lst:management:data:start}--\ref{lst:management:data:end}).
+
+Furthermore, methods are generated to access, increase or decrease the counter of selected objects; if an object does not have an associated counter yet or the counter reached zero, the object is added to or removed from the map, respectively (cf.\ lines~\ref{lst:management:bookkeeping:start}--\ref{lst:management:bookkeeping:end}).
+After having performed their operations, \lstinln{\$\{ipc\}_addInstance} and \lstinln{\$\{ipc\}_removeInstance} methods invoke an empty method, passing the added or removed object.
+We generate a public, named pointcut selecting these calls, exposing the respective events (cf.\ lines~\ref{lst:management:added:pc} and~\ref{lst:management:removed:pc}).
+
+\lstset{
+morecomment=[s][\itshape]{\$\{}{\}},
+moredelim=[is][\rmfamily\itshape]{|}{|},
+deleteemph={instance},
+escapechar={~}
+}
+\begin{lstlisting}[float, caption={Template of generated code for instance set management.},label=lst:management]
+private static WeakHashMap<${Type}, Integer> ${ipc}_data = new WeakHashMap<${Type}, Integer>(); ~\label{lst:management:map}~
+public static Set<${Type}> ${ipc}() { ~\label{lst:management:data:start}~
+	return Collections.unmodifiableSet(${ipc}_data.keySet());
+} ~\label{lst:management:data:end}~
+public static void ${ipc}_addInstance(${Type} instance) { ~\label{lst:management:bookkeeping:start}~
+	//increase counter associated with instance by the ${ipc}_data map
+	${ipc}_instanceAdded(instance); ~\label{lst:management:added}~
+}
+public static void ${ipc}_removeInstance(${Type} instance) {
+	//decrease counter associated with instance by the ${ipc}_data map
+	//if the counter reaches 0, remove instance from the map
+	${ipc}_instanceRemoved(instance); ~\label{lst:management:removed}~
+}
+public static int ${ipc}_cardinality(${Type} o) {..}
+private static void ${ipc}_setCardinality(${Type} o, int c){..}~\label{lst:management:bookkeeping:end}~
+private static void ${ipc}_instanceAdded(${Type} instance) {}
+private static void ${ipc}_instanceRemoved(${Type} instance) {}
+public pointcut ${ipc}_instanceAdded(${Type} instance) : call(private static void Aspect.${ipc}_instanceAdded(${Type})) && args(instance); ~\label{lst:management:added:pc}~
+public pointcut ${ipc}_instanceRemoved(${Type} instance) : call(private static void Aspect.${ipc}_instanceRemoved(${Type})) && args(instance); ~\label{lst:management:removed:pc}~
+\end{lstlisting}
+
+Next, these bookkeeping methods have to be executed at events corresponding to the instance pointcut definitions.
+Below, we elaborate on the code generation for instance pointcuts defined in the different possible ways.
+
+\subsection{Non-Composite Instance Pointcuts}
+
+A non-composite instance pointcut, generally consists of four underlying pointcut definitions: specifying join points (1) \emph{before} or (2) \emph{after} which an instance is to be \emph{added} to the selected instances; and specifying join points (3) \emph{before} or (4) \emph{after} which an instance is to be \emph{removed}.
+For each pointcut definition, we generate a method that creates a corresponding LIAM model; the methods are called \lstinline!${ipc}_add_before!, \lstinline!${ipc}_add_after!, \lstinline!${ipc}_remove_before!, and \lstinline!${ipc}_remove_after!.
+
+In LIAM, a \emph{Specialization} can represent a partial AspectJ pointcut and a full pointcut expression can be represented as the disjunction of a set of \emph{Specializations} (discussed in detail elsewhere~\cite{Bockisch2007}).
+Figure~\ref{fig:specialization} shows the meta-model for a Specialization in ALIA4J consisting of three parts.
+A \emph{Pattern} specifies syntactic and lexical properties of matched join point shadows.
+The \emph{Predicate} and \emph{Atomic Predicate} entities model conditions on the dynamic state pointcut designators depend on.
+The \emph{Context} entities model access to values like the called object or argument values.
+Contexts which are directly referred to by the Specialization are exposed to associated advice (i.e., they represent binding predicates).
+
+Depending on the definition of the instance pointcut, LIAM models of the underlying pointcuts have to be created in different ways.
+All four underlying pointcuts are optional; a missing pointcut can be represented as an empty set of Specializations in LIAM.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[x=30mm,y=12mm]
+\tikzset{CODE/.style={draw,chamfered rectangle,chamfered rectangle corners=north east,text centered,minimum height=1.6em}}
+\tikzset{CLASSES/.style={draw,rectangle,text centered,minimum height=1.6em}}
+\tikzset{CLASS/.style={draw,rectangle,text centered,minimum height=1.6em}}
+\tikzset{MULTIPART CLASS/.style={CLASS,rectangle split,rectangle split parts=2}}
+
+\tikzset{EXTENDS/.style={draw,-open triangle 90}}
+\tikzset{ASSOCIATES/.style={draw,-angle 90}}
+\tikzset{INSTANTIATES/.style={draw,dashed,-angle 90}}
+\tikzset{AGGREGATES/.style={draw,open diamond-angle 90}}
+
+\tikzset{CARDINALITY/.style={auto=right,near end,font=\tiny}}
+
+\tikzset{DINGBATS/.style={circle,fill=white,inner sep=-0.5pt}}
+
+\begin{scope}[text width=2.5cm]
+\node[CLASS] (specialization) at (0,-1) {\lstinln{Specialization}};
+\path (specialization)
+  -- +(-1,-1) node[CLASS] (context) {\lstinlineabstract{Context}}
+  -- +(+0,-1) node[CLASS] (expression) {\lstinln{Predicate}}
+  -- +(+1,-1) node[CLASS] (pattern) {\lstinln{Pattern}};
+\path (expression)
+  -- +(0,-1) node[CLASS] (atomic predicate) {\lstinlineabstract{AtomicPredicate}};
+\end{scope}
+
+\path [AGGREGATES] (specialization) -- +(0,-0.5) -| (pattern);
+\path [AGGREGATES] (specialization) -- +(0,-0.5) -| node[CARDINALITY] {*} (context);
+\path [AGGREGATES] (specialization) -- +(0,-0.5) -| node[CARDINALITY] {0..1}  (expression);
+
+\path [AGGREGATES] (context.-135) -- ++(0,-5mm) -| node[CARDINALITY] {*} (context.-160);
+
+\path [AGGREGATES] (atomic predicate) -| node[CARDINALITY] {*} (context);
+
+\path [AGGREGATES] (expression) -- node[CARDINALITY] {0..1} (atomic predicate);
+\path [AGGREGATES] (expression.-45) -- ++(0,-5mm) -| node[CARDINALITY] {0..2} (expression.-20);
+
+\end{tikzpicture}
+\caption{Meta-model of a Specialization in ALIA4J.}
+\label{fig:specialization}
+\end{figure}
+
+\paragraph{Plain Instance Pointcuts}
+For pointcut expressions that are directly provided, we use a library function provided by ALIA4J which takes a String containing an AspectJ pointcut as input.
+We have extended this library to also accept the \lstinln{returning} pointcut designator.
+
+%\begin{lstlisting}[float,caption={Example of an instance pointcut using composition and type refinement}, label=lst:example:compo:ref,moreemph=instance]
+%static instance pointcut ${ipc}<${Type}>:
+%ipc1<${Type2}> || ~\label{lst:example:ip:or}~
+%before(${pc_add_before}) || after(${pc_add_after}) UNTIL
+%before(${pc_remove_before}) || after(${pc_remove_after};
+%\end{lstlisting}
+\begin{lstlisting}[caption={Example of a plain instance pointcut}, label=lst:example:plainip,moreemph=instance]
+static instance pointcut ${ipc}<${Type}>:
+before(${pc_add_before}) || after(${pc_add_after}) UNTIL
+before(${pc_remove_before}) || after(${pc_remove_after};
+\end{lstlisting}
+
+For the example instance pointcut presented in listing~\ref{lst:example:plainip}, we show the code generated for the method creating the LIAM model for the add_before pointcut in listing~\ref{lst:example:compoRefGen}; the other methods are generated analogously.
+Line~\ref{lst:example:simple} shows the transformation of an AspectJ pointcut into a set of Specializations in the LIAM meta-model by passing the pointcut as a String---represented by \lstinline!${pc_add_before}! in listings~\ref{lst:example:plainip} and~\ref{lst:example:compoRefGen}---to the above mentioned library function.
+
+\begin{lstlisting}[caption={Template for creating the LIAM model for the add_before expression},label={lst:example:compoRefGen}]
+private static Set<Specialization> ${ipc}_add_before;
+public static Set<Specialization> ${ipc}_add_before() {
+	if (${ipc}_add_before == null) {
+		${ipc}_add_before = Util.toSpecializations("${pc_add_before}", ${Type}); ~\label{lst:example:simple}~
+	}
+	return ${ipc}_add_before;
+}
+\end{lstlisting}
+
+\paragraph{Type Refinement}
+An instance pointcut can also be defined by referring to another instance pointcut whereby a type restriction for the selected instances can be defined.
+A template for an instance pointcut defined as such is as follows:
+
+\begin{lstlisting}[numbers=none, emph={instance}]
+static instance pointcut ${ipc}<${Type}>: ipc1<${Type}>;
+\end{lstlisting}
+
+For such an instance pointcut also methods are created to produce LIAM models for the four underlying pointcuts (see the template in listing~\ref{lst:example:typeRef}).
+These methods first invoke the corresponding methods of the referenced instance pointcut (cf.\ line~\ref{lst:example:refer}).
+Second, the type restriction is added to the Predicates of the retrieved Specializations (cf.\ line~\ref{lst:example:restriction}) with the method \lstinln{addTypeConstraint}.
+
+\begin{lstlisting}[caption={Template for creating the LIAM model for the type-refined instance pointcut},label={lst:example:typeRef}]
+public static Set<Specialization> ${ipc}_add_before() {
+	...
+	Set<Specialization> ipRef = ipc1_add_before(); ~\label{lst:example:refer}~
+	${ipc}_add_before = Util.addTypeConstraint(ipRef, ${Type}); ~\label{lst:example:restriction}~
+	...
+}
+\end{lstlisting}
+
+
+\paragraph{Expression Refinement}
+When defining a new instance po-intcut through expression refinement, for each of the four underlying pointcut expressions, a plain pointcut expression can be \emph{and}ed or \emph{or}ed with the underlying pointcut expression of the referenced instance pointcut. As explained in the previous section, refinement pointcut expressions must not include a binding predicate. The referred instance pointcut expression already has a binding predicate which is carried over to be used as the binding predicate for the newly composed pointcut expression.
+The template for the generated method for creating the add/before LIAM model is shown in listing~\ref{lst:example:exprRef}.
+It assumes that the instance pointcut is named \lstinline!${ipc}! and it refines another instance pointcut \lstinline!${ipc1}! by \emph{and}ing the pointcut expression \lstinline!${ipc1_add_before}! to the add/before underlying pointcut.
+If the pointcuts are \emph{or}ed, correspondingly the method \lstinline!orSpecializations! is used in line~\ref{lst:example:composition}.
+
+These utility methods are provided as runtime library for the instance pointcuts.
+The method \lstinline!andSpecializations! forms the conjunction of the Predicates and Patterns of the passed Specialization sets.
+If \lstinline!ipRef! is empty, the conjunction is also empty and an empty set is returned.
+Otherwise, the Context declared by the Specializations \lstinline!ipRef! is copied to the ones newly created by the \lstinline!andSpecializations! method.
+The method \lstinline!orSpecializations! is implemented similarly.
+But it forms the disjunction of Predicates and Patterns and if \lstinline!ipRef! is empty, an exception is raised.
+
+\begin{lstlisting}[caption={Generated code for creating the LIAM model for the add/before pointcut of the instance pointcut created with expression refinement},label={lst:example:exprRef}]
+public static Set<Specialization> ${ipc}_add_before() {
+	...
+	Set<Specialization> plainIPExpr = Util.toSpecializatons("${pc_add_before}", ${Type});
+	Set<Specialization> ipRef = ipc1_add_before(); ~\label{lst:example:ref}~
+	${ipc}_add_before = Util.andSpecializations(ipRef, plainIPExpr); ~\label{lst:example:composition}~
+	...
+}
+\end{lstlisting}
+
+\paragraph{Deployment}
+
+In each of the above cases, the created LIAM models of the pointcuts must be associated with advice invoking the add or remove method for the instance pointcut.
+In a LIAM model this is achieved by defining an Attachment, which roughly corresponds to a pointcut-advice pair.
+An Attachment refers to a set of Specializations, to an \emph{Action}, which specifies the advice functionality, and to a \emph{Schedule Information}, which models the time relative to a join point when the action should be executed, e.g., ``before'' the join point (cf.\ line~\ref{lst:deploy:schedule}).
+
+Listing~\ref{lst:deployment} shows the generated code for creating and deploying the bookkeeping Attachments.
+The first Attachment uses the set of Specializations returned by the \lstinline!${ipc}add_before! method (cf.\ line~\ref{lst:deploy:specializations}) and specifies the \lstinline!${ipc}_addInstance! method as action to execute at the selected join points (cf.\ line~\ref{lst:deploy:action}).
+As relative execution time, the Attachment uses a ``SystemScheduleInfo''; this is provided by ALIA4J for Attachments performing maintenance whose action should be performed before or after all user actions at a join point, such that all user actions observe the same state of the maintained data.
+Thus, when reaching a selected join point the instance is added to the instance pointcut's multiset before any other action can access its current content.
+The other Attachments are created analogously.
+In the end, all Attachments are deployed through the ALIA4J \lstinln{System} (cf.\ line~\ref{lst:deploy:deploy}).
+
+\begin{lstlisting}[float,caption={Deployment of the bookkeeping for an instance pointcut.},label=lst:deployment]
+public static void ${ipc}_deploy() {
+	org.alia4j.fial.System.deploy( ~\label{lst:deploy:deploy}~
+		new Attachment(
+			${ipc}_add_before(), ~\label{lst:deploy:specializations}~
+			createStaticAction(void.class, ${Aspect}.class, "${ipc}_addInstance", new Class[]{${Type}.class}) ~\label{lst:deploy:action}~
+			SystemScheduleInfo.BEFORE_FARTHEST), ~\label{lst:deploy:schedule}~
+		//Create Attachments for the other three parts analogously.
+		//For the ``after'' parts, use SystemScheduleInfo.AFTER_FARTHEST.
+		//For the ``remove'' parts, specify method ${ipc}_removeInstance.
+		);
+}
+\end{lstlisting}
+
+\subsection{Composite Instance Pointcuts}
+
+Composite instance pointcuts require a different compilation strategy because they do not have the four underlying pointcut expressions.
+The data of a composite instance pointcut changes when the data of one of its referenced instance pointcuts is updated.
+The corresponding events happen during the execution of the generated methods \lstinline!${ipc}_addInstance! and \lstinline!${ipc}_removeInstance!.
+Therefore, a different mechanism is needed than for the non-composite instance pointcuts which depend on user events.
+
+\paragraph{Intersection and Union}
+
+When an instance pointcut \lstinline!${ipc}! is composed by forming the union or intersection of other instance pointcuts (\lstinline!${ipcX}!), the content of the maintained multiset potentially changes whenever an instance is added to or removed from one of the referenced instance pointcuts---events already exposed through \lstinline!${ipcX}_instanceAdded! or \newline\lstinline!${ipcX}_instanceRemoved! pointcuts.
+For the maintenance of a composite instance pointcut a method is generated which reacts to the join points matching the disjunction of all these pointcuts.
+The argument of this method is the instance exposed by these pointcuts, i.e., the instance that has either been added to or removed from a reference instance pointcut.
+When the maintenance method is invoked, we know the cardinality of this instance potentially changes in the multiset of the instance pointcut \lstinline!${ipc}!.
+The cardinality of other instances cannot change.
+The generated method, therefore, re-calculates the cardinality of the affected instance and changes its value in \lstinline!${ipc}_data!.
+
+To generate appropriate code, the compiler first builds a binary expression tree for the composition expression.
+Next, it traverses this tree and generates different code for the cases that the visited node is an instance pointcut reference, or an \texttt{inter} or \texttt{union} operator.
+For an instance pointcut reference, code is generated that retrieves the cardinality of the instance in the multiset of the referenced instance pointcut.
+For an \texttt{inter} and \texttt{union} operator, code is generated that calculates the minimum and maximum, respectively, of both sub-expressions. Finally, the cardinality in \lstinline!${ipc}_data! is updated.
+
+As example, listing~\ref{lst:example:inter-union} shows the generated code for a composite instance pointcut with the set expression \lstinline!$({ipc1} union ${ipc2}) inter ${ipc3}!. Besides, the generated code remembers the old cardinality; when the cardinality changes from $0$ to $>0$ or vice versa, the generated method invokes the method \lstinline!${ipc}_instanceAdded! \lstinline!${ipc}_instanceRemoved!, respectively.
+
+\begin{lstlisting}[float,caption={The update method generated from a composition expression},label=lst:example:inter-union]
+public static void ${ipc}_update(Object o) {
+	int oldCardinality = ${ipc}_cardinality(o);
+	int newCardinality =
+		Math.min(
+			Math.max(
+				${ipc1}_cardinality(o),
+				${ipc2}_cardinality(o)),
+			${ipc3}_cardinality(o));
+	${ipc}setCardinality(o, newCardinality);
+	if (oldCardinality == 0 and newCardinality > 0)
+		${ipc}_instanceAdded(o);
+	else if (oldCardinality > 0 and newCardinality == 0)
+		${ipc}_instanceRemoved(o);
+}
+\end{lstlisting}
+
+As in the case of non-composite instance pointcuts, a LIAM Attachment is generated and deployed which associates the Specializations corresponding to the pointcuts with the generated method.
+
+\paragraph{Type Refinement for Composite Instance Pointcuts}
+
+Instance pointcuts which are defined by means of type refined composite instance pointcuts, are treated similar to the case above.
+A method is generated which is executed when the referenced instance pointcut changes.
+The method checks whether the type of the added or removed object is assignment compatible with the type restriction.
+If this is the case, the same operation (adding or removing the instance) is performed on the multiset of the refining instance pointcut.
+
+\subsection{Compiling Plain AspectJ constructs}
+To ensure consistent ordering between AspectJ advice and our implementation of instance pointcuts (i.e., that our bookkeeping advice are executed before user advice), the AspectJ point\-cut-advice definitions must be processed by ALIA4J.
+This is possible because ALIA4J can integrate with the standard AspectJ tooling.
+Using command line arguments the AspectJ compiler can be instructed to omit the weaving phase.
+The advice bodies are converted to methods and pointcut expressions are attached to them using Java's annotations which are read by the ALIA4J-AspectJ integration and transformed into Attachments at program start-up.
+The code generated by our compiler consists of the above explained methods, as well as plain AspectJ definitions.
+When compiling this code with the mentioned command line options, the regular AspectJ pointcut-advice and the behavior of the instance pointcuts are both executed by ALIA4J, thus ensuring a consistent execution order.
+
