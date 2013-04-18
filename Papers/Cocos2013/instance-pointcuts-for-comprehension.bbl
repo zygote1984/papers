@@ -1,0 +1,45 @@
+\begin{thebibliography}{1}
+
+\bibitem{Alpern2005}
+B.~Alpern, S.~Augart, S.~M. Blackburn, M.~Butrico, A.~Cocchi, P.~Cheng,
+  J.~Dolby, S.~Fink, D.~Grove, M.~Hind, K.~S. McKinley, M.~Mergen, J.~E.~B.
+  Moss, T.~Ngo, and V.~Sarkar.
+\newblock {T}he {J}ikes {V}irtual {M}achine {R}esearch {P}roject: {B}uilding an
+  {O}pen-{S}ource {R}esearch {C}ommunity.
+\newblock {\em IBM Systems Journal}, 44, 2005.
+
+\bibitem{Bodden2011}
+E.~Bodden.
+\newblock Stateful breakpoints: a practical approach to defining parameterized
+  runtime monitors.
+\newblock In {\em Proceedings of the 19th ACM SIGSOFT symposium and the 13th
+  European conference on Foundations of software engineering}, ESEC/FSE '11,
+  pages 492--495, New York, NY, USA, 2011. ACM.
+
+\bibitem{Chern2007}
+R.~Chern and K.~De~Volder.
+\newblock Debugging with control-flow breakpoints.
+\newblock In {\em Proceedings of the 6th international conference on
+  Aspect-oriented software development}, AOSD '07, pages 96--106, New York, NY,
+  USA, 2007. ACM.
+
+\bibitem{cluet1998designing}
+S.~Cluet.
+\newblock Designing oql: Allowing objects to be queried.
+\newblock {\em Information systems}, 23(5):279--305, 1998.
+
+\bibitem{masuharafine}
+H.~Masuhara, Y.~Endoh, and A.~Yonezawa.
+\newblock A fine-grained join point model for more reusable aspects.
+\newblock In N.~Kobayashi, editor, {\em Programming Languages and Systems},
+  volume 4279 of {\em Lecture Notes in Computer Science}, pages 131--147.
+  Springer Berlin / Heidelberg, 2006.
+\newblock 10.1007/11924661_8.
+
+\bibitem{Yin2013}
+H.~Yin, C.~Bockisch, and M.~Aksit.
+\newblock A pointcut language for setting advanced breakpoints.
+\newblock In {\em Proceedings of Aspect-Oriented Software Development}. ACM,
+  2013.
+
+\end{thebibliography}

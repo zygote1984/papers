@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Wed Jan 02 15:53:51 CET 2013
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=
+mainTexFile=instance-pointcuts-for-comprehension.tex
+outputFile=instance-pointcuts-for-comprehension.pdf
+langSpell=
+markDer=true
+srcDir=

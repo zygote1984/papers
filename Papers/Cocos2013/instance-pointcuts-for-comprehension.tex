@@ -1,0 +1,358 @@
+% THIS IS SIGPROC-SP.TEX - VERSION 3.1
+% WORKS WITH V3.2SP OF ACM_PROC_ARTICLE-SP.CLS
+% APRIL 2009
+%
+% It is an example file showing how to use the 'acm_proc_article-sp.cls' V3.2SP
+% LaTeX2e document class file for Conference Proceedings submissions.
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V3.2SP) *DOES NOT* produce:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) Page numbering
+% ---------------------------------------------------------------------------------------------------------------
+% It is an example which *does* use the .bib file (from which the .bbl file
+% is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission,
+% you need to 'insert'  your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% Questions regarding SIGS should be sent to
+% Adrienne Griscti ---> griscti@acm.org
+%
+% Questions/suggestions regarding the guidelines, .tex and .cls files, etc. to
+% Gerald Murray ---> murray@hq.acm.org
+%
+% For tracking purposes - this is V3.1SP - APRIL 2009
+
+\documentclass{sig-alternate}
+
+\usepackage{listings}
+\usepackage{syntax}
+\usepackage[table]{xcolor}
+
+\lstset{
+ frame = l,%l,
+ stepnumber = 1,
+ numbers = left,
+ numbersep = 4pt,
+ numberstyle = \sffamily\tiny,
+ belowcaptionskip = \bigskipamount,
+ captionpos = b,
+ escapechar = ~,
+ tabsize = 2,
+ emphstyle = {\textbf},
+ showspaces = false,
+ commentstyle = \color [rgb] {0.35,0.35,0.6},
+ columns = fullflexible,
+ basicstyle = \sffamily\footnotesize,%\ttfamily,
+ showstringspaces = false,
+ breaklines=false,
+ rulecolor={\color [rgb] {0.7,0.7,0.7}},
+ xleftmargin=14pt,
+ frameshape={}{y}{}{},
+ aboveskip=\bigskipamount,
+ firstnumber=1
+}
+
+\begin{document}
+
+\conferenceinfo{CoCoS'13,} {March 25, 2013, Fukuoka, Japan.}
+\CopyrightYear{2013}
+\crdata{978-1-4503-1863-1/13/03}
+
+\clubpenalty=10000
+\widowpenalty = 10000
+
+%\special{papersize=8.5in,11in}
+%\setlength{\pdfpageheight}{\paperheight}
+%\setlength{\pdfpagewidth}{\paperwidth}
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+
+\title{Instance Pointcuts for Program Comprehension}
+
+\numberofauthors{2}
+\author{
+\alignauthor
+Christoph Bockisch\\
+       \affaddr{University of Twente}\\
+       \affaddr{P.O. Box 217}\\
+       \affaddr{7500 AE Enschede, the Netherlands}\\
+       \email{c.m.bockisch@cs.utwente.nl}
+% 2nd. author
+\alignauthor
+Kardelen Hatun\\
+       \affaddr{University of Twente}\\
+       \affaddr{P.O. Box 217}\\
+       \affaddr{7500 AE Enschede, the Netherlands}\\
+       \email{k.hatun@cs.utwente.nl}
+}
+
+\maketitle
+\begin{abstract}
+The dynamic behavior of programs generally cannot be fully observed via the source code, but dynamic tools, e.g. debuggers, have to be used.
+Comprehending dynamic behavior entails observing object interactions during runtime.
+The class structure is not always sufficient to understand these interactions since objects of the same type can be used in various places, just as objects of different types can be used in similar places.
+Our novel concept, \emph{instance pointcuts}, groups objects based on the events they participate in, introducing a flexible way of creating object categories; a category contains objects that are used in the specified way.
+This paper proposes an application of instance pointcuts to the program comprehension domain.
+We illustrate the usefulness of our approach through three comprehension scenarios.
+\end{abstract}
+
+\category{D.2.5}{Software Engineering}{Testing and Debugging}[Code inspections and walk-throughs]
+\category{D.3.3}{Programming Languages}{Language Constructs and Features}
+
+\terms{Design, Languages}
+
+\keywords{program comprehension, debugging, instance pointcuts, object categories, object-oriented programming, aspect-oriented programming} % NOT required for Proceedings
+
+\section{Introduction}
+
+Complex software systems are difficult to understand because they consist of many elements with complicated dependencies.
+A factor further complicating the comprehensibility is the dynamicity of execution semantics:
+In object-oriented programming languages, the dynamic type of the receiver object determines which implementation of the called method will be executed.
+It is generally not possible to determine the dynamic type of an expression just by looking at the source code.
+For this reason, often dynamic tools are used to observe the program execution for comprehending a program.
+As such tools are mainly used during debugging, they are often called \emph{debuggers};
+we will also use this term throughout this paper to refer to tools which in general allow observing and possibly interacting with program executions at runtime.
+
+In object-oriented programming, on the source code level the main abstractions are classes (object-oriented languages which are not class-based provide an equivalent like prototypes in delegation-based languages).
+At runtime, however, the main building blocks are \emph{objects} which are instances of classes.
+Comprehending the behavior of a program means to comprehend the interplay of objects.
+In general, there can be arbitrarily many instances of each class, which makes the comprehension difficult as their connections and dependencies can be manifold.
+
+A natural technique to increase comprehensibility is introducing a limited number of categories, grouping all objects into categories and considering only the categories during the comprehension task.
+This is even well supported by object-oriented languages, since classes already form such categories and there is an easily observable relation between an object and its class, and vice versa.
+However, the categorization offered by the class structure of the program is not always the best fit for the comprehension task at hand.
+On one hand, instances of the same class may be used in different ways throughout the program execution; on the other hand, instances of different classes may be used in the same or a similar way.
+
+For these reasons, we claim that another, more powerful and flexible way for dynamically categorizing objects is needed to guide the task of program comprehension.
+In our ongoing research, we are developing the language concept of \emph{instance pointcuts}, originally to facilitate flexibly extending program behavior and composing independently developed architectural components.
+Recently, we have found the abstraction provided by instance pointcuts also to be useful to support comprehension of highly dynamic object-oriented programs.
+
+In the following section, we will briefly introduce the concept of instance pointcuts.
+By walking the reader through a few particular comprehension tasks in section \ref{sec:walkthrough}, we will illustrate the applicability of instance pointcuts;
+throughout this section we will sketch a user interface that visualizes instance pointcuts.
+In section \ref{sec:challenges} we will discuss challenges in realizing the outlined concepts.
+We present related work in section \ref{sec:related-work} before we conclude our position in section \ref{sec:conclusion}.
+
+\section{Instance Pointcuts}
+\label{sec:instance-pointcuts}
+
+Instance pointcut is a declarative language construct that is used to reify and maintain a set of objects of a specified type, with the ability to select them over a period marked by events in the usage of the object, modularizing the object selection concern and making it declarative.
+We have implemented a prototype by extending AspectJ.
+Besides defining instance pointcut based on events in the usage of objects, our language also provides means to compose instance pointcuts from existing ones.
+This feature is mainly useful in application programming where instance pointcuts may be re-used and may evolve along with the application; in comprehension tasks, we expect instance pointcuts be used in an ad-hoc manner and therefore do not discuss these advanced features in detail here.
+In our language prototype, instance pointcuts are static members of aspect modules. For the purpose of this paper we present them as stand-alone constructs, which can be defined through the user interface of the debugger.
+
+\begin{lstlisting}[caption={Grammar definition for instance pointcuts},label=fig:grammar1, columns=spaceflexible]
+ip        ::= `instance pointcut' name `<' type `>' `:'
+              ip-expr (`UNTIL' ip-expr)?
+
+ip-expr   ::= aft-event `||' bef-event
+              | bef-event `||' aft-event
+              | aft-event
+              | bef-event
+
+aft-event ::= `after' `('pointcut-expression`)'
+
+bef-event ::= `before' `('pointcut-expression`)'
+\end{lstlisting}
+
+A concrete instance pointcut definition (the grammar is shown in listing~\ref{fig:grammar1}) consists of a name and type, and an instance pointcut expression.
+The latter selects the desired events at which the instance pointcut set must be maintained and binds the object which is to be added to or removed from the maintained set.
+%Instance pointcuts implicitly add an object from an internal set or remove it, when specified events in the object's life-cycle occur.
+An instance pointcut expression consists of two sub-expressions that are separated by the \lstinline{UNTIL} keyword.
+The first sub-expression, the so-called \emph{add expression}, selects events which expose the instances to be added to the instance pointcut set.
+After the \lstinline{UNTIL} clause an optional sub-expression, called the \emph{remove expression}, can be defined, which specifies when to remove which object.
+When the remove expression is not defined, the object is kept in the set until it \emph{dies}.
+
+In AspectJ, join points mark \emph{regions in time}~\cite{masuharafine}, and only together with the keywords for defining an advice (\lstinline!before! or \lstinline!after!), events are selected.
+As we need to identify events for our approach, we combine pointcut expressions with advice specifiers to obtain \emph{expression elements}.
+Each expression element contains a (nearly) regular AspectJ pointcut expression and the advice specifier (before or after) to select events.
+Both add and remove expressions are composed of expression elements.
+A sub-expression (add/remove expression) contains at least one \emph{expression element} and at most two.
+
+The pointcut expressions used in instance pointcuts are almost plain AspectJ pointcut expression with a few restrictions and only one addition:
+Every pointcut expression must contain exactly one binding predicate (\lstinline{args}, \lstinline{target}, etc.) that binds the (implicit) \lstinline{instance} parameter. We extend the list of binding predicates with a new one, namely \lstinline{returning}.
+The \lstinline{returning} clause binds the returned variable by a method or a constructor and may only be used inside an after expression element.
+In AspectJ the result value can only be bound by a special advice specifier (\lstinline{after returning}); since we only use pointcut expressions, we had to extend the pointcut language.
+
+The way how the instance pointcut's object set is maintained bears two peculiarities.
+First, instance pointcuts do not keep objects alive.
+This means: independently of the optional remove expression, objects are removed from the maintained set when they are not referenced by the rest of the program anymore and are garbage collected.
+Second, actually \emph{multisets} are maintained. Thus, an object can be multiply bound by the add-expression and has to be bound equally often by the remove-expression to eventually be eliminated from the set.
+
+In our full language prototype, we provide several operators to refine and compose instance pointcuts.
+For example, new instance pointcuts can be defined based on existing ones by refining the type constraint or by composing them through the set operations union and intersect.
+Furthermore, properties of instance pointcuts can be checked, e.g., if the content of the instance pointcut's set will always be empty, a warning can be issued.
+
+
+\section{Example Walkthrough}
+\label{sec:walkthrough}
+
+\begin{figure*}[t!]
+\begin{minipage}[t]{0.3333\textwidth}
+\centering
+\includegraphics[scale=0.24]{images/callInstructions.png}
+\caption{The Instance Pointcuts View}
+\label{fig:ip-view}
+\end{minipage}
+\begin{minipage}[t]{0.3333\textwidth}
+\centering
+\includegraphics[scale=0.24]{images/callInstructionsHighlighted.png}
+\caption{A highlighted instance pointcut.}
+\label{fig:ip-view-highlight}
+\end{minipage}
+\begin{minipage}[t]{0.3333\textwidth}
+\centering
+\includegraphics[scale=0.24]{images/runtimeServices.png}
+\caption{Another example of an instance pointcut definition.}
+\label{fig:ip-view-runtimeServices}
+\end{minipage}
+\end{figure*}
+
+In this section, we will describe an existing system and several comprehension scenarios where instance pointcuts can be useful.
+Intertwined with these scenarios, we will discuss a hypothetical extension to the Eclipse debugger for using instance pointcuts.
+
+We made the observation that instance pointcuts can support program comprehension while working on an extension to the Jikes Research Virtual Machine~\cite{Alpern2005}.
+In particular, we were extending the optimizing just-in-time (JIT) compiler of this virtual machine.
+The optimizing compiler works in multiple phases, whereby the first one creates an object-based intermediate representation (IR) from the Java bytecode of the method which is currently compiled.
+This IR, basically a linked list of \lstinline!Instruction! objects, is iteratively analyzed and rewritten until eventually machine code is emitted.
+In our extension we manipulated this IR by inserting instructions and adding rewrites.
+When we made a mistake runtime failures occurred and we had to understand the impact of our extension on the further processing of the JIT compiler, i.e. to identify our fault we had to comprehend a very complex system.
+
+All elements in the IR are instances of the same class (\lstinline!Instruction!) which are configured with an \lstinline!Operator! object determining the behavior of the instruction.
+Thus, at first sight it is not clear which instruction is represented by an \lstinline!Instruction! object.
+Besides the referenced \lstinline!Operator! object, also the creation site of the \lstinline!Instruction! object allows to draw conclusions about the purpose of an \lstinline!Instruction!: There is a factory class for each kind of instruction.
+For instance, if we are only interested in instructions representing a function invocation, we can focus our comprehension task on those \lstinline!Instruction! objects that are returned by a \lstinline!create! method in the class \lstinline!Call!.
+
+\subsection{Scenario 1}
+\label{sec:scenario-1}
+
+\paragraph{A View for Instance Pointcuts}
+
+An instance pointcut, let's call it \lstinline!callInstructions!, selecting the objects described above can be defined as seen in figure~\ref{fig:ip-view}\footnote{For brevity we only show simple class names.}.
+The figure depicts a view for defining instance pointcuts.
+The new view allows to add instance pointcuts which are maintained during the execution of the program, and to inspect the content of the defined instance pointcuts while the program execution is suspended at a breakpoint.
+The left column shows the names of the defined instance pointcuts.
+A row with an instance pointcut can be expanded, for example in the figure the instance pointcut \lstinline!callInstructions! is expanded and its elements are listed.
+When a row containing the name of an instance pointcut is selected, the detail pane (at the bottom) shows its definition.
+When a row is selected which represents an element of an instance pointcut, the \lstinline!toString()! of the value is shown.
+
+\paragraph{Linking the Instance Pointcut View}
+
+The left-most icon of the toolbar in figure \ref{fig:ip-view-highlight} allows linking the Instance Pointcut View with other debugging-related views.
+When linking is turned on and an object is selected on another view, e.g. in the Variables view, all instance pointcuts are highlighted which contain the selected object.
+Figure \ref{fig:ip-view-highlight} shows the instance pointcut \lstinline!callInstructions! in green, which means that the user has currently selected an object contained in \lstinline!callInstructions!.
+In the outlined comprehension task, this feature makes it simple to identify for each \lstinline!Instruction! object, if it represents an instruction relevant for the task, i.e., for which an instance pointcut was defined.
+
+
+\subsection{Scenario 2}
+
+Besides representing different (virtual) machine instructions, \lstinline!Instruction!s also need to be distinguished by the purpose for which they have been created.
+The majority of the instructions are directly compiled from the Java bytecode instructions.
+But some instructions have to be inserted into the generated machine code to inject the runtime services offered by the virtual machine, e.g., thread switching, memory management, and profiling for facilitating optimizations.
+In our concrete case, some instructions are also generated by our own extension to the virtual machine.
+
+A simple example is insertion of the runtime service for managed memory allocation.
+This is done in a compiler phase after the initial creation of the \lstinline!Instruction!-based intermediate representation.
+When an instruction representing the allocation of an object is encountered in this phase, the \lstinline!Instruction! is \emph{mutated} by turning it into a Call instruction invoking the virtual machine's function realizing this service.
+Figure~\ref{fig:ip-view-runtimeServices} shows the instance pointcut selecting all \lstinline!Instruction!s that inject a runtime service.
+
+
+\paragraph{Using Instance Pointcuts in Conditions and Expressions}
+
+Besides using instance pointcuts during inspection when the execution is suspended at a breakpoint, defined instance pointcuts can also be used for defining conditional breakpoints.
+As an example consider the task of comprehending a late compiler phase.
+At this time, many \lstinline!Instruction!s have been mutated for optimization purposes or for injecting runtime services.
+But many \lstinline!Instruction!s still simply reflect the functionality directly specified by the Java bytecode instructions.
+Assume we want to comprehend the impact of injected runtime services on the liveness analysis, a phase necessary for generating meta-data needed by the garbage collector.
+Figure~\ref{fig:breakpoint-properties} shows a screenshot of the breakpoint properties dialog where the condition refers to the instance pointcut defined in figure~\ref{fig:ip-view-runtimeServices}.
+The execution is only suspended at this breakpoint when the local variable \lstinline!inst! is selected by the instance pointcut describing the \lstinline!Instruction!s that realize runtime services.
+In the same way, watch expressions entered in Eclipse's Expression View can refer to instance pointcuts, simply treating them as \lstinline!java.util.Set!s.
+
+\begin{figure*}
+\centering
+\includegraphics[scale=0.7]{images/breakpointProperties.png}
+\caption{Breakpoint properties using an instance pointcut.}
+\label{fig:breakpoint-properties}
+\end{figure*}
+
+\subsection{Scenario 3}
+
+\paragraph{Instance Pointcut Watchpoints}
+
+To demonstrate the \emph{remove expression} feature of instance pointcuts, consider the two scenarios above.
+Since mutation changes the operation represented by an \lstinline!Instruction! object, mutated \lstinline!Instruction!s must be removed from the instance pointcut representing a specific operation as mentioned in the first scenario.
+Figure~\ref{fig:ip-watchpoints} shows the extended instance pointcut definition.
+
+Furthermore, the language concept of instance pointcuts allows to advise the joint points when a new instance is added to an instance pointcut and when an instance is removed, respectively.
+Instance pointcuts internally maintain multisets; we specify that only the initial addition and the final removal of an object are join points, i.e. when the cardinality of an object in the multiset changes from 0 to 1 and from 1 to 0, respectively.
+These join points can also be used to define watchpoints.
+The two right-most columns in figure~\ref{fig:ip-watchpoints} represent this feature.
+In the example, the watchpoint for adding an object to the instance pointcut \lstinline!callInstructions! is enabled; the breakpoint for removing an object is disabled.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.24]{images/callInstructionsUntil.png}
+\caption{Setting watchpoints for instance breakpoint changes.}
+\label{fig:ip-watchpoints}
+\end{figure}
+
+\section{Challenges}
+\label{sec:challenges}
+
+Obviously, the expressiveness of the pointcut language determines how precisely sets of objects can be selected.
+Since in our prototype we use the AspectJ pointcut language underlyingly, we are limited to selecting the supported events and specifying supported restrictions.
+In the example of the optimizing compiler of the Jikes virtual machine, this can be a significant limitation:
+long switch statements identify different ways of processing instructions and it is often relevant in the context of which \emph{case} an object was used.
+However, since AspectJ pointcuts cannot refer to switch cases, they cannot be used in the add or remove expressions of instance pointcuts.
+
+%In the discussion of scenario one (cf.~\ref{sec:scenario-1}) it is apparent that often many similar instance pointcuts have to be defined for a comprehension task, e.g., one instance pointcut per relevant kind of instruction.
+%It would be more convenient to define just one instance pointcut and specify the variability, in the example this is the declaring type of the \lstinline!create! method.
+
+We are used to adding breakpoints or watch expressions dynamically, during the runtime of the debugged program.
+With instance pointcut, this is not possible or at least risky.
+As is always the case with dynamic deployment of aspects, it may be that some relevant join points have already passed at the time of deployment.
+Thus, it may be that objects, which should have been selected by an instance pointcut, are not selected; or not all of the recursive additions have been tracked and an object is removed from the multiset too early.
+For these reasons, we do not suggest to support dynamic addition of instance pointcuts, even though this may require to restart the program during one comprehension task, if new relevant categorizations for objects are discovered during runtime.
+
+\section{Related Work}
+\label{sec:related-work}
+
+A field related to instance pointcuts is Object Query Languages~(OQL) which are used to query objects in an object-oriented program~\cite{cluet1998designing}.
+However OQLs do not support event based querying as presented in our approach, but only allow to select objects based on the current heap structure.
+
+Using pointcut-based techniques for specifying breakpoints in a debugger has been proposed before.
+For example, Chern and De Volder \cite{Chern2007} have proposed to define breakpoints based on the current control flow, similar to AspectJ's \lstinline!cflow! pointcut designator.
+Bodden has proposed stateful breakpoint \cite{Bodden2011}, which allows programmers to specify the order in which different events must occur to lead to suspension of the program execution.
+Yin et al.\ have presented a language for specifying breakpoints \cite{Yin2013} which is also based on a pointcut language and already allows specifying breakpoints based on object relations.
+Nevertheless, the approach presented in our paper is the first to actually maintain a set of objects, which relate by how they have been used in the past, and to expose these sets to different debugging facilities.
+
+\section{Conclusion}
+\label{sec:conclusion}
+In this paper we proposed an application of the instance pointcuts approach to the program comprehension domain, as an extension to the Eclipse debugger.
+Our vision is that by using instance pointcuts during debugging, we will be able to identify objects based on how they are used which is not observable by the class structure.
+Inspired by the challenges encountered while debugging an extension of the Jikes VM's optimizing compiler, we devised three scenarios~(section~\ref{sec:walkthrough}).
+In the first scenario we explained how the instance pointcuts concept is useful during debugging; we can easily identify objects that are relevant to the debugging task by looking if they are contained by a certain instance pointcut.
+In the second scenario we explored the use of instance pointcuts with conditional breakpoints; instance pointcuts can be referenced as \lstinline!Set!s and we can observe if an object is added to the instance pointcut set by means of a conditional expression.
+In the third and the final scenario we have utilized the removal feature of instance pointcuts; here instance pointcuts are used to maintain a set of objects starting from the time they were \lstinline!create!d until they were \lstinline!mutate!d.
+We also showed how the built-in joinpoints for add and remove operations can be used to define watchpoints.
+
+Despite some limitations, instance pointcuts are beneficial for program comprehension since they provide the means to create meaningful runtime categories.
+We think that this extra dimension brings practicality for understanding dynamic behavior.
+In future work, we will develop this idea further and explore different event selection languages to overcome limitations introduced by AspectJ.
+
+
+
+
+
+
+\bibliographystyle{abbrv}
+\bibliography{sigproc}
+
+\balancecolumns
+% That's all folks!
+\end{document}
